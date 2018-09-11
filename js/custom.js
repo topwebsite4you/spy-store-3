@@ -95,6 +95,55 @@
 
 $(document).ready(function() {
 	
+$('.top-carousel').slick({
+  dots: false,
+  arrows: false,
+  infinite: true,
+  autoplay: false,
+  speed: 300,
+  slidesToShow: 5,
+  slidesToScroll: 1,
+  
+  /*centerMode: true,
+  variableWidth: true,
+  fade: true,*/
+  responsive: [
+    {
+      breakpoint: 1250,
+      settings: {
+        slidesToShow: 4,
+		slidesToScroll: 1,
+		autoplay: true
+      }
+    },
+	{
+      breakpoint: 992,
+      settings: {
+        slidesToShow: 3,
+		slidesToScroll: 1,
+		autoplay: true
+      }
+    },
+    {
+      breakpoint: 600,
+      settings: {
+		slidesToShow: 2,
+		slidesToScroll: 1,
+		autoplay: true
+      }
+    },
+    {
+      breakpoint: 480,
+      settings: {
+        slidesToShow: 1,
+		slidesToScroll: 1,
+		autoplay: true
+      }
+    }
+  ]
+});
+$('.top-carousel').show();
+	
 $('.category-car').slick({
   dots: true,
   infinite: false,
