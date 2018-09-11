@@ -1126,6 +1126,142 @@ h1.cat-title{
 .header-mid-section {
     box-shadow: 0px 0px 30px rgba(158, 158, 158, 0.2);
 }
+.main-menu ul.main-l-nav>li>a {
+    padding: 20px 10px;
+    border: none;
+    margin: 0px;
+}
+.header-botom-section {
+    background: #fff;
+}
+.main-menu ul.main-l-nav {
+    background: #d01d1b;
+    display: block;
+    width: initial;
+    float: left;
+    padding: 0 20px;
+	position: static;
+}
+.main-menu ul.main-l-nav>li>a {
+    padding: 24px 20px;
+    border: none;
+    margin: 0px;
+    font-size: 16px;
+    letter-spacing: 1px;
+    color: #fff;
+	
+    background-color: transparent;
+}
+.main-menu ul.main-l-nav:after{
+	display:none !important;
+}
+.main-menu ul.extra-main {
+    float: right;
+    width: initial;
+    padding: 0;
+    text-align: right;
+    margin-right: 40px;
+}
+.main-menu ul.extra-main>li {
+    margin: 0px 10px;
+    display: inline-block;
+}
+.main-menu ul.extra-main>li>a {
+    padding: 23px 13px 24px;
+    border: none;
+    margin: 0;
+    font-size: 15px;
+    letter-spacing: 1px;
+    color: #fff;
+    font-weight: 600;
+    display: block;
+	background: transparent;
+}
+.main-menu {
+    background-color: #000;
+    padding: 0px;
+}
+.header-botom-section .main-menu {
+    background-color: #000;
+    padding: 0px;
+	    position: relative;
+}
+.main-menu .main-l-nav .m-menu-items {
+    top: initial;
+}
+.wrapper-logo img.logo {
+    max-width: 320px;
+}
+.wrapper-search .header-search {
+    padding: 0px;
+	    float: right;
+}
+.wrapper-search {
+    display: block;
+    float: right;
+	    margin-top: 30px;
+}
+.wrapper-search .mid-header-nav {
+    margin: 0px;
+	    vertical-align: middle;
+    display: table;
+	
+    float: right;
+}
+.wrapper-middle .wrapper-middle {
+    padding-top: 25px;
+    padding-bottom: 25px;
+}
+.wrapper-logo {
+    float: left;
+}
+svg#cartnew {
+    max-width: 40px;
+    height: initial;
+}
+.mid-header-nav > li{
+	 display: table-cell;
+    vertical-align: middle;
+}
+.mid-header-nav .cart-qty-number {
+    position: absolute;
+    background-color: #d01d1b;
+    padding: 0px 6px;
+    right: -10px;
+    top: -10px;
+}
+#header-cart > a{
+    position: relative;
+    display: inline-block;
+}
+html .wrapper-middle {
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+img.acc-ico-img {
+    max-width: 25px;
+    margin-right: 5px;
+    position: relative;
+    top: -1px;
+}
+.mid-header-nav a {
+    font-size: 16px;
+}
+.wrapper-middle .input-group {
+    display: inline-block;
+}
+.wrapper-middle .input-group .form-control {
+    width: initial;
+}
+.wrapper-middle span.input-group-btn {
+    display: inline-block;
+}
+
+
+
+
+
+
 
 @media (max-width: 1250px) {
 .top-carousel .slick-slide{
