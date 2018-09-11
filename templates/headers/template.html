@@ -36,6 +36,16 @@
 	<div class="top-bar">
 		<div class="container">
 			<div class="row">
+				<div class="col-md-12 col-xs-12 top-bar">
+					[%advert type:'text' template:'top-bar' limit:'5' ad_group:'top-header' sortby:'sortorder,name' category:'0'%]
+					[%param *header%]
+						<ul class="list-inline">
+					[%/param%]
+					[%param *footer%]
+						</ul>
+					[%/param%]
+					[%/advert%]
+				</div>
 				<div class="col-md-7 hidden-xs usp-top">
 					[%advert type:'text' template:'usp-top' limit:'3' ad_group:'usp-top' sortby:'sortorder,name' category:'0'%]
 					[%param *header%]

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<dwsync>
+<file name="alerts.less" server="sftp.neto.net.au:2022//httpdocs/assets/themes/spy-store-3/" local="131811537073864484" remote="131811554650000000" Dst="2" />
+<file name="badges.less" server="sftp.neto.net.au:2022//httpdocs/assets/themes/spy-store-3/" local="131811536847611398" remote="131811554660000000" Dst="2" />
+<file name="bootstrap.less" server="sftp.neto.net.au:2022//httpdocs/assets/themes/spy-store-3/" local="131811536951913584" remote="131811554680000000" Dst="2" />
+<file name="breadcrumbs.less" server="sftp.neto.net.au:2022//httpdocs/assets/themes/spy-store-3/" local="131811536889934661" remote="131811554690000000" Dst="2" />
+<file name="button-groups.less" server="sftp.neto.net.au:2022//httpdocs/assets/themes/spy-store-3/" local="131811537059936645" remote="131811554700000000" Dst="2" />
+<file name="buttons.less" server="sftp.neto.net.au:2022//httpdocs/assets/themes/spy-store-3/" local="131811537033079043" remote="131811554720000000" Dst="2" />
+<file name="carousel.less" server="sftp.neto.net.au:2022//httpdocs/assets/themes/spy-store-3/" local="131811536910797701" remote="131811554730000000" Dst="2" />
+<file name="close.less" server="sftp.neto.net.au:2022//httpdocs/assets/themes/spy-store-3/" local="131811536846737779" remote="131811554750000000" Dst="2" />
+<file name="code.less" server="sftp.neto.net.au:2022//httpdocs/assets/themes/spy-store-3/" local="131811536724060110" remote="131811554760000000" Dst="2" />
+<file name="component-animations.less" server="sftp.neto.net.au:2022//httpdocs/assets/themes/spy-store-3/" local="131811536765385919" remote="131811554780000000" Dst="2" />
+<file name="dropdowns.less" server="sftp.neto.net.au:2022//httpdocs/assets/themes/spy-store-3/" local="131811537053454070" remote="131811554790000000" Dst="2" />
+<file name="forms.less" server="sftp.neto.net.au:2022//httpdocs/assets/themes/spy-store-3/" local="131811537018828096" remote="131811554800000000" Dst="2" />
+<file name="glyphicons.less" server="sftp.neto.net.au:2022//httpdocs/assets/themes/spy-store-3/" local="131811536683289422" remote="131811554820000000" Dst="2" />
+<file name="grid.less" server="sftp.neto.net.au:2022//httpdocs/assets/themes/spy-store-3/" local="131811536703570515" remote="131811554830000000" Dst="2" />
+<file name="input-groups.less" server="sftp.neto.net.au:2022//httpdocs/assets/themes/spy-store-3/" local="131811536931382025" remote="131811554850000000" Dst="2" />
+<file name="jumbotron.less" server="sftp.neto.net.au:2022//httpdocs/assets/themes/spy-store-3/" local="131811536764896204" remote="131811554860000000" Dst="2" />
+<file name="labels.less" server="sftp.neto.net.au:2022//httpdocs/assets/themes/spy-store-3/" local="131811536998327725" remote="131811554870000000" Dst="2" />
+<file name="list-group.less" server="sftp.neto.net.au:2022//httpdocs/assets/themes/spy-store-3/" local="131811536827103381" remote="131811554890000000" Dst="2" />
+<file name="media.less" server="sftp.neto.net.au:2022//httpdocs/assets/themes/spy-store-3/" local="131811537012615170" remote="131811554900000000" Dst="2" />
+<file name="mixins.less" server="sftp.neto.net.au:2022//httpdocs/assets/themes/spy-store-3/" local="131811536805735228" remote="131811554920000000" Dst="2" />
+<file name="modals.less" server="sftp.neto.net.au:2022//httpdocs/assets/themes/spy-store-3/" local="131811536704039224" remote="131811554930000000" Dst="2" />
+<file name="navbar.less" server="sftp.neto.net.au:2022//httpdocs/assets/themes/spy-store-3/" local="131811536724528866" remote="131811554940000000" Dst="2" />
+<file name="navs.less" server="sftp.neto.net.au:2022//httpdocs/assets/themes/spy-store-3/" local="131811536785939582" remote="131811554960000000" Dst="2" />
+<file name="normalize.less" server="sftp.neto.net.au:2022//httpdocs/assets/themes/spy-store-3/" local="131811536951288621" remote="131811554970000000" Dst="2" />
+<file name="pager.less" server="sftp.neto.net.au:2022//httpdocs/assets/themes/spy-store-3/" local="131811536869911945" remote="131811554990000000" Dst="2" />
+<file name="pagination.less" server="sftp.neto.net.au:2022//httpdocs/assets/themes/spy-store-3/" local="131811537039321634" remote="131811555000000000" Dst="2" />
+<file name="panels.less" server="sftp.neto.net.au:2022//httpdocs/assets/themes/spy-store-3/" local="131811537094358723" remote="131811555010000000" Dst="2" />
+<file name="popovers.less" server="sftp.neto.net.au:2022//httpdocs/assets/themes/spy-store-3/" local="131811536971840437" remote="131811555030000000" Dst="2" />
+<file name="print.less" server="sftp.neto.net.au:2022//httpdocs/assets/themes/spy-store-3/" local="131811536930972202" remote="131811555040000000" Dst="2" />
+<file name="progress-bars.less" server="sftp.neto.net.au:2022//httpdocs/assets/themes/spy-store-3/" local="131811536806392023" remote="131811555060000000" Dst="2" />
+<file name="responsive-embed.less" server="sftp.neto.net.au:2022//httpdocs/assets/themes/spy-store-3/" local="131811536910582836" remote="131811555080000000" Dst="2" />
+<file name="responsive-utilities.less" server="sftp.neto.net.au:2022//httpdocs/assets/themes/spy-store-3/" local="131811536785314580" remote="131811555090000000" Dst="2" />
+<file name="scaffolding.less" server="sftp.neto.net.au:2022//httpdocs/assets/themes/spy-store-3/" local="131811536869592994" remote="131811555110000000" Dst="2" />
+<file name="tables.less" server="sftp.neto.net.au:2022//httpdocs/assets/themes/spy-store-3/" local="131811536745031298" remote="131811555120000000" Dst="2" />
+<file name="theme.less" server="sftp.neto.net.au:2022//httpdocs/assets/themes/spy-store-3/" local="131811536992379441" remote="131811555130000000" Dst="2" />
+<file name="thumbnails.less" server="sftp.neto.net.au:2022//httpdocs/assets/themes/spy-store-3/" local="131811536972309155" remote="131811555150000000" Dst="2" />
+<file name="tooltip.less" server="sftp.neto.net.au:2022//httpdocs/assets/themes/spy-store-3/" local="131811537104206027" remote="131811555160000000" Dst="2" />
+<file name="type.less" server="sftp.neto.net.au:2022//httpdocs/assets/themes/spy-store-3/" local="131811536890352584" remote="131811555180000000" Dst="2" />
+<file name="utilities.less" server="sftp.neto.net.au:2022//httpdocs/assets/themes/spy-store-3/" local="131811537080423272" remote="131811555190000000" Dst="2" />
+<file name="variables.less" server="sftp.neto.net.au:2022//httpdocs/assets/themes/spy-store-3/" local="131811536826165954" remote="131811555200000000" Dst="2" />
+<file name="wells.less" server="sftp.neto.net.au:2022//httpdocs/assets/themes/spy-store-3/" local="131811536742429504" remote="131811555220000000" Dst="2" />
+</dwsync>
