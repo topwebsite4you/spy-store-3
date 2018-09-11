@@ -37,16 +37,16 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-md-12 col-xs-12 top-bar">
-					[%advert type:'text' template:'top-bar' limit:'5' ad_group:'top-header' sortby:'sortorder,name' category:'0'%]
+					[%advert type:'text' template:'top-header' limit:'5' ad_group:'top-header' sortby:'sortorder,name' category:'0'%]
 					[%param *header%]
-						<ul class="list-inline">
+						<div class="top-carousel">
 					[%/param%]
 					[%param *footer%]
-						</ul>
+						</div>
 					[%/param%]
 					[%/advert%]
 				</div>
-				<div class="col-md-7 hidden-xs usp-top">
+				<!--<div class="col-md-7 hidden-xs usp-top">
 					[%advert type:'text' template:'usp-top' limit:'3' ad_group:'usp-top' sortby:'sortorder,name' category:'0'%]
 					[%param *header%]
 						<ul class="list-inline">
@@ -91,10 +91,11 @@
 							[%/ cache%]
 							<li><a href="tel:[@CONFIG:COMPANY_PHONE@]" class="text-right"><strong><i class="fa fa-phone" aria-hidden="true"></i> [@CONFIG:COMPANY_PHONE@]</strong></a></li>
 						</ul>
-				</nav>
+				</nav>-->
 			</div>
 		</div>
 	</div>
+	<div class="header-mid-section">
 	<div class="wrapper-middle container">
 		<div class="row">
 			<div class="col-xs-12 col-sm-4 wrapper-logo">
@@ -161,6 +162,8 @@
 			</div>
 		</div>
 	</div>
+	</div>
+	
     <nav class="navbar visible-xs navbar-default" role="navigation" aria-label="Main Menu">
       <div class="navbar-header">
           <ul class="navigation-list list-inline nMobileNav">
