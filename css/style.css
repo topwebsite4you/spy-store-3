@@ -1106,3 +1106,34 @@ h1.cat-title{
     font-weight: 600;
 	    margin-top: 25px;
 }
+
+.top-carousel { display: none; }
+.top-carousel.slick-initialized { display: block; }
+.top-carousel .slick-slide img {
+    max-height: 28px;
+    max-width: inherit;
+    display: inline-block;
+    margin-right: 5px;
+}
+
+.top-carousel .slick-slide {
+    font-size: 13px;
+}
+.top-bar {
+    background: #f8f8f8;
+    padding: 5px 0;
+}
+.header-mid-section {
+    box-shadow: 0px 0px 30px rgba(158, 158, 158, 0.2);
+}
+
+@media (max-width: 1250px) {
+.top-carousel .slick-slide{
+	padding:0 10px;
+}
+}
+@media (max-width: 600px) {
+.top-carousel .slick-slide {
+    text-align: center;
+}
+}
