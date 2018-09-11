@@ -1,0 +1,13 @@
+type
+website
+----------
+name
+Blooming Brush
+----------
+version
+6
+----------
+install_description
+----------
+description
+<h1>Blooming Brush</h1>

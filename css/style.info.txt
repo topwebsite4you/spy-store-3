@@ -1,0 +1,8 @@
+/* Website
+===========================================================================================================*/
+
+/* Global
+-----------------------------------------------------------------------------------------------------------*/
+background-image: 					Select the background image
+primary-color:						The primary link colour throughout the site
+secondary-color:					The secondary color, used for call to actions

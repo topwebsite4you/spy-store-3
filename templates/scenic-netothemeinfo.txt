@@ -1,0 +1,13 @@
+type
+website
+----------
+name
+Scenic
+----------
+version
+6
+----------
+install_description
+----------
+description
+<h1>Scenic</h1>

@@ -1,0 +1,178 @@
+* {
+font-family: "MS Sans Serif", Geneva, sans-serif;
+}
+body {
+	background-color:#e1e1e1 /*{body|background-colour}*/;
+	background-image: none /*{body|background-image}*/;
+	color:#333333 /*{body|text-colour}*/;
+}
+a, a:hover, a:active {
+	color:#00a5af /*{body|link-colour}*/;
+}
+#main-content {
+	background:#FFFFFF;
+	padding-top:15px;
+}
+.wrapper-header {
+	background-color:#19242f /*{header|background-colour}*/;
+	border-color:transparent;
+	margin-bottom:0px;
+}
+.wrapper-header .btn-default {
+	background-color:#FFFFFF /*{header|button-colour}*/;
+	border-color:#FFFFFF /*{header|button-colour}*/;
+	color:#19242f /*{header|button-text-colour}*/;
+}
+.navbar {
+	margin-bottom: 0;
+	background-color: transparent;
+	border-color: transparent;
+}
+.navigation-list li a, .navbar-default .navbar-nav > li > a, .navbar-default .navbar-nav > li > a:hover,.navigation-list li a:hover,.navbar-default .navbar-nav > li:hover > a,.navigation-list li:hover a {
+	color: #fbaf17 /*{header|link-colour}*/;
+}
+.wrapper-footer {
+	background-color:#62c8d5 /*{footer|background-colour}*/;
+	color:#19242f /*{footer|text-colour}*/;
+}
+.wrapper-footer h4 {
+	color:#19242f /*{footer|text-colour}*/;
+}
+.wrapper-footer hr {
+	border-color: rgba(255, 255, 255, 0.2);
+}
+.wrapper-footer a, .wrapper-footer a:hover, .wrapper-footer a:active {
+	color:#19242f /*{footer|link-colour}*/;
+}
+.nav > li > a:hover, .nav > li > a:focus {
+	background: rgba(0, 0, 0, 0.2);
+}
+.tab-content {
+	background-color:#FFF;
+	padding:15px;
+	border:1px solid #DDD;
+	border-top-color:transparent;
+}
+.nav-tabs {
+	border-bottom:1px solid #FFF;
+}
+.nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus {
+	border:1px solid #DDD;
+	border-bottom-color:transparent;
+}
+hr {
+	border-color: transparent;
+}
+.btn-primary {
+  color: #FFFFFF;
+  background-color: #19242f /*{buttons|primary-colour}*/;
+  border-color: #19242f /*{buttons|primary-colour}*/;
+}
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:active,
+.btn-primary.active,
+.open > .dropdown-toggle.btn-primary {
+  color: #FFFFFF;
+  background-color: #19242f /*{buttons|primary-colour}*/;
+  border-color: #19242f /*{buttons|primary-colour}*/;
+}
+.btn-primary:active,
+.btn-primary.active,
+.open > .dropdown-toggle.btn-primary {
+  background-image: none;
+}
+.btn-primary.disabled,
+.btn-primary[disabled],
+fieldset[disabled] .btn-primary,
+.btn-primary.disabled:hover,
+.btn-primary[disabled]:hover,
+fieldset[disabled] .btn-primary:hover,
+.btn-primary.disabled:focus,
+.btn-primary[disabled]:focus,
+fieldset[disabled] .btn-primary:focus,
+.btn-primary.disabled:active,
+.btn-primary[disabled]:active,
+fieldset[disabled] .btn-primary:active,
+.btn-primary.disabled.active,
+.btn-primary[disabled].active,
+fieldset[disabled] .btn-primary.active {
+  background-color: #19242f /*{buttons|primary-colour}*/;
+  border-color: #19242f /*{buttons|primary-colour}*/;
+}
+
+.btn-default {
+  color: #FFFFFF;
+  background-color: #19242f /*{buttons|primary-colour}*/;
+  border-color: #19242f /*{buttons|primary-colour}*/;
+}
+.btn-default:hover,
+.btn-default:focus,
+.btn-default:active,
+.btn-default.active,
+.open > .dropdown-toggle.btn-default {
+  color: #FFFFFF;
+  background-color: #19242f /*{buttons|primary-colour}*/;
+  border-color: #19242f /*{buttons|primary-colour}*/;
+}
+.btn-default:active,
+.btn-default.active,
+.open > .dropdown-toggle.btn-default {
+  background-image: none;
+}
+.btn-default.disabled,
+.btn-default[disabled],
+fieldset[disabled] .btn-default,
+.btn-default.disabled:hover,
+.btn-default[disabled]:hover,
+fieldset[disabled] .btn-default:hover,
+.btn-default.disabled:focus,
+.btn-default[disabled]:focus,
+fieldset[disabled] .btn-default:focus,
+.btn-default.disabled:active,
+.btn-default[disabled]:active,
+fieldset[disabled] .btn-default:active,
+.btn-default.disabled.active,
+.btn-default[disabled].active,
+fieldset[disabled] .btn-default.active {
+  background-color: #19242f /*{buttons|primary-colour}*/;
+  border-color: #19242f /*{buttons|primary-colour}*/;
+}
+
+.btn-success {
+  color: #ffffff;
+  background-color: #fbaf17 /*{buttons|secondary-colour}*/;
+  border-color: #fbaf17 /*{buttons|secondary-colour}*/;
+}
+.btn-success:hover,
+.btn-success:focus,
+.btn-success:active,
+.btn-success.active,
+.open > .dropdown-toggle.btn-success {
+  color: #ffffff;
+  background-color: #fbaf17 /*{buttons|secondary-colour}*/;
+  border-color: #fbaf17 /*{buttons|secondary-colour}*/;
+}
+.btn-success:active,
+.btn-success.active,
+.open > .dropdown-toggle.btn-success {
+  background-image: none;
+}
+.btn-success.disabled,
+.btn-success[disabled],
+fieldset[disabled] .btn-success,
+.btn-success.disabled:hover,
+.btn-success[disabled]:hover,
+fieldset[disabled] .btn-success:hover,
+.btn-success.disabled:focus,
+.btn-success[disabled]:focus,
+fieldset[disabled] .btn-success:focus,
+.btn-success.disabled:active,
+.btn-success[disabled]:active,
+fieldset[disabled] .btn-success:active,
+.btn-success.disabled.active,
+.btn-success[disabled].active,
+fieldset[disabled] .btn-success.active {
+  background-color: #fbaf17 /*{buttons|secondary-colour}*/;
+  border-color: #fbaf17 /*{buttons|secondary-colour}*/;
+}

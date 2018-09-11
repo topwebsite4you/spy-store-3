@@ -1,0 +1,76 @@
+[%SET [@page_type@]='category'/%]
+	</div>
+</div>
+
+<div class="container main-wrap">
+
+[%load_template file:'cms/includes/sidebar.template.html'/%]
+
+<div class="row thumb-wrap-new cat-desc">
+<div class="col-xs-12">
+[%breadcrumb%]
+	[%PARAM *header%]
+		<ul class="breadcrumb">
+			<li>
+				<a href="[@config:home_url@]">Home</a>
+			</li>
+	[%/PARAM%]
+	[%PARAM *body%]
+		<li>
+			<a href="[@url@]">[@name@]</a>
+		</li>
+	[%/PARAM%]
+	[%PARAM *footer%]
+		</ul>
+	[%/PARAM%]
+[%/breadcrumb%]
+
+<h1 class="cat-title">[@name@]</h1>
+
+[%IF [@content_short_description1@]%]
+[@content_description1@]
+[%/IF%]
+</div>
+</div>
+
+[%THUMB_LIST type:'products' template:'list-special' limit:'[@config:THUMB_LIMIT@]'%]
+	[%PARAM template%][%VIEWBY type:'products' default:'[@templatethumb@]'%][%/VIEWBY%][%/PARAM%]
+	[%PARAM *header%]
+	<div class="[%VIEWBY type:'products' if:'eq' value:'list' if_true:'thumb_list' if_false:'thumb'%][%/VIEWBY%]">
+		<div class="row thumb-wrap-new">
+		[%/PARAM%]
+		[%PARAM *footer%]
+		</div>
+	</div>
+	[%IF [@total_results@] > [@config:thumb_limit@]%]
+		<div class="row">
+			<div class="col-xs-12">
+				<hr />
+				<div class="text-center">
+					<ul class="pagination">
+						[%paging limit:'3'%]
+							[%PARAM *previous_page%]<li><a href="[@URL@]"><i class="fa fa-chevron-left"></i></a></li>[%/PARAM%]
+							[%PARAM *goback_pages%]<li><a href="[@URL@]">[@PAGE@]</a></li>[%/PARAM%]
+							[%PARAM *current_page%]<li class="active"><a href="[@URL@]">[@PAGE@]</a></li>[%/PARAM%]
+							[%PARAM *gonext_pages%]<li><a href="[@URL@]">[@PAGE@]</a></li>[%/PARAM%]
+							[%PARAM *next_page%]<li><a href="[@URL@]"><i class="fa fa-chevron-right"></i></a></li>[%/PARAM%]
+						[%/paging%]
+					</ul>
+				</div>
+				<hr />
+			</div>
+		</div>
+	[%/IF%]
+	[%/PARAM%]
+	[%PARAM *ifempty%]
+		<div class="row">
+			<div class="col-xs-12">
+			<div class="row thumb-wrap-new">
+				<p class="no-content">This category is empty! Please try another category or use our search function to find what you are looking for. If you require further assistance please contact us.</p>
+			</div>
+			</div>
+		</div>
+	[%/PARAM%]
+[%/THUMB_LIST%]
+</div>
+</div>

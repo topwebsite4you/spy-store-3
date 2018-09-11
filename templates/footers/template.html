@@ -1,0 +1,228 @@
+	</div>
+</div>
+<div class="wrapper-footer">
+	<div class="subscribe-box">
+		<div class="container">
+			<div class="row">
+				<h5 class="col-lg-4 col-md-5 col-sm-6 col-xs-12">SIGN UP TO OUR NEWSLETTER FOR BIG SAVINGS</h5>
+				<form class="col-lg-4 col-md-5 col-sm-6 col-xs-12" method="post" action="[%URL type:'page' id:'subscribe' https:'1'%][%END URL%]">
+					<input type="hidden" name="list_id" value="1">
+					<input type="hidden" name="opt_in" value="y">
+					<div class="input-group">
+						<input name="inp-email" class="form-control" type="email" value="[%nohtml%][@inp-email@][%/nohtml%]" placeholder="Email Address" required/>
+						<input name="inp-submit" type="hidden" value="y" />
+						<input name="inp-opt_in" type="hidden" value="y" />
+						<span class="input-group-btn">
+							<input class="btn btn-default" type="submit" value="Subscribe" data-loading-text="<i class='fa fa-spinner fa-spin' style='font-size: 14px'></i>"/>
+						</span>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+	<div class="container footer-nav">
+		<div class="row">
+			<div class="col-xs-12 col-sm-3">
+				<a href="[@config:homeurl@]" title="[@config:company_name@]">
+					<img class="logo" src="[@config:imageurl@]/website_logo.png?[@config:neto_css_version@]" alt="[@config:company_name@] Logo"/>
+				</a>
+				[%content_zone id:'footer-text'%][%end content_zone%]
+			</div>
+			<div class="col-xs-12 col-sm-9">
+				<div class="col-xs-12 col-sm-6">
+					<div class="row">
+						[%menu id:'web_footer'%]
+							[%param *level_1%]
+								<div class="col-xs-12 col-sm-6">
+									<h4>[@name@]</h4>
+									<ul class="nav nav-pills nav-stacked">
+										[@next_level@]
+									</ul>
+								</div>
+							[%/param%]
+							[%param *level_2%]
+								<li><a href="[@url@]">[@name@]</a></li>
+							[%/param%]
+						[%/menu%]
+					</div>
+				</div>
+				<div class="col-xs-12 col-sm-4">
+					<h4>Contact Details</h4>
+					<ul class="nav nav-pills nav-stacked">
+						[%if [@CONFIG:COMPANY_PHONE@]%]
+						<li><a href="tel:[@CONFIG:COMPANY_PHONE@]"><i class="fa fa-phone-square"></i> [@CONFIG:COMPANY_PHONE@]</a></li>
+						[%/if%]
+						[%if [@CONFIG:COMPANY_EMAIL@]%]
+						<li><a href="mailto:[@CONFIG:COMPANY_EMAIL@]"><i class="fa fa-envelope"></i> [@CONFIG:COMPANY_EMAIL@]</a></li>
+						[%/if%]
+						[%if [@CONFIG:COMPANY_ADDR@]%]
+						<li><a href="https://goo.gl/maps/jCZLoEpGTDC2" target="_blank"><i class="fa fa-map-marker"></i> [@CONFIG:COMPANY_ADDR@]</a></li>
+						[%/if%]
+					</ul>
+					<ul class="list-inline list-social">
+						[%if [@config:facebook_account_id@]%]
+						<li><a href="[@config:facebook_account_id@]" target="_blank"><i class="fa fa-facebook-square"></i></a></li>
+						[%/if%]
+						[%if [@config:twitter_account_id@]%]
+						<li><a href="[@config:twitter_account_id@]" target="_blank"><i class="fa fa-twitter-square"></i></a></li>
+						[%/if%]
+						[%if [@config:googleplus_account_id@]%]
+						<li><a href="[@config:googleplus_account_id@]" target="_blank"><i class="fa fa-google-plus-square"></i></a></li>
+						[%/if%]
+						[%if [@config:youtube_account_id@]%]
+						<li><a href="[@config:youtube_account_id@]" target="_blank"><i class="fa fa-youtube-square"></i></a></li>
+						[%/if%]
+						[%if [@config:instagram_account_id@]%]
+						<li><a href="[@config:instagram_account_id@]" target="_blank"><i class="fa fa-instagram"></i></a></li>
+						[%/if%]
+						[%if [@config:pinterest_account_id@]%]
+						<li><a href="[@config:pinterest_account_id@]" target="_blank"><i class="fa fa-pinterest-square"></i></a></li>
+						[%/if%]
+						[%if [@config:tumblr_account_id@]%]
+						<li><a href="[@config:tumblr_account_id@]" target="_blank"><i class="fa fa-tumblr-square"></i></a></li>
+						[%/if%]
+						[%if [@config:linkedin_account_id@]%]
+						<li><a href="[@config:linkedin_account_id@]" target="_blank"><i class="fa fa-linkedin-square"></i></a></li>
+						[%/if%]
+					</ul>
+				</div>
+				<div class="col-xs-12 col-sm-2">
+					<img class="img-responsive" src="/assets/images/Australia_map.png">
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-12">
+				<hr />
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-9 hidden-xs">
+				[%payment_methods ignore_balance:'1'%]
+					[%param header%]
+						<ul class="list-inline">
+					[%/param%]
+					[%param *body%]
+						[%if [@name@] like 'American Express'%]
+							<li>
+								<div class="payment-icon-container">
+									<div class="payment-icon payment-icon-americanexpress"></div>
+									<span class="sr-only">[@name@]</span>
+								</div>
+							</li>
+						[%/if%]
+						[%if [@name@] like 'Visa'%]
+							<li>
+								<div class="payment-icon-container">
+									<div class="payment-icon payment-icon-visa"></div>
+									<span class="sr-only">[@name@]</span>
+								</div>
+							</li>
+						[%/if%]
+						[%if [@name@] like 'MasterCard' OR [@name@] like 'Master Card'%]
+							<li>
+								<div class="payment-icon-container">
+									<div class="payment-icon payment-icon-mastercard"></div>
+									<span class="sr-only">[@name@]</span>
+								</div>
+							</li>
+						[%/if%]
+						[%if [@name@] like 'Discover'%]
+							<li>
+								<div class="payment-icon-container">
+									<div class="payment-icon payment-icon-discover"></div>
+									<span class="sr-only">[@name@]</span>
+								</div>
+							</li>
+						[%/if%]
+						[%if [@name@] like 'Diners'%]
+							<li>
+								<div class="payment-icon-container">
+									<div class="payment-icon payment-icon-diners"></div>
+									<span class="sr-only">[@name@]</span>
+								</div>
+							</li>
+						[%/if%]
+						[%if [@name@] like 'Cheque'%]
+							<li>
+								<div class="payment-icon-container">
+									<div class="payment-icon payment-icon-cheque"></div>
+									<span class="sr-only">[@name@]</span>
+								</div>
+							</li>
+						[%/if%]
+						[%if [@name@] like 'Money Order'%]
+							<li>
+								<div class="payment-icon-container">
+									<div class="payment-icon payment-icon-moneyorder"></div>
+									<span class="sr-only">[@name@]</span>
+								</div>
+							</li>
+						[%/if%]
+						[%if [@name@] like 'Direct Deposit' OR [@name@] like 'Bank Deposit'%]
+							<li>
+								<div class="payment-icon-container">
+									<div class="payment-icon payment-icon-directdeposit"></div>
+									<span class="sr-only">[@name@]</span>
+								</div>
+							</li>
+						[%/if%]
+						[%if [@name@] like 'bpay'%]
+							<li>
+								<div class="payment-icon-container">
+									<div class="payment-icon payment-icon-bpay"></div>
+									<span class="sr-only">[@name@]</span>
+								</div>
+							</li>
+						[%/if%]
+						[%if [@name@] like 'paypal'%]
+							<li>
+								<div class="payment-icon-container">
+									<div class="payment-icon payment-icon-paypal"></div>
+									<span class="sr-only">[@name@]</span>
+								</div>
+							</li>
+						[%/if%]
+						[%if [@name@] like 'afterpay'%]
+							<li>
+								<div class="payment-icon-container">
+									<div class="payment-icon payment-icon-afterpay"></div>
+								</div>
+							</li>
+						[%/if%]
+					[%/param%]
+					[%param *footer%]
+						</ul>
+					[%/param%]
+				[%/payment_methods%]
+			</div>
+			<div class="col-sm-3">
+				<address>
+					<strong>Copyright &copy; [%format type:'date' format:'#Y'%]today[%/format%] [@config:company_name@]</strong><br>
+					[%if [@config:company_abn@]%]<strong>ABN:</strong> [@config:company_abn@]<br>[%/ if%]
+					[%if [@config:company_poaddr@]%]<strong>Address:</strong> [@config:company_poaddr@][%/ if%]
+				</address>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- Required Neto Scripts - DO NOT REMOVE -->
+[%cdn_asset html:'1' type:'js' library:'jquery' version:'1.11.3'%]jquery.min.js[%/cdn_asset%]
+[%cdn_asset html:'1' type:'js' library:'fancybox' version:'2.1.5'%]jquery.fancybox.pack.js[%/cdn_asset%]
+[%NETO_JS html:'1' id:'main' /%]
+[%cdn_asset html:'1' type:'js' library:'bootstrap' version:'3.3.6'%]bootstrap.min.js[%/cdn_asset%]
+<script type="text/javascript" src="[%ntheme_asset%]js/custom.js[%/ntheme_asset%]"></script>
+<script type="text/javascript" src="[%ntheme_asset%]js/slick.min.js[%/ntheme_asset%]"></script>
+[%cdn_asset html:'1' type:'js' library:'jquery_ui' version:'1.11.1'%]js/jquery-ui-1.8.18.custom.min.js[%/cdn_asset%]
+[%SITE_VALUE id:'footer_javascript' type:'load'/%]
+<!-- Analytics -->
+[%if [@form:disable_scripts@] ne 'true'%]
+	[%tracking_code type:'Visitor' /%]
+[%/if%]
+<div class="npopup" style=""> <a href="javascript:void(0);" class="npopup-btn-close"></a>
+	<div class="npopup-body">
+	</div>
+</div>
+<div class="nactivity"><i class="fa fa-spinner fa-spin fa-inverse fa-3x fa-fw"></i></div>
+</body>
+</html>

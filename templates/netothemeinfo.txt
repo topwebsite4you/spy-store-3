@@ -1,0 +1,13 @@
+type
+website
+----------
+name
+Country
+----------
+version
+6
+----------
+install_description
+----------
+description
+<h1>Country</h1>

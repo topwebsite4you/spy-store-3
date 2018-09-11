@@ -1,0 +1,70 @@
+<div class="wrapper-thumbnail col-xs-12 col-sm-6 col-md-4 col-lg-3">
+	<div class="thumbnail" itemscope itemtype="http://schema.org/Product">
+	[%if [@misc3@] or [@misc4@]%]
+		<div class="savings-container">
+			[%if [@misc3@]%]
+				<p class="label">New Arrival</p>
+			[%/if%]
+			[%if [@misc4@]%]
+				<p class="label">Best Seller</p>
+			[%/if%]
+		</div>
+	[%/if%]
+		<meta itemprop="brand" content="[@brand@]"/>
+		<a href="[@URL@]" class="thumbnail-image">
+			<img src="[%asset_url type:'product' thumb:'thumb' id:'[@SKU@]'%][%param default%][%cdn_asset html:'0' library:'images'%]default_product.gif[%/cdn_asset%][%end param%][%/asset_url%]" class="product-image" alt="[@model@]" rel="itmimg[@SKU@]">
+		</a>
+		<div class="caption">
+			<h3 itemprop="name"><a href="[@URL@]" title="[@model@]">[%format type:'text' truemaxlength:'50' rmhtml:'1'%][@model@][%/FORMAT%]</a></h3>
+			[%if [@misc2@]%]
+			<div class="short-thumb">[@misc2@]</div>
+			[%/if%]
+			<p class="price text-center" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+				
+				 
+				
+				
+				[%if [@inpromo@]%]
+					<meta itemprop="priceValidUntil" content="[%format type:'date' format:'#Y-#M-#d'%][@promo_end@][%END format%]"/>
+					<span class="rrp-price" itemprop="price" content="[@store_price@]">[%format type:'currency'%][@store_price@][%/format%]</span>
+					<span itemprop="price" content="[@promo_price@]">[%format type:'currency'%][@promo_price@][%/format%]</span>
+				[%else%]
+					[%if [@has_child@]%]<span class="small">From&nbsp;</span>[%/if%]
+			 [%if [@save@] > 0%]
+			<span class="rrp-price" itemprop="price" content="[@store_price@]">[%format type:'currency' dpno_zero:1%][@retail@][%/format%]</span>
+			[%/if%]
+					<span itemprop="price" content="[@store_price@]" class="store-price">[%format type:'currency' dpno_zero:1%][@store_price@][%/format%]</span>
+				
+		 [%if [@save@] > 0%]
+				<span class="save-price">SAVE [%format type:'currency' dpno_zero:1%][@save_price@][%/format%]</span>
+			[%/if%]	
+				
+				
+				[%/if%]
+				<meta itemprop="priceCurrency" content="[@config:defaultcurrency@]">
+			</p>
+			[%tracking_code type:'Thumbnails' /%]
+			<!-- Purchase Logic -->
+			<form class="form-inline buying-options">
+				<input type="hidden" id="sku[@rndm@][@SKU@]" name="sku[@rndm@][@SKU@]" value="[@SKU@]">
+				<input type="hidden" id="model[@rndm@][@SKU@]" name="model[@rndm@][@SKU@]" value="[@model@]">
+				<input type="hidden" id="thumb[@rndm@][@SKU@]" name="thumb[@rndm@][@SKU@]" value="[@thumb@]">
+				<input type="hidden" id="qty[@rndm@][@SKU@]" name="qty[@rndm@][@SKU@]" value="[%if [@min_qty@] > 0%][@min_qty@][%else%]1[%/if%]" class="input-tiny">
+				<a class="details-btn btn btn-block" href="[@url@]">Product Details</a>
+				[%if [@extra@] or [@has_child@] or [@editable_bundle@]%]
+					<a href="[@URL@]" title="Buying Options" class="addtocart btn-primary btn btn-block btn-loads" data-loading-text="<i class='fa fa-spinner fa-spin' style='font-size: 14px'></i>">See Options</a>
+				[%elseif [@store_quantity@] > 0 AND [@preorder@] %]
+					<button type="button" title="Pre-Order Now!" class="addtocart btn-primary btn btn-block btn-loads" rel="[@rndm@][@SKU@]" data-loading-text="<i class='fa fa-spinner fa-spin' style='font-size: 14px'></i>">Pre-Order</button>
+				[%elseif [@store_quantity@] > 0 AND ![@preorder@] %]
+					<button type="button" title="Add to Cart" class="addtocart btn-primary btn btn-block btn-loads" rel="[@rndm@][@SKU@]" data-loading-text="<i class='fa fa-spinner fa-spin' style='font-size: 14px'></i>">Add to Cart</button>
+				[%elseif [@store_quantity@] < 1 AND [@config:ALLOW_NOSTOCK_CHECKOUT@] %]
+					<button type="button" title="Add to Cart" class="addtocart btn-primary btn btn-block btn-loads" rel="[@rndm@][@SKU@]" data-loading-text="<i class='fa fa-spinner fa-spin' style='font-size: 14px'></i>">Backorder</button>
+				[%else%]
+					<button type="button" class="addtocart btn-primary btn btn-block btn-loads" href="[@url@]" title="Notify Me When Back In Stock" data-loading-text="<i class='fa fa-spinner fa-spin' style='font-size: 14px'></i>">Out Of Stock</a>
+				[%/if%]
+			</form>
+			<!-- /Purchase Logic -->
+		</div>
+	</div>
+</div>
+

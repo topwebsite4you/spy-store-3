@@ -1,0 +1,13 @@
+type
+website
+----------
+name
+Shinglebum
+----------
+version
+6
+----------
+install_description
+----------
+description
+<h1>Shinglebum</h1>

@@ -1,0 +1,28 @@
+<div itemscope itemtype="http://schema.org/Product" class="row">
+	<meta itemprop="brand" content="[@brand@]"/>
+	<div class="wrapper-product-title col-sm-12">
+		<h1 itemprop="name">[@name@]</h1>
+		<p class="mutted">[@sku@]</p>
+
+		[%if [@reviews@] > 0%]
+			<span class="small" itemprop="aggregateRating" itemscope itemtype="http://schema.org/AggregateRating">
+				[%set [@data:ratings-count@] = 1 /%]
+				[%while [@data:ratings-count@] <= [@data:rating@]%]
+					[%set [@data:ratings-count@] = [@data:ratings-count@]+1 /%]
+					<i class="fa fa-star"></i>
+				[%/ while%]
+				[%while [@data:ratings-count@] <= 5%]
+					[%set [@data:ratings-count@] = [@data:ratings-count@]+1 /%]
+					<i class="fa fa-star-o"></i>
+				[%/while%]
+				Rated <span itemprop="ratingValue">[@rating@]</span>/<span itemprop="bestRating">5</span> based on <span itemprop="ratingCount">[@reviews@]</span> reviews.
+			</span>
+		[%/if%]
+        [%if [@description@]%]
+<div class="main-product-description">
+[@description@]
+	
+</div>
+        [%/if%]
+	</div>
+</div>

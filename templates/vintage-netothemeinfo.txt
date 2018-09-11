@@ -1,0 +1,13 @@
+type
+website
+----------
+name
+Vintage
+----------
+version
+6
+----------
+install_description
+----------
+description
+<h1>Vintage</h1>

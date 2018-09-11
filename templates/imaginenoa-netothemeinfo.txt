@@ -1,0 +1,13 @@
+type
+website
+----------
+name
+Imagine Noa
+----------
+version
+6
+----------
+install_description
+----------
+description
+<h1>Imagine Noa</h1>
