@@ -119,7 +119,7 @@ $('.top-carousel').slick({
 	{
       breakpoint: 992,
       settings: {
-        slidesToShow: 3,
+        slidesToShow: 2,
 		slidesToScroll: 1,
 		autoplay: true
       }
@@ -127,7 +127,7 @@ $('.top-carousel').slick({
     {
       breakpoint: 600,
       settings: {
-		slidesToShow: 2,
+		slidesToShow: 1,
 		slidesToScroll: 1,
 		autoplay: true
       }
