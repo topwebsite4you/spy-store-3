@@ -35,8 +35,9 @@ h6,
     z-index: 9;
     background: #fff;
     padding: 20px;
-    border: 1px solid #000;
-	    left: 0px;
+    border: 1px solid #c8c8c8;
+    box-shadow: 0px 0px 30px rgba(158, 158, 158, 0.2);
+    left: 0px;
 }
 .category-car .slick-dots {
     padding: 0px;
@@ -112,7 +113,7 @@ width: 107%;
     left: 0px;
 }
 .content-page.home-ad-section {
-    background-color: #efefef;
+    background-color: transparent;
     color: #000;
 	    text-align: center;
 }
@@ -198,14 +199,35 @@ span.save-price {
     -o-transition: all 0.2s ease-in-out;
     transition: all 0.2s ease-in-out;
 }
-.main-menu ul > li.mega-item:hover .m-menu-items{
-	display:block;
+.main-menu ul > li.mega-item:hover .m-menu-items {
+    display: block;
+    background: #f9f9f9;
 }
-.main-menu .m-menu-items .c-item{
+.main-menu .m-menu-items .c-item {
     float: left;
     width: 25%;
     text-align: center;
     padding: 0px 30px;
+    background: #fff;
+    border: 1px solid #e4e4e4;
+}
+.main-menu ul.main-l-nav>li:hover > a {
+        color: rgba(0, 0, 0, 0.5);
+}
+.main-menu ul.main-l-nav>li:hover > a:after {
+    transition: all 0.5s cubic-bezier(.25,.8,.25,1);
+    width: 100%;
+}
+.main-menu ul.main-l-nav>li > a:after {
+    content: '';
+    display: block;
+    position: absolute;
+    bottom: 0px;
+    width: 0%;
+    left: 0%;
+    height: 8px;
+    background: rgba(0, 0, 0, 0.2);
+    transition: all 0.5s cubic-bezier(.25,.8,.25,1);
 }
 .main-menu .m-menu-items .c-item img{
 	    margin: 0px;
@@ -486,10 +508,9 @@ path:hover {
 .main-menu ul > li > a:active,
 .main-menu ul > li > a:focus,
 .main-menu ul > li.mega-item.hover > a {
-border: 1px solid #000;
-    border-bottom: 1px solid #fff;
-background-color: #fff;
-    color: #000;
+    border: none;
+    background-color: transparent;
+    color: rgba(0, 0, 0, .5);
     z-index: 999;
 }
 .main-menu ul > li > a{
@@ -1111,17 +1132,18 @@ h1.cat-title{
 .top-carousel.slick-initialized { display: block; }
 .top-carousel .slick-slide img {
     max-height: 28px;
-    max-width: inherit;
+    margin: 0 auto;
     display: inline-block;
-    margin-right: 5px;
 }
 
 .top-carousel .slick-slide {
     font-size: 13px;
+    line-height: 28px;
+	    text-align: center;
 }
 .top-bar {
     background: #f8f8f8;
-    padding: 5px 0;
+    padding: 7px 0;
 }
 .header-mid-section {
     box-shadow: 0px 0px 30px rgba(158, 158, 158, 0.2);
@@ -1139,35 +1161,34 @@ h1.cat-title{
     display: block;
     width: initial;
     float: left;
-    padding: 0 20px;
-	position: static;
+    padding: 0 25px;
+    position: static;
 }
 .main-menu ul.main-l-nav>li>a {
-    padding: 24px 20px;
+    padding: 34px 22px 28px;
     border: none;
     margin: 0px;
     font-size: 16px;
     letter-spacing: 1px;
     color: #fff;
-	
     background-color: transparent;
 }
 .main-menu ul.main-l-nav:after{
 	display:none !important;
 }
 .main-menu ul.extra-main {
-    float: right;
+float: right;
     width: initial;
     padding: 0;
     text-align: right;
-    margin-right: 40px;
+    margin-right: 35px;
 }
 .main-menu ul.extra-main>li {
-    margin: 0px 10px;
+    margin: 0px 9px;
     display: inline-block;
 }
 .main-menu ul.extra-main>li>a {
-    padding: 23px 13px 24px;
+    padding: 33px 13px 28px;
     border: none;
     margin: 0;
     font-size: 15px;
@@ -1175,7 +1196,7 @@ h1.cat-title{
     color: #fff;
     font-weight: 600;
     display: block;
-	background: transparent;
+    background: transparent;
 }
 .main-menu {
     background-color: #000;
@@ -1184,13 +1205,16 @@ h1.cat-title{
 .header-botom-section .main-menu {
     background-color: #000;
     padding: 0px;
-	    position: relative;
+    position: relative;
+    width: 100%;
+    float: left;
 }
 .main-menu .main-l-nav .m-menu-items {
     top: initial;
 }
 .wrapper-logo img.logo {
-    max-width: 320px;
+    max-width: 305px;
+	    margin-left: 10px;
 }
 .wrapper-search .header-search {
     padding: 0px;
@@ -1199,7 +1223,8 @@ h1.cat-title{
 .wrapper-search {
     display: block;
     float: right;
-	    margin-top: 30px;
+	    margin-top: 25px;
+		    margin-right: 23px;
 }
 .wrapper-search .mid-header-nav {
     margin: 0px;
@@ -1216,7 +1241,7 @@ h1.cat-title{
     float: left;
 }
 svg#cartnew {
-    max-width: 40px;
+    max-width: 35px;
     height: initial;
 }
 .mid-header-nav > li{
@@ -1226,21 +1251,96 @@ svg#cartnew {
 .mid-header-nav .cart-qty-number {
     position: absolute;
     background-color: #d01d1b;
-    padding: 0px 6px;
-    right: -10px;
+    padding: 0 5px;
+    right: -13px;
+    font-size: 14px;
+    min-width: 22px;
+    display: block;
     top: -10px;
 }
 #header-cart > a{
     position: relative;
     display: inline-block;
 }
+#header-cart {
+    margin-left: 30px;
+    display: block;
+	    position: relative;
+    top: 4px;
+}
+.header-contact {
+    float: right;
+    text-align: center;
+    padding: 0 80px;
+}
+
+.wrapper-middle .header-search .input-group .form-control {
+    width: initial;
+    min-width: 290px;
+    padding: 0px;
+    font-size: 16px;
+    font-weight: 300;
+    display: block;
+    color: #000000;
+    border: 1px solid #a9a9a9;
+    padding: 11px 10px 11px 54px;
+    line-height: 1.4em;
+    height: initial;
+    border-radius: 5px;
+}
+
+.wrapper-middle .header-search .input-group span.input-group-btn button.btn {
+    font-size: 24px;
+    padding: 6px;
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    margin-left: 16px;
+}
+
+.wrapper-middle .header-search .input-group span.input-group-btn {
+    position: absolute;
+    left: 0px;
+    z-index: 9;
+}
+
+.header-contact h3.h-contact {
+    font-size: 15px;
+    font-weight: normal;
+    margin: 0px;
+    letter-spacing: 1px;
+    position: relative;
+    top: -5px;
+}
+
+.header-contact h3.h-contact a {
+    display: block;
+    font-weight: 600;
+    font-size: 24px;
+    letter-spacing: -1px;
+    margin-top: 0px;
+	    color: #303a46;
+}
+
+.header-contact h3.h-contact a img.call-ico {
+    max-width: 23px;
+    margin-right: 10px;
+    position: relative;
+    top: -2px;
+}
+
+.header-contact h3.h-contact span{
+	position: relative;
+    left: 7px;
+}
+
 html .wrapper-middle {
-    padding-top: 30px;
-    padding-bottom: 30px;
+    padding-top: 25px;
+    padding-bottom: 22px;
 }
 img.acc-ico-img {
     max-width: 25px;
-    margin-right: 5px;
+    margin-right: 2px;
     position: relative;
     top: -1px;
 }
