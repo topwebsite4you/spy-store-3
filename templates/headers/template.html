@@ -58,9 +58,9 @@
 				</a>
 			</div>
 			<div class="wrapper-search">
-				
+			
 				<ul class="mid-header-nav list-inline text-right">
-					<li class="lv1-li dropdown dropdown-hover text-center">
+					<li class="lv1-li dropdown dropdown-hover text-center account-btt">
 						<a href="[%url page:'account'/%]" [%if [@next_level@]%]class="dropdown-toggle" data-toggle="dropdown"[%/if%]>
 							<img class="acc-ico-img" src="[@config:imageurl@]/website_cart.png?[@config:neto_css_version@]" alt="[@config:company_name@] cart"/>
 							<span class="icon-name">Account</span>
@@ -144,6 +144,12 @@
 					</li>
 				</ul>
 				
+				<div class="header-contact">
+					<h3 class="h-contact"><span>NEED HELP?</span>
+					<a href="tel:086543871"><img class="call-ico" src="[@config:imageurl@]/themes/spy-store-3/img/call-ico-white.png?[@config:neto_css_version@]" alt="[@config:company_name@] Call Us"/>08 654 3871</a>
+					</h3>
+				</div>
+				
 				<div class="header-search">
 					<form name="productsearch" method="get" action="/" role="search" aria-label="Product Search">
 						<input type="hidden" name="rf" value="kw"/>
@@ -164,7 +170,9 @@
 	
 	
 <div class="header-botom-section">
-	<div class="main-menu container">	
+	<div class=" container">	
+	<div class=" row">
+	<div class="main-menu">
 		
 		<ul class="main-l-nav nav navbar-nav">
 				<li class="mega-item"><a href="/spy-cameras/"><span>SPY CAMERAS</span></a>
@@ -231,6 +239,8 @@
 			[%/menu%]
 		[%/ cache%]
 			</ul>
+	</div>
+	</div>
 	</div>
 	</div>
 	
