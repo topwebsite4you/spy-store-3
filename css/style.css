@@ -1356,20 +1356,233 @@ img.acc-ico-img {
 .wrapper-middle span.input-group-btn {
     display: inline-block;
 }
+nav.extra-main-mobile {
+    display: none;
+}
+.mobile-main-trigger{
+	display:none;
+}
 
 
 
 
-
-
-
+@media (max-width: 1199px){
+.main-menu ul.main-l-nav>li>a {
+    padding: 34px 14px 28px;
+	font-size: 14px;
+}
+.main-menu ul.extra-main {
+    margin-right: 20px;
+}
+.main-menu ul.extra-main>li>a {
+    padding: 35px 9px 28px;
+    font-size: 13px;
+}
+.header-contact {
+    padding: 0 30px;
+}
+.wrapper-middle .header-search .input-group .form-control {
+    min-width: 210px;
+    width: 210px;
+}
+}
 @media (max-width: 1250px) {
 .top-carousel .slick-slide{
 	padding:0 10px;
 }
 }
+@media (max-width: 991px) {
+li.account-btt {
+    display: none;
+}
+li#header-cart {
+    display: none;
+}
+.main-menu .extra-main-mobile ul li a {
+    padding: 0px;
+    margin: 0px;
+    border: none;
+    position: relative;
+    font-size: 30px;
+    line-height: 30px;
+	    display: block;
+}
+main-menu .extra-main-mobile ul li {
+    display: inline-block;
+    width: initial;
+    height: 30px;
+    line-height: 30px;
+    float: left;
+	    margin-left: 10px;
+}
+.main-menu .extra-main-mobile ul.iconic-menu {
+    float: right;
+    padding: 0px;
+}
+.main-menu .extra-main-mobile ul {
+    display: block;
+}
+.main-menu ul.extra-main {
+    display: none;
+}
+nav.extra-main-mobile {
+    display: inline-block;
+    float: right;
+    margin-right: 30px;
+    margin: 25px 30px 10px 0;
+    width: initial;
+    min-width: initial;
+}
+img.mobile-menu-ico {
+    max-width: 30px;
+}
+.main-menu ul.main-l-nav>li>a {
+    padding: 34px 8px 28px;
+    font-size: 12px;
+    letter-spacing: 0px;
+}
+.main-menu ul > li path {
+    fill: #ffffff;
+}
+.extra-main-mobile .cart-qty-number {
+    background-color: #d01d1b;
+    color: #fff;
+    padding: 1px 5px;
+    font-size: 11px;
+    line-height: initial;
+    display: block;
+    right: -8px;
+    height: initial;
+    top: -7px;
+}
+.wrapper-search .header-search {
+    display: none;
+}
+.header-contact h3.h-contact span {
+    display: none;
+}
+.header-contact {
+    padding-right: 0px;
+}
+.wrapper-search {
+    margin-top: 45px;
+}
+img.mobile-menu-ico {
+    width: 100%;
+    max-width: 30px;
+}
+.main-menu .extra-main-mobile ul li a span.icon i {
+    color: #fff;
+}
+svg#cartnewmobile {
+    max-width: 30px;
+    display: block;
+    height: initial;
+}
+.main-menu .extra-main-mobile ul.iconic-menu {
+    float: right;
+    padding: 0px;
+}
+nav.extra-main-mobile {
+    display: inline-block;
+    float: right;
+    margin-right: 30px;
+    margin: 25px 30px 10px 0;
+    width: initial;
+    min-width: initial;
+}
+.main-menu .extra-main-mobile ul > li {
+    display: block;
+    float: left;
+    margin-left: 15px;
+}
+.main-menu .m-menu-items .c-item {
+    width: 33%;
+}
+.wrapper-search .header-search{
+	display:none;
+}
+.mobile-hidden{
+	display:none !important;
+}
+.mobile-search-wrap{
+    width: 100%;
+    float: left;
+    padding: 10px;
+    background: #000;
+    margin: 0 0px;
+}
+}
+@media (max-width: 769px) {
+.mobile-main-trigger {
+    display: block;
+    background: #d01d1b;
+    float: left;
+    line-height: 82px;
+    color: #fff;
+    font-size: 30px;
+    padding-left: 40px;
+    padding-right: 30px;
+}
+.main-menu ul.main-l-nav{
+	display:none;
+}
+span.m-txt {
+    vertical-align: middle;
+    position: relative;
+    float: right;
+    top: -3px;
+    margin-left: 10px;
+}
+.mobile-main-trigger:hover {
+    color: #fff;
+}
+.iconic-menu span.cart-qty-number {
+    position: absolute;
+    bottom: initial;
+}
+}
 @media (max-width: 600px) {
 .top-carousel .slick-slide {
     text-align: center;
+}
+}
+@media (max-width: 550px) {
+.mobile-main-trigger {
+    font-size: 20px;
+}
+.wrapper-logo {
+    max-width: 56%;
+    float: left;
+}
+.wrapper-search {
+    float: right;
+    width: 44%;
+    margin-right: 0px;
+    margin-top: 30px;
+}
+.wrapper-logo img.logo {
+    max-width: 100%;
+    margin-left: 0px;
+}
+.header-contact {
+    padding: 0px;
+    padding-right: 20px;
+}
+.header-contact h3.h-contact a img.call-ico {
+    margin-right: 5px;
+    top: 0px;
+}
+.header-contact h3.h-contact a {
+    font-size: 16px;
+}
+}
+@media (max-width: 370px) {
+.mobile-main-trigger {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+nav.extra-main-mobile {
+    margin: 25px 18px 10px 0;
 }
 }
