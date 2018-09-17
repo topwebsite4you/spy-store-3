@@ -1,11 +1,16 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:400,600,700|Open+Sans+Condensed:300');
 * {
-font-family: 'Open Sans', sans-serif;
+font-family: 'Montserrat', sans-serif;
+    font-weight:400;
 }
 body {
 	background-color:#FFFFFF /*{body|background-colour}*/;
 	background-image: none /*{body|background-image}*/;
 	color:#000000 /*{body|text-colour}*/;
+}
+html body {
+    font-family: 'Montserrat', sans-serif;
+    font-weight:400;
 }
 a, a:hover, a:active {
 	color:#000000 /*{body|link-colour}*/;
@@ -225,9 +230,12 @@ span.save-price {
     bottom: 0px;
     width: 0%;
     left: 0%;
-    height: 8px;
-    background: rgba(0, 0, 0, 0.2);
+    height: 1px;
+    background: rgba(0, 0, 0, 1);
     transition: all 0.5s cubic-bezier(.25,.8,.25,1);
+}
+.main-menu ul.main-l-nav>li>a > span {
+    font-weight: 700;
 }
 .main-menu .m-menu-items .c-item img{
 	    margin: 0px;
@@ -1165,10 +1173,11 @@ h1.cat-title{
     position: static;
 }
 .main-menu ul.main-l-nav>li>a {
-    padding: 34px 22px 28px;
+    padding: 0px 20px;
     border: none;
+    line-height: 70px;
     margin: 0px;
-    font-size: 16px;
+    font-size: 14px;
     letter-spacing: 1px;
     color: #fff;
     background-color: transparent;
@@ -1181,17 +1190,18 @@ float: right;
     width: initial;
     padding: 0;
     text-align: right;
-    margin-right: 35px;
+    margin-right: 40px;
 }
 .main-menu ul.extra-main>li {
     margin: 0px 9px;
     display: inline-block;
 }
 .main-menu ul.extra-main>li>a {
-    padding: 33px 13px 28px;
+    padding: 0px 13px 0px;
+    line-height: 70px;
     border: none;
     margin: 0;
-    font-size: 15px;
+    font-size: 14px;
     letter-spacing: 1px;
     color: #fff;
     font-weight: 600;
@@ -1362,20 +1372,87 @@ nav.extra-main-mobile {
 .mobile-main-trigger{
 	display:none;
 }
+a.close-menu {
+    display: block;
+    width: 100%;
+    float: right;
+    background: #f3f3f3;
+    padding: 20px;
+    text-align: right;
+    padding-right: 40px; 
+    font-weight: 700;
+}
+nav.navbar.mobile-menu {
+    max-width: 90%;
+    overflow: hidden;
+    position: fixed;
+    background: #fff;
+    z-index: 999;
+    height: 100%;
+        width: 100%;
+}
+.m-nav-wrap {
+    padding: 20px 40px;
+    float: left;
+    width: 100%;
+}
+.m-nav-wrap li .nav-sub {
+    padding-left: 20px;
+    margin-bottom: 20px;
+    margin-top: 10px;
+}
+.overlay.open {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.68);
+    z-index: 9;
+}
+nav.navbar.mobile-menu {
+    left: -100%;
+        -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    -ms-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+}
+nav.navbar.mobile-menu.open {
+    left: 0%;
+        -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    -ms-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+}
+
+.m-nav-wrap li .nav-sub a {
+    font-weight: 400;
+        font-size: 14px;
+} 
+.m-nav-wrap li a {
+    font-weight: 700;
+    line-height: 2em;
+    font-size: 18px;
+}
+.m-nav-wrap ul {
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+}
 
 
 
 
 @media (max-width: 1199px){
 .main-menu ul.main-l-nav>li>a {
-    padding: 34px 14px 28px;
-	font-size: 14px;
+    padding: 0px 10px 0px;
+    font-size: 14px;
 }
 .main-menu ul.extra-main {
     margin-right: 20px;
 }
 .main-menu ul.extra-main>li>a {
-    padding: 35px 9px 28px;
+    padding: 0px 2px 0px;
     font-size: 13px;
 }
 .header-contact {
@@ -1391,7 +1468,26 @@ nav.extra-main-mobile {
 	padding:0 10px;
 }
 }
+nav.navbar.mobile-menu{
+    display:none;
+}
 @media (max-width: 991px) {
+nav.navbar.mobile-menu{
+    display:block;
+}
+    .main-menu ul.main-l-nav{
+        display:none;
+    }
+.mobile-main-trigger {
+    display: block;
+    background: #d01d1b;
+    float: left;
+    line-height: 70px;
+    color: #fff;
+    font-size: 30px;
+    padding-left: 40px;
+    padding-right: 30px;
+}
 li.account-btt {
     display: none;
 }
@@ -1437,7 +1533,7 @@ img.mobile-menu-ico {
     max-width: 30px;
 }
 .main-menu ul.main-l-nav>li>a {
-    padding: 34px 8px 28px;
+    padding: 0px 5px;
     font-size: 12px;
     letter-spacing: 0px;
 }
@@ -1451,9 +1547,11 @@ img.mobile-menu-ico {
     font-size: 11px;
     line-height: initial;
     display: block;
-    right: -8px;
+    right: initial;
     height: initial;
     top: -7px;
+    left: 50%;
+    margin-left: 10px;
 }
 .wrapper-search .header-search {
     display: none;
@@ -1478,6 +1576,7 @@ svg#cartnewmobile {
     max-width: 30px;
     display: block;
     height: initial;
+        margin: 0 auto;
 }
 .main-menu .extra-main-mobile ul.iconic-menu {
     float: right;
@@ -1487,14 +1586,17 @@ nav.extra-main-mobile {
     display: inline-block;
     float: right;
     margin-right: 30px;
-    margin: 25px 30px 10px 0;
+    margin: 18px 25px 10px 0;
     width: initial;
     min-width: initial;
+        width: calc(100% - 245px);
 }
 .main-menu .extra-main-mobile ul > li {
     display: block;
     float: left;
-    margin-left: 15px;
+    margin-left: 0px;
+    width: 25%;
+    text-align: center;
 }
 .main-menu .m-menu-items .c-item {
     width: 33%;
@@ -1510,7 +1612,7 @@ nav.extra-main-mobile {
     float: left;
     padding: 10px;
     background: #000;
-    margin: 0 0px;
+    margin: 0 0px;  
 }
 }
 @media (max-width: 769px) {
@@ -1518,7 +1620,7 @@ nav.extra-main-mobile {
     display: block;
     background: #d01d1b;
     float: left;
-    line-height: 82px;
+    line-height: 70px;
     color: #fff;
     font-size: 30px;
     padding-left: 40px;
@@ -1548,6 +1650,9 @@ span.m-txt {
 }
 }
 @media (max-width: 550px) {
+nav.extra-main-mobile {
+    width: calc(100% - 205px);
+}
 .mobile-main-trigger {
     font-size: 20px;
 }
@@ -1582,7 +1687,9 @@ span.m-txt {
     padding-left: 20px;
     padding-right: 20px;
 }
+}
+@media (max-width: 320px) {
 nav.extra-main-mobile {
-    margin: 25px 18px 10px 0;
+    width: calc(100% - 175px);
 }
 }
