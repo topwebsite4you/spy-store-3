@@ -235,6 +235,18 @@ $('.nToggleMenu').click(function(){
 	$(toggleTarget).slideToggle();
 });
 
+$('.mobile-main-trigger').click(function(){
+    
+    $('.mobile-menu').addClass('open');
+    $('.overlay').addClass('open');
+});
+
+$('a.close-menu').click(function(){
+    
+    $('.mobile-menu').removeClass('open');
+    $('.overlay').removeClass('open');
+});
+
 //active link
     var currentPage = location.pathname;
     $('a').each(function() {
