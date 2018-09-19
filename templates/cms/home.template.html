@@ -1,100 +1,113 @@
-	</div>
-</div>
-<div class="content-page home-ad-section">
-	<div class="container">
-		<div class="row">
-			<div class="col-xs-12 col-sm-12 col-md-12">
-				<h1><img src="/assets/images/australia.png" /> Australia/s #1 Source of Quality & Affordable Spy Gadgets</h1>
-				<div class="home-ads ">
-<div class="container">
-<div class="row">
-[%advert type:'text' limit:'4' ad_group:'home-image' sortby:'sortorder,date'%]
-	[%param *header%]
-		<div class="ad-item">
-	[%/param%] 
+[%advert type:'text' limit:'20' ad_group:'home-ads' sortby:'sortorder,name'%]
+[%param *header%]
+<div class="top-ads-carousel">
+    [%/param%]
     [%param *body%]
-            <a href="[@url@]" target="[@target@]">
-                <img class="img-ad" src="[%asset_url type:'adw' id:'[@ad_id@]'%][%param default%][%cdn_asset html:'0' library:'images'%]default_product.gif[%/cdn_asset%][%/param%][%/asset_url%]" alt="[@headline@]">
-				<h3>[@headline@]</h3>
-            </a>
-			
+    <div>
+        <a href="[@url@]">
+            <img src="[%asset_url type:'adw' id:'[@ad_id@]'%][%param default%][%cdn_asset html:'0' library:'images'%]default_product.gif[%/cdn_asset%][%/param%][%/asset_url%]" />
+        </a>
+    </div>
     [%/param%]
-	[%param *footer%]
-		</div>
-	[%/param%]
+    [%param *footer%]
+</div>
+[%/param%]
 [%/advert%]
-</div>
-</div>
-</div>
-			</div>
-			
-		</div>
-	</div>
+
+
+<div class="content-page home-ad-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <h1><img src="/assets/images/australia.png" /> Australia/s #1 Source of Quality & Affordable Spy Gadgets</h1>
+                <div class="home-ads ">
+                    <div class="container">
+                        <div class="row">
+                            [%advert type:'text' limit:'4' ad_group:'home-image' sortby:'sortorder,date'%]
+                            [%param *header%]
+                            <div class="ad-item">
+                                [%/param%]
+                                [%param *body%]
+                                <a href="[@url@]" target="[@target@]">
+                                    <img class="img-ad" src="[%asset_url type:'adw' id:'[@ad_id@]'%][%param default%][%cdn_asset html:'0' library:'images'%]default_product.gif[%/cdn_asset%][%/param%][%/asset_url%]" alt="[@headline@]">
+                                    <h3>[@headline@]</h3>
+                                </a>
+
+                                [%/param%]
+                                [%param *footer%]
+                            </div>
+                            [%/param%]
+                            [%/advert%]
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
 </div>
 <div class="container">
-<div class="row category-row">
-<h3>Spy Cameras</h3>
-<div class="category-car">
-[%thumb_list type:'products' template:'new' filter_category:'126' limit:'12'%]
-    [%param *header%]
-    [%/param%]
-    [%param *footer%]
-    [%/param%]
-    [%param *ifempty%]
-        No Results Found
-    [%/param%]
-[%/thumb_list%]
-</div>
-<a href="/spy-cameras/" class="c-more">View all Spy Cameras</a>
-</div>
+    <div class="row category-row">
+        <h3>Spy Cameras</h3>
+        <div class="category-car">
+            [%thumb_list type:'products' template:'new' filter_category:'126' limit:'12'%]
+            [%param *header%]
+            [%/param%]
+            [%param *footer%]
+            [%/param%]
+            [%param *ifempty%]
+            No Results Found
+            [%/param%]
+            [%/thumb_list%]
+        </div>
+        <a href="/spy-cameras/" class="c-more">View all Spy Cameras</a>
+    </div>
 
-<div class="row category-row">
-<h3>Vehicle GPS Trackers</h3>
-<div class="category-car">
-[%thumb_list type:'products' template:'new' filter_category:'129' limit:'12'%]
-    [%param *header%]
-    [%/param%]
-    [%param *footer%]
-    [%/param%]
-    [%param *ifempty%]
-        No Results Found
-    [%/param%]
-[%/thumb_list%]
-</div>
-<a href="/gps-tracker/vehicle-gps-trackers/" class="c-more">View all Vehicle GPS Trackers</a>
-</div>
+    <div class="row category-row">
+        <h3>Vehicle GPS Trackers</h3>
+        <div class="category-car">
+            [%thumb_list type:'products' template:'new' filter_category:'129' limit:'12'%]
+            [%param *header%]
+            [%/param%]
+            [%param *footer%]
+            [%/param%]
+            [%param *ifempty%]
+            No Results Found
+            [%/param%]
+            [%/thumb_list%]
+        </div>
+        <a href="/gps-tracker/vehicle-gps-trackers/" class="c-more">View all Vehicle GPS Trackers</a>
+    </div>
 
-<div class="row category-row">
-<h3>Personal GPS Trackers</h3>
-<div class="category-car">
-[%thumb_list type:'products' template:'new' filter_category:'130' limit:'12'%]
-    [%param *header%]
-    [%/param%]
-    [%param *footer%]
-    [%/param%]
-    [%param *ifempty%]
-        No Results Found
-    [%/param%]
-[%/thumb_list%]
-</div>
-<a href="/gps-tracker/personal-gps-trackers/" class="c-more">View all Personal GPS Trackers</a>
-</div>
+    <div class="row category-row">
+        <h3>Personal GPS Trackers</h3>
+        <div class="category-car">
+            [%thumb_list type:'products' template:'new' filter_category:'130' limit:'12'%]
+            [%param *header%]
+            [%/param%]
+            [%param *footer%]
+            [%/param%]
+            [%param *ifempty%]
+            No Results Found
+            [%/param%]
+            [%/thumb_list%]
+        </div>
+        <a href="/gps-tracker/personal-gps-trackers/" class="c-more">View all Personal GPS Trackers</a>
+    </div>
 
-<div class="row category-row">
-<h3>Security Cameras</h3>
-<div class="category-car">
-[%thumb_list type:'products' template:'new' filter_category:'106' limit:'12'%]
-    [%param *header%]
-    [%/param%]
-    [%param *footer%]
-    [%/param%]
-    [%param *ifempty%]
-        No Results Found
-    [%/param%]
-[%/thumb_list%]
+    <div class="row category-row">
+        <h3>Security Cameras</h3>
+        <div class="category-car">
+            [%thumb_list type:'products' template:'new' filter_category:'106' limit:'12'%]
+            [%param *header%]
+            [%/param%]
+            [%param *footer%]
+            [%/param%]
+            [%param *ifempty%]
+            No Results Found
+            [%/param%]
+            [%/thumb_list%]
+        </div>
+        <a href="/security-camera/" class="c-more">View all Security Cameras</a>
+    </div>
 </div>
-<a href="/security-camera/" class="c-more">View all Security Cameras</a>
-</div>
-</div>
-
-
