@@ -28,15 +28,14 @@
 					[%FORMAT type:'currency'%][@store_price@][%/FORMAT%]
 				</div>
 				[%else%]
-				<div class="pwasprice">
-					WAS <span>[%FORMAT type:'currency'%][@store_price@][%/FORMAT%]</span>
-				</div>
-				<div class="ppromo">
+                <div class="ppromo">
 					<span>[%FORMAT type:'currency'%][@promo_price@][%/FORMAT%]</span>
 				</div>
-				[%if [@save@] > 0%]
-				<span class="save-price">SAVE [%format type:'currency' dpno_zero:1%][@save_price@][%/format%]</span>
-			[%/if%]
+				<div class="pwasprice">
+					<span>[%FORMAT type:'currency'%][@store_price@][%/FORMAT%]</span>
+				</div>
+				
+				
 				[%/if%]
 				
 				
