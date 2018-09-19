@@ -1,367 +1,365 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-<meta name="keywords" content="[%url_info name:'meta_keywords'/%]"/>
-<meta name="description" content="[%url_info name:'meta_description'/%]"/>
-<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0"/>
-<meta property="og:image" content="[%if [@config:current_page_type@] eq 'product'%][@config:homeurl@][%asset_url type:'product' id:'[@SKU@]' thumb:'full'/%][%ELSEIF [@config:current_page_type@] eq 'content'%][@config:homeurl@][%ASSET_url type:'content' id:'[@content_id@]' default:'/assets/website_logo.png'%][%/ASSET_url%][%ELSE%][@config:homeurl@]/assets/website_logo.png[%/if%]"/>
-<meta property="og:title" content="[%url_info name:'page_title'/%]"/>
-<meta property="og:site_name" content="[@config:website_name@]"/>
-<meta property="og:type" content="website"/>
-<meta property="og:url" content="[@config:canonical_url@]"/>
-<meta property="og:description" content="[%url_info name:'meta_description'/%]"/>
-[@config:GOOGLE_VERIFICATION_CODE@]
-<title>[%url_info name:'page_title'/%]</title>
-<link rel="canonical" href="[@config:canonical_url@]"/>
-<link rel="shortcut icon" href="/assets/favicon_logo.png?[@config:neto_css_version@]"/>
-<link class="theme-selector" rel="stylesheet" type="text/css" href="[%ntheme_asset%]css/app.css[%/ntheme_asset%]" media="all"/>
-<link rel="stylesheet" type="text/css" href="[%ntheme_asset%]css/style.css[%/ntheme_asset%]" media="all"/>
-<link rel="stylesheet" type="text/css" href="[%ntheme_asset%]css/slick.css[%/ntheme_asset%]" media="all"/>
-<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="[%url_info name:'meta_keywords'/%]" />
+    <meta name="description" content="[%url_info name:'meta_description'/%]" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0" />
+    <meta property="og:image" content="[%if [@config:current_page_type@] eq 'product'%][@config:homeurl@][%asset_url type:'product' id:'[@SKU@]' thumb:'full'/%][%ELSEIF [@config:current_page_type@] eq 'content'%][@config:homeurl@][%ASSET_url type:'content' id:'[@content_id@]' default:'/assets/website_logo.png'%][%/ASSET_url%][%ELSE%][@config:homeurl@]/assets/website_logo.png[%/if%]" />
+    <meta property="og:title" content="[%url_info name:'page_title'/%]" />
+    <meta property="og:site_name" content="[@config:website_name@]" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="[@config:canonical_url@]" />
+    <meta property="og:description" content="[%url_info name:'meta_description'/%]" />
+    [@config:GOOGLE_VERIFICATION_CODE@]
+    <title>[%url_info name:'page_title'/%]</title>
+    <link rel="canonical" href="[@config:canonical_url@]" />
+    <link rel="shortcut icon" href="/assets/favicon_logo.png?[@config:neto_css_version@]" />
+    <link class="theme-selector" rel="stylesheet" type="text/css" href="[%ntheme_asset%]css/app.css[%/ntheme_asset%]" media="all" />
+    <link rel="stylesheet" type="text/css" href="[%ntheme_asset%]css/style.css[%/ntheme_asset%]" media="all" />
+    <link rel="stylesheet" type="text/css" href="[%ntheme_asset%]css/slick.css[%/ntheme_asset%]" media="all" />
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
 
-[%cdn_asset html:'1' type:'css' domain:'maxcdn.bootstrapcdn.com' library:'font-awesome' version:'4.7.0'%]css/font-awesome.min.css[%/cdn_asset%]
-[%cdn_asset html:'1' type:'css' library:'jquery_ui' version:'1.11.1'%]css/custom-theme/jquery-ui-1.8.18.custom.css[%/cdn_asset%]
-[%cdn_asset html:'1' type:'css' library:'fancybox' version:'2.1.5'%]jquery.fancybox.css[%/cdn_asset%]
+    [%cdn_asset html:'1' type:'css' domain:'maxcdn.bootstrapcdn.com' library:'font-awesome' version:'4.7.0'%]css/font-awesome.min.css[%/cdn_asset%]
+    [%cdn_asset html:'1' type:'css' library:'jquery_ui' version:'1.11.1'%]css/custom-theme/jquery-ui-1.8.18.custom.css[%/cdn_asset%]
+    [%cdn_asset html:'1' type:'css' library:'fancybox' version:'2.1.5'%]jquery.fancybox.css[%/cdn_asset%]
 
 
-<!--[if lte IE 8]>
+    <!--[if lte IE 8]>
 	[%cdn_asset html:'1' type:'js' library:'html5shiv' version:'3.7.0'%]html5shiv.js[%/cdn_asset%]
 	[%cdn_asset html:'1' type:'js' library:'respond.js' version:'1.3.0'%]respond.min.js[%/cdn_asset%]
 <![endif]-->
-[%tracking_code type:'Declaration'/%]
+    [%tracking_code type:'Declaration'/%]
 </head>
+
 <body id="n_[@config:current_page_type@]" class="n_[@CONFIG:TEMPLATELANG@]">
-<a href="#main-content" class="sr-only sr-only-focusable">Skip to main content</a>
-    
-    
- <nav class="navbar mobile-menu">
-     <a href="#" class="close-menu">Close <i class="fa fa-times" aria-hidden="true"></i></a>
-      <div class="m-nav-wrap">
-          <ul>
-          [%menu id:'menu_mobile'%]
-							[%param *level_1%]
-								 
-									<li><a href="[@url@]">[@name@]</a>
-									
-                                        [%if [@next_level@]%]<ul class="nav-sub">
-										[@next_level@]
-									</ul>[%/if%]
-                                    </li>
-								
-							[%/param%]
-							[%param *level_2%]
-								<li><a href="[@url@]">[@name@]</a></li>
-							[%/param%]
-						[%/menu%]
-              </ul>
-      </div>
-  </nav>   
+    <a href="#main-content" class="sr-only sr-only-focusable">Skip to main content</a>
+
+
+    <nav class="navbar mobile-menu">
+        <a href="#" class="close-menu">Close <i class="fa fa-times" aria-hidden="true"></i></a>
+        <div class="m-nav-wrap">
+            <ul>
+                [%menu id:'menu_mobile'%]
+                [%param *level_1%]
+
+                <li><a href="[@url@]">[@name@]</a>
+
+                    [%if [@next_level@]%]<ul class="nav-sub">
+                        [@next_level@]
+                    </ul>[%/if%]
+                </li>
+
+                [%/param%]
+                [%param *level_2%]
+                <li><a href="[@url@]">[@name@]</a></li>
+                [%/param%]
+                [%/menu%]
+            </ul>
+        </div>
+    </nav>
     <div class="overlay"></div>
-    
-    
-<header class="wrapper-header" aria-label="Header Container">
-	<div class="top-bar">
-		<div class="container">
-			<div class="row">
-				<div class="col-md-12 col-xs-12 top-bar">
-					[%advert type:'text' template:'top-header' limit:'5' ad_group:'top-header' sortby:'sortorder,name' category:'0'%]
-					[%param *header%]
-						<div class="top-carousel">
-					[%/param%]
-					[%param *footer%]
-						</div>
-					[%/param%]
-					[%/advert%]
-				</div>
-			</div>
-		</div>
-	</div>
-	<div class="header-mid-section">
-	<div class="wrapper-middle container">
-		<div class="row">
-			<div class="wrapper-logo">
-				<a href="[@config:homeurl@]" title="[@config:company_name@]">
-					<img class="logo" src="[@config:imageurl@]/website_logo_new.png?[@config:neto_css_version@]" alt="[@config:company_name@] Logo"/>
-				</a>
-			</div>
-			<div class="wrapper-search">
-			
-				<ul class="mid-header-nav list-inline text-right">
-					<li class="lv1-li dropdown dropdown-hover text-center account-btt">
-						<a href="[%url page:'account'/%]" [%if [@next_level@]%]class="dropdown-toggle" data-toggle="dropdown"[%/if%]>
-							<img class="acc-ico-img" src="[@config:imageurl@]/website_cart.png?[@config:neto_css_version@]" alt="[@config:company_name@] cart"/>
-							<span class="icon-name">Account</span>
-						</a>
-						<ul class="dropdown-menu pull-right">
-							<li><a href="[%url page:'account'/%]">Account Home</a></li>
-							<li><a href="[%url page:'account'/%]#orders">Orders</a></li>
-							[%if [@config:allow_user_quote@]%]
-							<li><a href="[%url page:'account'/%]#quotes">Quotes</a></li>
-							[%/ if%]
-							<li><a href="[%url page:'account' type:'payrec'/%]">Pay Invoices</a></li>
-							<li><a href="[%url page:'account' type:'favourites'/%]">Favourites</a></li>
-							[%if [@config:show_wishlist@]%]
-							<li><a href="[%url page:'account' type:'wishlist'/%]">Wishlists</a></li>
-							[%/if%]
-							<li><a href="[%url page:'account' type:'warranty'/%]">Resolution Centre</a></li>
-							<li><a href="[%url page:'account' type:'edit_account'/%]">Edit My Details</a></li>
-							<li><a href="[%url page:'account' type:'edit_address'/%]">Edit My Address Book</a></li>
-							<li class="divider"></li>
-							[%if [@user:username@]%]
-								<li> <a href="[%url page:'account' type:'edit_pwd'/%]"><i class="fa fa-lock"></i> Change My Password</a> </li>
-								<li> <a href="[%url page:'account' type:'logout'/%]"><i class="fa fa-off"></i> Log Out</a> </li>
-							[%else%]
-								<li> <a href="[%url page:'account' type:'login'/%]" title="Login">Login</a> </li>
-								<li> <a href="[%url page:'account' type:'register'/%]" title="Register">Register</a> </li>
-							[%/if%]
-						</ul>
-					</li>
-					<li id="header-cart" class="lv1-li dropdown dropdown-hover hidden-xs text-center">
-						<a href="[%url page:'checkout' type:'cart'/%]" href="#" class="dropdown-toggle" data-toggle="dropdown" id="cartcontentsheader">
-							<svg version="1.1" id="cartnew" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 width="510px" height="510px" viewBox="0 0 510 510" style="enable-background:new 0 0 510 510;" xml:space="preserve">
-<g>
-	<g id="shopping-cart">
-		<path d="M153,408c-28.05,0-51,22.95-51,51s22.95,51,51,51s51-22.95,51-51S181.05,408,153,408z M0,0v51h51l91.8,193.8L107.1,306
+
+
+    <header class="wrapper-header" aria-label="Header Container">
+        <div class="top-bar">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 col-xs-12 top-bar">
+                        [%advert type:'text' template:'top-header' limit:'5' ad_group:'top-header' sortby:'sortorder,name' category:'0'%]
+                        [%param *header%]
+                        <div class="top-carousel">
+                            [%/param%]
+                            [%param *footer%]
+                        </div>
+                        [%/param%]
+                        [%/advert%]
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="header-mid-section">
+            <div class="wrapper-middle container">
+                <div class="row">
+                    <div class="wrapper-logo">
+                        <a href="[@config:homeurl@]" title="[@config:company_name@]">
+                            <img class="logo" src="[@config:imageurl@]/website_logo_new.png?[@config:neto_css_version@]" alt="[@config:company_name@] Logo" />
+                        </a>
+                    </div>
+                    <div class="wrapper-search">
+
+                        <ul class="mid-header-nav list-inline text-right">
+                            <li class="lv1-li dropdown dropdown-hover text-center account-btt">
+                                <a href="[%url page:'account'/%]" [%if [@next_level@]%]class="dropdown-toggle" data-toggle="dropdown" [%/if%]> <img class="acc-ico-img" src="[@config:imageurl@]/website_cart.png?[@config:neto_css_version@]" alt="[@config:company_name@] cart" />
+                                <span class="icon-name">Account</span>
+                                </a>
+                                <ul class="dropdown-menu pull-right">
+                                    <li><a href="[%url page:'account'/%]">Account Home</a></li>
+                                    <li><a href="[%url page:'account'/%]#orders">Orders</a></li>
+                                    [%if [@config:allow_user_quote@]%]
+                                    <li><a href="[%url page:'account'/%]#quotes">Quotes</a></li>
+                                    [%/ if%]
+                                    <li><a href="[%url page:'account' type:'payrec'/%]">Pay Invoices</a></li>
+                                    <li><a href="[%url page:'account' type:'favourites'/%]">Favourites</a></li>
+                                    [%if [@config:show_wishlist@]%]
+                                    <li><a href="[%url page:'account' type:'wishlist'/%]">Wishlists</a></li>
+                                    [%/if%]
+                                    <li><a href="[%url page:'account' type:'warranty'/%]">Resolution Centre</a></li>
+                                    <li><a href="[%url page:'account' type:'edit_account'/%]">Edit My Details</a></li>
+                                    <li><a href="[%url page:'account' type:'edit_address'/%]">Edit My Address Book</a></li>
+                                    <li class="divider"></li>
+                                    [%if [@user:username@]%]
+                                    <li> <a href="[%url page:'account' type:'edit_pwd'/%]"><i class="fa fa-lock"></i> Change My Password</a> </li>
+                                    <li> <a href="[%url page:'account' type:'logout'/%]"><i class="fa fa-off"></i> Log Out</a> </li>
+                                    [%else%]
+                                    <li> <a href="[%url page:'account' type:'login'/%]" title="Login">Login</a> </li>
+                                    <li> <a href="[%url page:'account' type:'register'/%]" title="Register">Register</a> </li>
+                                    [%/if%]
+                                </ul>
+                            </li>
+                            <li id="header-cart" class="lv1-li dropdown dropdown-hover hidden-xs text-center">
+                                <a href="[%url page:'checkout' type:'cart'/%]" href="#" class="dropdown-toggle" data-toggle="dropdown" id="cartcontentsheader">
+                                    <svg version="1.1" id="cartnew" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="510px" height="510px" viewBox="0 0 510 510" style="enable-background:new 0 0 510 510;" xml:space="preserve">
+                                        <g>
+                                            <g id="shopping-cart">
+                                                <path d="M153,408c-28.05,0-51,22.95-51,51s22.95,51,51,51s51-22.95,51-51S181.05,408,153,408z M0,0v51h51l91.8,193.8L107.1,306
 			c-2.55,7.65-5.1,17.85-5.1,25.5c0,28.05,22.95,51,51,51h306v-51H163.2c-2.55,0-5.1-2.55-5.1-5.1v-2.551l22.95-43.35h188.7
 			c20.4,0,35.7-10.2,43.35-25.5L504.9,89.25c5.1-5.1,5.1-7.65,5.1-12.75c0-15.3-10.2-25.5-25.5-25.5H107.1L84.15,0H0z M408,408
-			c-28.05,0-51,22.95-51,51s22.95,51,51,51s51-22.95,51-51S436.05,408,408,408z"/>
-	</g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-</svg>
-							
-							<span class="cart-qty-number" rel="a2c_item_count">[%format type:'number' dp:'0'%][%CART id:'total_items'%][%/CART%][%/format%]</span>
-						</a>
-						<ul class="dropdown-menu">
-							<li class="box" id="neto-dropdown">
-								<div class="body padding" id="cartcontents"></div>
-								<div class="footer"></div>
-							</li>
-						</ul>
-					</li>
-				</ul>
-				
-				<div class="header-contact">
-					<h3 class="h-contact"><span>NEED HELP?</span>
-					<a href="tel:086543871"><img class="call-ico" src="[@config:imageurl@]/themes/spy-store-3/img/call-ico-white.png?[@config:neto_css_version@]" alt="[@config:company_name@] Call Us"/>08 654 3871</a>
-					</h3>
-				</div>
-				
-				<div class="header-search mobile-hidden">
-					<form name="productsearch" method="get" action="/" role="search" aria-label="Product Search">
-						<input type="hidden" name="rf" value="kw"/>
-						<div class="input-group">
-							<input class="form-control ajax_search" placeholder="Product search" value="[%nohtml%][%filter ID:'keywords'%][%/filter%][%/nohtml%]" id="name_search" autocomplete="off" name="kw" type="search" aria-label="Input Search"/>
-							<span class="input-group-btn">
-								<button type="submit" value="Search" class="btn" aria-label="Search Site"><i class="fa fa-search"></i></button>
-							</span>
-						</div>
-					</form>
-				</div>
-			</div>
-		</div>
-	</div>
-	
-	</div>
-	
-	
-	
-<div class="header-botom-section">
-	<div class=" container">	
-	<div class=" row">
-	<div class="main-menu">
-		
-		<ul class="main-l-nav nav navbar-nav">
-		
-		<!--<li><a href="#" class="nToggleMenu" data-target=".navbar-responsive-collapse"><span class="icon"><i class="fa fa-bars"></i></span></a></li>-->
-		
-				<li class="mega-item"><a href="/spy-cameras/"><span>SPY CAMERAS</span></a>
-[%content_menu content_type:'category' sortby:'sortorder, name' show_empty:'1' start_category:'126' get_fields:'content_description1'%]
-    [%param header%]
-        <ul class="m-menu-items">
-    [%/param%]
-    [%param *level_1%]
-    <a href="[@url@]" class="c-item">
-		<img src="[%ASSET_URL type:'content' id:'[@content_id@]' default:'[@config:imageurl@]/na.gif'/%]" class="img-responsive">
-        <h3> [@name@]</h3>
-    </a>
-    [%/param%]
-    [%param footer%]
-        </ul>
-    [%/param%]
-[%/content_menu%]
-				</li>
-				<li class="mega-item"><a href="/gps-tracker/"><span>GPS TRACKERS</span></a>
-[%content_menu content_type:'category' sortby:'sortorder, name' show_empty:'1' start_category:'107' get_fields:'content_description1'%]
-    [%param header%]
-        <ul class="m-menu-items">
-    [%/param%]
-    [%param *level_1%]
-    <a href="[@url@]" class="c-item">
-		<img src="[%ASSET_URL type:'content' id:'[@content_id@]' default:'[@config:imageurl@]/na.gif'/%]" class="img-responsive">
-        <h3> [@name@]</h3>
-    </a>
-    [%/param%]
-    [%param footer%]
-        </ul>
-    [%/param%]
-[%/content_menu%]				
-				</li>
-				<li class="mega-item"><a href="/security-camera/"><span>SECURITY CAMERAS</span></a>
-[%content_menu content_type:'category' sortby:'sortorder, name' show_empty:'1' start_category:'106' get_fields:'content_description1'%]
-    [%param header%]
-        <ul class="m-menu-items">
-    [%/param%]
-    [%param *level_1%]
-    <a href="[@url@]" class="c-item">
-		<img src="[%ASSET_URL type:'content' id:'[@content_id@]' default:'[@config:imageurl@]/na.gif'/%]" class="img-responsive">
-        <h3> [@name@]</h3>
-    </a>
-    [%/param%]
-    [%param footer%]
-        </ul>
-    [%/param%]
-[%/content_menu%]				
-				</li>
-				<li><a href="/voice-recorder/"><span>RECORDING DEVICES</span></a>
-				</li>
-				
-				
-				
-			</ul>
-			
-			<a href="#" class=" mobile-main-trigger" data-target=".navbar-responsive-collapse"><span class="icon"><i class="fa fa-bars"></i></span><span class="m-txt">menu</span></a>
-			
-			<ul class="extra-main">
-			[%cache type:'menu' id:'header-bottom-menu'%]
-			[%menu id:'main-header'%]
-				[%param *level_1%]
-					<li class=""> <a href="[@url@]">[@name@]</a></li>
-				[%/param%]
-			[%/menu%]
-		[%/ cache%]
-			</ul>
-			
-			
-<nav class="extra-main-mobile" role="navigation" aria-label="Main Menu">
+			c-28.05,0-51,22.95-51,51s22.95,51,51,51s51-22.95,51-51S436.05,408,408,408z" />
+                                            </g>
+                                        </g>
+                                        <g>
+                                        </g>
+                                        <g>
+                                        </g>
+                                        <g>
+                                        </g>
+                                        <g>
+                                        </g>
+                                        <g>
+                                        </g>
+                                        <g>
+                                        </g>
+                                        <g>
+                                        </g>
+                                        <g>
+                                        </g>
+                                        <g>
+                                        </g>
+                                        <g>
+                                        </g>
+                                        <g>
+                                        </g>
+                                        <g>
+                                        </g>
+                                        <g>
+                                        </g>
+                                        <g>
+                                        </g>
+                                        <g>
+                                        </g>
+                                    </svg>
 
-	<ul class="iconic-menu">
-<li><a href="/_myacct/"><img src="[%ASSET_URL type:'content' id:'[@content_id@]' default:'[@config:imageurl@]/themes/spy-store-3/img/btt-info.png'/%]" class="mobile-menu-ico"></a></li>
-              <li><a href="/_myacct/"><img src="[%ASSET_URL type:'content' id:'[@content_id@]' default:'[@config:imageurl@]/themes/spy-store-3/img/btt-acc.png'/%]" class="mobile-menu-ico"></a></li>
-			  <li><a href="#" class="nToggleMenu" data-target=".header-search-collapse"><span class="icon"><i class="fa fa-search"></i></span></a></li>
-              <li><a href="[%url page:'checkout' type:'cart'/%]">
-<svg version="1.1" id="cartnewmobile" class="mobile-menu-ico" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 width="510px" height="510px" viewBox="0 0 510 510" style="enable-background:new 0 0 510 510;" xml:space="preserve">
-<g>
-	<g id="shopping-cart">
-		<path d="M153,408c-28.05,0-51,22.95-51,51s22.95,51,51,51s51-22.95,51-51S181.05,408,153,408z M0,0v51h51l91.8,193.8L107.1,306
+                                    <span class="cart-qty-number" rel="a2c_item_count">[%format type:'number' dp:'0'%][%CART id:'total_items'%][%/CART%][%/format%]</span>
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li class="box" id="neto-dropdown">
+                                        <div class="body padding" id="cartcontents"></div>
+                                        <div class="footer"></div>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                        <div class="header-contact">
+                            <h3 class="h-contact"><span>NEED HELP?</span>
+                                <a href="tel:086543871"><img class="call-ico" src="[@config:imageurl@]/themes/spy-store-3/img/call-ico-white.png?[@config:neto_css_version@]" alt="[@config:company_name@] Call Us" />08 654 3871</a>
+                            </h3>
+                        </div>
+
+                        <div class="header-search mobile-hidden">
+                            <form name="productsearch" method="get" action="/" role="search" aria-label="Product Search">
+                                <input type="hidden" name="rf" value="kw" />
+                                <div class="input-group">
+                                    <input class="form-control ajax_search" placeholder="Product search" value="[%nohtml%][%filter ID:'keywords'%][%/filter%][%/nohtml%]" id="name_search" autocomplete="off" name="kw" type="search" aria-label="Input Search" />
+                                    <span class="input-group-btn">
+                                        <button type="submit" value="Search" class="btn" aria-label="Search Site"><i class="fa fa-search"></i></button>
+                                    </span>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
+
+        <div class="header-botom-section">
+            <div class=" container">
+                <div class=" row">
+                    <div class="main-menu">
+
+                        <ul class="main-l-nav nav navbar-nav">
+
+                            <!--<li><a href="#" class="nToggleMenu" data-target=".navbar-responsive-collapse"><span class="icon"><i class="fa fa-bars"></i></span></a></li>-->
+
+                            <li class="mega-item"><a href="/spy-cameras/"><span>SPY CAMERAS</span></a>
+                                [%content_menu content_type:'category' sortby:'sortorder, name' show_empty:'1' start_category:'126' get_fields:'content_description1'%]
+                                [%param header%]
+                                <ul class="m-menu-items">
+                                    [%/param%]
+                                    [%param *level_1%]
+                                    <a href="[@url@]" class="c-item">
+                                        <img src="[%ASSET_URL type:'content' id:'[@content_id@]' default:'[@config:imageurl@]/na.gif'/%]" class="img-responsive">
+                                        <h3> [@name@]</h3>
+                                    </a>
+                                    [%/param%]
+                                    [%param footer%]
+                                </ul>
+                                [%/param%]
+                                [%/content_menu%]
+                            </li>
+                            <li class="mega-item"><a href="/gps-tracker/"><span>GPS TRACKERS</span></a>
+                                [%content_menu content_type:'category' sortby:'sortorder, name' show_empty:'1' start_category:'107' get_fields:'content_description1'%]
+                                [%param header%]
+                                <ul class="m-menu-items">
+                                    [%/param%]
+                                    [%param *level_1%]
+                                    <a href="[@url@]" class="c-item">
+                                        <img src="[%ASSET_URL type:'content' id:'[@content_id@]' default:'[@config:imageurl@]/na.gif'/%]" class="img-responsive">
+                                        <h3> [@name@]</h3>
+                                    </a>
+                                    [%/param%]
+                                    [%param footer%]
+                                </ul>
+                                [%/param%]
+                                [%/content_menu%]
+                            </li>
+                            <li class="mega-item"><a href="/security-camera/"><span>SECURITY CAMERAS</span></a>
+                                [%content_menu content_type:'category' sortby:'sortorder, name' show_empty:'1' start_category:'106' get_fields:'content_description1'%]
+                                [%param header%]
+                                <ul class="m-menu-items">
+                                    [%/param%]
+                                    [%param *level_1%]
+                                    <a href="[@url@]" class="c-item">
+                                        <img src="[%ASSET_URL type:'content' id:'[@content_id@]' default:'[@config:imageurl@]/na.gif'/%]" class="img-responsive">
+                                        <h3> [@name@]</h3>
+                                    </a>
+                                    [%/param%]
+                                    [%param footer%]
+                                </ul>
+                                [%/param%]
+                                [%/content_menu%]
+                            </li>
+                            <li><a href="/voice-recorder/"><span>RECORDING DEVICES</span></a>
+                            </li>
+
+
+
+                        </ul>
+
+                        <a href="#" class=" mobile-main-trigger" data-target=".navbar-responsive-collapse"><span class="icon"><i class="fa fa-bars"></i></span><span class="m-txt">menu</span></a>
+
+                        <ul class="extra-main">
+                            [%cache type:'menu' id:'header-bottom-menu'%]
+                            [%menu id:'main-header'%]
+                            [%param *level_1%]
+                            <li class=""> <a href="[@url@]">[@name@]</a></li>
+                            [%/param%]
+                            [%/menu%]
+                            [%/ cache%]
+                        </ul>
+
+
+                        <nav class="extra-main-mobile" role="navigation" aria-label="Main Menu">
+
+                            <ul class="iconic-menu">
+                                <li><a href="/_myacct/"><img src="[%ASSET_URL type:'content' id:'[@content_id@]' default:'[@config:imageurl@]/themes/spy-store-3/img/btt-info.png'/%]" class="mobile-menu-ico"></a></li>
+                                <li><a href="/_myacct/"><img src="[%ASSET_URL type:'content' id:'[@content_id@]' default:'[@config:imageurl@]/themes/spy-store-3/img/btt-acc.png'/%]" class="mobile-menu-ico"></a></li>
+                                <li><a href="#" class="nToggleMenu" data-target=".header-search-collapse"><span class="icon"><i class="fa fa-search"></i></span></a></li>
+                                <li><a href="[%url page:'checkout' type:'cart'/%]">
+                                        <svg version="1.1" id="cartnewmobile" class="mobile-menu-ico" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="510px" height="510px" viewBox="0 0 510 510" style="enable-background:new 0 0 510 510;" xml:space="preserve">
+                                            <g>
+                                                <g id="shopping-cart">
+                                                    <path d="M153,408c-28.05,0-51,22.95-51,51s22.95,51,51,51s51-22.95,51-51S181.05,408,153,408z M0,0v51h51l91.8,193.8L107.1,306
 			c-2.55,7.65-5.1,17.85-5.1,25.5c0,28.05,22.95,51,51,51h306v-51H163.2c-2.55,0-5.1-2.55-5.1-5.1v-2.551l22.95-43.35h188.7
 			c20.4,0,35.7-10.2,43.35-25.5L504.9,89.25c5.1-5.1,5.1-7.65,5.1-12.75c0-15.3-10.2-25.5-25.5-25.5H107.1L84.15,0H0z M408,408
-			c-28.05,0-51,22.95-51,51s22.95,51,51,51s51-22.95,51-51S436.05,408,408,408z"/>
-	</g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-<g>
-</g>
-</svg>			  
-							<span class="cart-qty-number" rel="a2c_item_count">[%format type:'number' dp:'0'%][%CART id:'total_items'%][%/CART%][%/format%]</span></a></li>
-	</ul>
+			c-28.05,0-51,22.95-51,51s22.95,51,51,51s51-22.95,51-51S436.05,408,408,408z" />
+                                                </g>
+                                            </g>
+                                            <g>
+                                            </g>
+                                            <g>
+                                            </g>
+                                            <g>
+                                            </g>
+                                            <g>
+                                            </g>
+                                            <g>
+                                            </g>
+                                            <g>
+                                            </g>
+                                            <g>
+                                            </g>
+                                            <g>
+                                            </g>
+                                            <g>
+                                            </g>
+                                            <g>
+                                            </g>
+                                            <g>
+                                            </g>
+                                            <g>
+                                            </g>
+                                            <g>
+                                            </g>
+                                            <g>
+                                            </g>
+                                            <g>
+                                            </g>
+                                        </svg>
+                                        <span class="cart-qty-number" rel="a2c_item_count">[%format type:'number' dp:'0'%][%CART id:'total_items'%][%/CART%][%/format%]</span></a></li>
+                            </ul>
 
-      
 
-  </nav>			
-			
-		
 
-		
-	</div>
-	
-	
-	
-      <div class="row collapse header-search-collapse mobile-search-wrap">
-          <form name="productsearch" method="get" action="/" role="search" aria-label="Product Search">
-              <input type="hidden" name="rf" value="kw"/>
-              <div class="input-group">
-                  <input class="form-control ajax_search" placeholder="SEARCH GADGETS" value="[%nohtml%][%filter ID:'keywords'%][%/filter%][%/nohtml%]" id="name_search" autocomplete="off" name="kw" type="search" aria-label="Input Search"/>
-                  <span class="input-group-btn">
-                      <button type="submit" value="Search" class="btn" aria-label="Search Site"><i class="fa fa-search"></i></button>
-                  </span>
-              </div>
-          </form>
-      </div>	
-	
-	</div>
-	</div>
-	</div>
-	
-	
-	
-	
-	
-    
-	<div class="hidden-xs main-menu text-center">
-		<div class="container">
-			
-		</div>
-	</div>
-</header>
-<div id="main-content" class="container" [%if [@config:current_page_type@] eq 'product'%]role="main"[%/if%]>
-	<div class="row">
+                        </nav>
+
+
+
+
+                    </div>
+
+
+
+                    <div class="row collapse header-search-collapse mobile-search-wrap">
+                        <form name="productsearch" method="get" action="/" role="search" aria-label="Product Search">
+                            <input type="hidden" name="rf" value="kw" />
+                            <div class="input-group">
+                                <input class="form-control ajax_search" placeholder="SEARCH GADGETS" value="[%nohtml%][%filter ID:'keywords'%][%/filter%][%/nohtml%]" id="name_search" autocomplete="off" name="kw" type="search" aria-label="Input Search" />
+                                <span class="input-group-btn">
+                                    <button type="submit" value="Search" class="btn" aria-label="Search Site"><i class="fa fa-search"></i></button>
+                                </span>
+                            </div>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+
+        <div class="hidden-xs main-menu text-center">
+            <div class="container">
+
+            </div>
+        </div>
+    </header>
+    <div id="main-content" class="container" [%if [@config:current_page_type@] eq 'product' %]role="main" [%/if%]> <div class="row">
