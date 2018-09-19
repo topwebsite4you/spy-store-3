@@ -66,12 +66,12 @@ h6,
     padding: 0px;
     list-style: none;
     text-align: center;
-    margin: 10px 0 0 0;
+margin: 30px 0 0 0;
 }
 
 .category-car .slick-dots li {
     display: inline-block;
-    margin: 0 5px;
+    margin: 0 0px;
 }
 
 .category-car a {
@@ -81,12 +81,17 @@ h6,
 .category-car .new-listing {}
 
 .category-car .new-listing .new-listing-wrap {
-    border: 1px solid #000;
-    margin: 10px;
+    border: 2px solid #c8c8c8;
+    margin: 0px;
     padding: 20px;
     text-align: center;
     position: relative;
     background: #fff;
+}
+
+.category-car.slick-initialized .slick-slide.slick-current {
+    position:relative;
+    right:-2px;
 }
 
 .category-car .new-listing .new-listing-wrap:hover {
@@ -100,21 +105,60 @@ h6,
     transition: all .3s ease-in-out;*/
 }
 
+.category-car .slick-arrow {
+    position: absolute;
+    bottom: 50%;
+    background: #cacaca;
+    color: #fff;
+    z-index: 9;
+    padding: 10px 7px;
+}
+.category-car .next-arr.slick-arrow {
+    right: -11px;
+}
+.category-car .slick-arrow.prev-arr {
+    left: -10px;
+}
+
+.category-car button.slick-prev:after {
+  content: ">";
+  color: red;
+  font-size: 30px;
+}
+
+.category-car button.slick-next:before {
+  content: "<";
+  color: red;
+  font-size: 30px;
+}
+
 .category-row h3 {
-    font-size: 32px;
-    font-weight: bold;
+    font-size: 22px;
+    text-align: center;
+    font-weight: 400;
+    text-transform: none;
     margin-bottom: 40px;
     margin-top: 40px;
 }
 
-a.c-more {
-    text-transform: uppercase;
-    margin-top: 30px;
-    display: inline-block;
-    font-size: 14px;
-    margin-bottom: 40px;
+.category-row a h3 {
+    font-weight: 600;    
+    line-height: 1.4em;
 }
 
+a.c-more {
+    text-transform: none;
+    margin-top: 10px;
+    display: block;
+    font-size: 14px;
+    margin-bottom: 40px;
+    text-align: center;
+    font-weight: 600;
+    color: #b22321;
+}
+.category-row a h3{
+    text-align:left;
+}
 .row.category-row {
     text-align: center;
 }
@@ -165,7 +209,7 @@ a.c-more {
     position: absolute;
     right: 50%;
     margin-right: -75px;
-    top: 10px;
+    top: 0px;
     font-size: 12px;
     background: #54852f;
 }
@@ -177,7 +221,7 @@ a.c-more {
 .category-car .new-listing .new-listing-wrap h3 {
     font-size: 16px;
     margin: 20px 0;
-    height: 51px;
+    height: 65px;
     margin-bottom: 10px;
 }
 
@@ -193,7 +237,6 @@ a.c-more {
 
 .pwasprice {
     color: #000;
-    font-size: 12px;
     font-weight: 300;
     display: inline-block;
 }
@@ -201,7 +244,7 @@ a.c-more {
 .ppromo {
     display: inline-block;
     position: relative;
-    top: 2px;
+    top: 0px;
 }
 
 span.save-price {
@@ -213,9 +256,12 @@ span.save-price {
 
 .pwasprice span {
     text-decoration: line-through;
-    font-size: 12px;
+    font-size: initial;
     position: relative;
-    top: 1px;
+    top: 0px;
+    font-weight: 300;
+    font-family: 'Montserrat', sans-serif;
+    color: #797979;
 }
 
 .category-car {
@@ -224,6 +270,10 @@ span.save-price {
 
 .category-car.slick-initialized {
     display: block;
+}
+.p-price > div.ppromo > span, .p-price > div.ppromo > div {
+    font-weight: 700;
+    color:#797979;
 }
 
 .slick-list,
@@ -234,8 +284,8 @@ span.save-price {
 .category-car .slick-dots li button {
     outline: none !important;
     text-indent: -100px;
-    width: 15px;
-    height: 15px;
+    width: 9px;
+    height: 9px;
     display: block;
     overflow: hidden;
     background: #d2d2d2;
@@ -247,7 +297,7 @@ span.save-price {
 
 .category-car .slick-dots li.slick-active button,
 .category-car .slick-dots li:hover button {
-    background: #b5b5b5;
+    background: #cd5252;
     -webkit-transition: all 0.2s ease-in-out;
     -o-transition: all 0.2s ease-in-out;
     transition: all 0.2s ease-in-out;
@@ -711,12 +761,14 @@ path:hover {
 .p-price {
     font-size: 18px;
     color: #e7002f;
-    font-weight: 600 !important;
-    font-family: 'Open Sans', sans-serif;
+    font-weight: 700 !important;
+    font-family: 'Montserrat', sans-serif;
     letter-spacing: 1px;
     min-height: 26px;
+    line-height: 26px;
     margin-bottom: 10px;
     text-align: center;
+    color:#797979;
 }
 
 html .new-list .savings-container {
@@ -730,11 +782,13 @@ html .new-list .savings-container {
 
 html .savings-container .label {
     font-size: 12px;
-    font-weight: 500;
+    font-weight: 600;
 }
 
 .p-price > div {
-    font-weight: 400;
+    font-weight: 700;
+    float: left;
+    margin-right: 20px;
 }
 
 html .savings-container {
@@ -987,6 +1041,23 @@ p#price-range {
 #n_home .content-page li {
     list-style-type: none;
     font-size: 18px;
+}
+
+.sale-placeholder {
+    height: 50px;
+    background: #ededed;
+    width: 100%;
+    margin: 50px 0 40px;
+}
+
+.recommended-items .one-half {
+    width: 49%;
+    float: left;
+}
+
+.recommended-items .one-half.last {
+    width: 49%;
+    float: right;
 }
 
 #n_home .content-page li:before {
@@ -1955,7 +2026,26 @@ nav.navbar.mobile-menu {
         margin: 0 0px;
     }
 }
-
+@media (max-width: 950px) {
+.category-car.slick-initialized .slick-slide.slick-current {
+    position: relative;
+    right: 0px;
+}
+    .category-car .new-listing .new-listing-wrap h3 {
+    height: initial;
+}
+}
+@media (max-width: 810px) {
+#main-content {
+    overflow: hidden;
+}
+    .category-car .slick-arrow.prev-arr {
+    left: 1px;
+}
+    .category-car .next-arr.slick-arrow {
+    right: -1px;
+} 
+}
 @media (max-width: 769px) {
     .mobile-main-trigger {
         display: block;
@@ -1994,6 +2084,9 @@ nav.navbar.mobile-menu {
     .top-ads-carousel .slick-slide img {
     width: 100%;
     padding: 0 10px;
+}
+    .recommended-items {
+    margin: 0px 10px;
 }
 }
 
@@ -2042,6 +2135,10 @@ nav.navbar.mobile-menu {
     .header-contact h3.h-contact a {
         font-size: 16px;
     }
+    
+ .recommended-items .col-xs-6.col-sm-6 {
+    width: 100%;
+}
 }
 
 @media (max-width: 370px) {
