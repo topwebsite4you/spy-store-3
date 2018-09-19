@@ -517,6 +517,7 @@ path:hover {
     -webkit-transition: all 0.2s ease-in-out;
     -o-transition: all 0.2s ease-in-out;
     transition: all 0.2s ease-in-out;
+    outline: none;
 }
 
 /* HEADER */
@@ -1347,6 +1348,10 @@ h1.cat-title {
     display: inline-block;
 }
 
+html img.h-ad {
+    display: block !important;
+}
+
 .top-carousel .slick-slide {
     font-size: 13px;
     line-height: 28px;
@@ -1379,6 +1384,52 @@ h1.cat-title {
     float: left;
     padding: 0 25px;
     position: static;
+}
+
+.top-ads-carousel .slick-slide img {
+    height: initial !important;
+    width: 100%;
+}
+
+.top-ads-carousel .slick-list {
+    margin: 0 -6px;
+}
+
+.top-ads-carousel .slick-slide img {
+    width: 100%;
+    padding: 0 6px;
+}
+
+.top-ads-carousel {
+    margin-top: 10px;
+}
+
+ul.slick-dots li.slick-active button, ul.slick-dots li:hover button {
+    background: #cd5252;
+}
+
+ul.slick-dots li button {
+    text-indent: -999px;
+    overflow: hidden;
+    width: 9px;
+    height: 9px;
+    padding: 0px;
+    border: none;
+    background: #d6d6d6;
+    border-radius: 10px;
+    margin: 0px 7px;
+}
+
+ul.slick-dots li {
+    display: inline-block;
+}
+
+ul.slick-dots {
+    margin: 0px;
+    padding: 0px;
+    text-align: center;
+    margin-top: 30px;
+    list-style: none;
 }
 
 .main-menu ul.main-l-nav>li>a {
