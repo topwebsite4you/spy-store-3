@@ -8,4 +8,4 @@ Mobile menu ID is "menu_mobile"
 
 Home top banners are advertizing campagn with group "home-ads" (3 in a row)
 
-Black "about" menu in header - id is "header-bottom-menu"
+Black "about" menu in header - id is "main-header"
