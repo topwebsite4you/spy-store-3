@@ -1,9 +1,47 @@
-// NOTICE!! THIS IS REQUIRED TO MAKE YOUR NETO SHOPPING CART WORK
-// DO NOT REMOVE UNLESS YOU REALLY KNOW WHAT YOU ARE DOING
+jQuery(window).load(function () {
+
+
+    // Same height boxes
+    jQuery.fn.sameheight = function () {
+
+        var maxHeight = 0;
+
+        jQuery(this).each(function () {
+
+            // reset the height
+            jQuery(this).css({
+                'height': 'auto'
+            });
+            var thisHeight = jQuery(this).height();
+
+            if (thisHeight > maxHeight) {
+                maxHeight = thisHeight;
+            }
+
+        });
+
+        jQuery(this).each(function () {
+            jQuery(this).height(maxHeight);
+        });
+
+    };
+
+
+    jQuery('.new-listing .new-listing-wrap').sameheight();
+
+    jQuery(window).resize(function () {
+
+        jQuery('.new-listing .new-listing-wrap').sameheight();
+
+    });
+
+
+});
 
 (function ($) {
     $.extend({
         initPageFuncs: function () {
+
             // Ajax Wish List
             $.addToWishList({
                 'class': 'wishlist_toggle',
@@ -159,7 +197,7 @@ $(document).ready(function () {
         autoplay: false,
         speed: 300,
         slidesToShow: 3,
-        slidesToScroll: 1,
+        slidesToScroll: 3,
 
         /*centerMode: true,
         variableWidth: true,
@@ -169,7 +207,7 @@ $(document).ready(function () {
                 breakpoint: 1250,
                 settings: {
                     slidesToShow: 3,
-                    slidesToScroll: 1,
+                    slidesToScroll: 3,
                     autoplay: true
                 }
     },
@@ -177,7 +215,7 @@ $(document).ready(function () {
                 breakpoint: 992,
                 settings: {
                     slidesToShow: 2,
-                    slidesToScroll: 1,
+                    slidesToScroll: 2,
                     autoplay: true
                 }
     },
@@ -206,17 +244,17 @@ $(document).ready(function () {
         infinite: true,
         speed: 300,
         slidesToShow: 2,
-        
-        slidesToScroll: 1,
+
+        slidesToScroll: 2,
         arrows: true,
-        prevArrow:"<a href='#' class='prev-arr rel-arr'><i class='fa fa-chevron-left' aria-hidden='true'></i></a>",
-            nextArrow:"<a href='#' class='next-arr rel-arr'><i class='fa fa-chevron-right' aria-hidden='true'></i></a>",
+        prevArrow: "<a href='#' class='prev-arr rel-arr'><i class='fa fa-chevron-left' aria-hidden='true'></i></a>",
+        nextArrow: "<a href='#' class='next-arr rel-arr'><i class='fa fa-chevron-right' aria-hidden='true'></i></a>",
         responsive: [
             {
                 breakpoint: 1024,
                 settings: {
                     slidesToShow: 2,
-                    slidesToScroll: 1,
+                    slidesToScroll: 2,
                     infinite: true,
                     dots: true
                 }
@@ -224,8 +262,8 @@ $(document).ready(function () {
             {
                 breakpoint: 950,
                 settings: {
-                    slidesToShow: 1,
-                    slidesToScroll: 1
+                    slidesToShow: 2,
+                    slidesToScroll: 2
                 }
     }
   ]
