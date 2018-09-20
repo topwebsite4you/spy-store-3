@@ -82,6 +82,8 @@ h6,
 
 .category-car .new-listing .new-listing-wrap {
     border: 2px solid #c8c8c8;
+        border-left-width: 1px;
+    border-right-width: 1px;
     margin: 0px;
     padding: 20px;
     text-align: center;
@@ -91,7 +93,7 @@ h6,
 
 .category-car.slick-initialized .slick-slide.slick-current {
     position: relative;
-    right: -2px;
+    right: 0px;
 }
 
 .category-car .new-listing .new-listing-wrap:hover {
