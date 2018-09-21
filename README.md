@@ -9,3 +9,5 @@ Mobile menu ID is "menu_mobile"
 Home top banners are advertizing campagn with group "home-ads" (3 in a row)
 
 Black "about" menu in header - id is "main-header"
+
+Home page top content section located after slider with 3X banners - Content zone ID "home_text_top"
