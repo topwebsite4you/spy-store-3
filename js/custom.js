@@ -28,10 +28,12 @@ jQuery(window).load(function () {
 
 
     jQuery('.new-listing .new-listing-wrap').sameheight();
+    jQuery('.home-bottom .home-bottom-item').sameheight();
 
     jQuery(window).resize(function () {
 
         jQuery('.new-listing .new-listing-wrap').sameheight();
+        jQuery('.home-bottom .home-bottom-item').sameheight();
 
     });
 
@@ -143,7 +145,7 @@ $(document).ready(function () {
     $('.top-carousel').slick({
         dots: false,
         arrows: false,
-        infinite: true,
+        infinite: false,
         autoplay: false,
         speed: 300,
         slidesToShow: 5,
@@ -158,7 +160,9 @@ $(document).ready(function () {
                 settings: {
                     slidesToShow: 4,
                     slidesToScroll: 1,
-                    autoplay: true
+                    autoplay: true,
+                    autoplaySpeed: 4000,
+                    infinite: false
                 }
     },
             {
@@ -166,7 +170,9 @@ $(document).ready(function () {
                 settings: {
                     slidesToShow: 2,
                     slidesToScroll: 1,
-                    autoplay: true
+                    autoplay: true,
+                    autoplaySpeed: 4000,
+                    infinite: false
                 }
     },
             {
@@ -174,7 +180,11 @@ $(document).ready(function () {
                 settings: {
                     slidesToShow: 1,
                     slidesToScroll: 1,
-                    autoplay: true
+                    autoplay: true,
+                    autoplaySpeed: 4000,
+                    fade: true,
+                    cssEase: 'linear',
+                    infinite: true
                 }
     },
             {
@@ -182,18 +192,25 @@ $(document).ready(function () {
                 settings: {
                     slidesToShow: 1,
                     slidesToScroll: 1,
-                    autoplay: true
+                    autoplay: true,
+                    autoplaySpeed: 4000,
+                    fade: true,
+                    cssEase: 'linear',
+                    infinite: true
                 }
     }
   ]
     });
+
+
+
     $('.top-carousel').show();
 
 
     $('.top-ads-carousel').slick({
         dots: true,
         arrows: false,
-        infinite: true,
+        infinite: false,
         autoplay: false,
         speed: 300,
         slidesToShow: 3,
@@ -208,7 +225,7 @@ $(document).ready(function () {
                 settings: {
                     slidesToShow: 3,
                     slidesToScroll: 3,
-                    autoplay: true
+                    autoplay: false
                 }
     },
             {
@@ -216,7 +233,7 @@ $(document).ready(function () {
                 settings: {
                     slidesToShow: 2,
                     slidesToScroll: 2,
-                    autoplay: true
+                    autoplay: false
                 }
     },
             {
@@ -224,7 +241,11 @@ $(document).ready(function () {
                 settings: {
                     slidesToShow: 1,
                     slidesToScroll: 1,
-                    autoplay: true
+                    autoplay: true,
+                    autoplaySpeed: 7000,
+                    fade: true,
+                    cssEase: 'linear',
+                    infinite: true
                 }
     },
             {
@@ -232,7 +253,11 @@ $(document).ready(function () {
                 settings: {
                     slidesToShow: 1,
                     slidesToScroll: 1,
-                    autoplay: true
+                    autoplay: true,
+                    autoplaySpeed: 7000,
+                    fade: true,
+                    cssEase: 'linear',
+                    infinite: true
                 }
     }
   ]
@@ -241,10 +266,10 @@ $(document).ready(function () {
 
     $('.category-car').slick({
         dots: true,
-        infinite: true,
+        infinite: false,
         speed: 300,
         slidesToShow: 2,
-
+        autoplay: false,
         slidesToScroll: 2,
         arrows: true,
         prevArrow: "<a href='#' class='prev-arr rel-arr'><i class='fa fa-chevron-left' aria-hidden='true'></i></a>",
@@ -256,6 +281,7 @@ $(document).ready(function () {
                     slidesToShow: 2,
                     slidesToScroll: 2,
                     infinite: true,
+                    autoplay: false,
                     dots: true
                 }
     },
@@ -263,6 +289,7 @@ $(document).ready(function () {
                 breakpoint: 950,
                 settings: {
                     slidesToShow: 2,
+                    autoplay: false,
                     slidesToScroll: 2
                 }
     }
