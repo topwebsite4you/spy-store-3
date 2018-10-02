@@ -1,157 +1,154 @@
 [%advert type:'text' limit:'20' ad_group:'home-ads' sortby:'sortorder,name'%]
 [%param *header%]
 <div class="row">
-    <div class="top-ads-carousel">
+  <div class="top-ads-carousel">
 
-        [%/param%]
-        [%param *body%]
-        <div>
-            <a href="[@url@]">
+    [%/param%]
+    [%param *body%]
+    <div>
+      <a href="[@url@]">
                 <img src="[%asset_url type:'adw' id:'[@ad_id@]'%][%param default%][%cdn_asset html:'0' library:'images'%]default_product.gif[%/cdn_asset%][%/param%][%/asset_url%]" />
             </a>
-        </div>
-        [%/param%]
-        [%param *footer%]
     </div>
+    [%/param%]
+    [%param *footer%]
+  </div>
 </div>
 
 [%/param%]
 [%/advert%]
 
 <div class="home-txt-top">
-    <div class="row">
-        <div class="col-xs-12 col-sm-12">
-            [%content_zone id:'home_text_top'%]
-            [%param if_empty%]
-            <p>There is no zone with the ID of ZONEID</p>
-            [%/param%]
-            [%/content_zone%]
-        </div>
+  <div class="row">
+    <div class="col-xs-12 col-sm-12">
+      [%content_zone id:'home_text_top'%]
+      [%param if_empty%]
+      <p>There is no zone with the ID of ZONEID</p>
+      [%/param%]
+      [%/content_zone%]
     </div>
+  </div>
 
 </div>
 
-<div class="sale-placeholder"></div>
+</div>
+
+[%thumb_list type:'products' template:'new' filter_inpromo:'1' filter_category:'' sortby:'promo_end' limit:'20'%]
+[%param *header%]
+
+<div class="sale-placeholder">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-6 col-sm-6 txt-sale">
+
+        <h2>sale now on</h2>
+        <h3>hurry! limited time only</h3>
+        <p>Whether you want to protect your home, guard your ofﬁce, monitor a parent at a retirement home, we’ve got the right spy camera for you. Don’t forget, if you need help choosing our friendly staff are available to help guide you. </p>
+
+      </div>
+      <div class="col-xs-6 col-sm-6 category-row-wrap">
+
+        <div class="category-row">
+          <div class="category-car">
+
+            [%/param%]
+            [%param *footer%]
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+[%/param%]
+[%param *ifempty%]
+No Results Found
+[%/param%]
+[%/thumb_list%]
 
 <div class="recommended-items">
-
+  <div class="container">
     <div class="row">
-        <div class="col-xs-6 col-sm-6 category-row-wrap">
+      <div class="col-xs-6 col-sm-6 category-row-wrap">
 
-            <div class="category-row">
-                <h3>Recommended <strong>Spy Cameras</strong></h3>
-                <div class="category-car">
-                    [%thumb_list type:'products' template:'new' filter_category:'166' limit:'16%]
-                    [%param *header%]
-                    [%/param%]
-                    [%param *footer%]
-                    [%/param%]
-                    [%param *ifempty%]
-                    No Results Found
-                    [%/param%]
-                    [%/thumb_list%]
-                </div>
-                <a href="/spy-cameras/" class="c-more">Explore All Spy Cameras >></a>
-            </div>
-
+        <div class="category-row">
+          <h3>Recommended <strong>Spy Cameras</strong></h3>
+          <div class="category-car">
+            [%thumb_list type:'products' template:'new' filter_category:'166' limit:'16%]
+            [%param *header%]
+            [%/param%]
+            [%param *footer%]
+            [%/param%]
+            [%param *ifempty%]
+            No Results Found
+            [%/param%]
+            [%/thumb_list%]
+          </div>
+          <a href="/spy-cameras/" class="c-more">Explore All Spy Cameras >></a>
         </div>
-        <div class="col-xs-6 col-sm-6 category-row-wrap">
 
-            <div class="category-row">
-                <h3>Recommended <strong>GPS Trackers</strong></h3>
-                <div class="category-car">
-                    [%thumb_list type:'products' template:'new' filter_category:'167' limit:'16'%]
-                    [%param *header%]
-                    [%/param%]
-                    [%param *footer%]
-                    [%/param%]
-                    [%param *ifempty%]
-                    No Results Found
-                    [%/param%]
-                    [%/thumb_list%]
-                </div>
-                <a href="/gps-tracker/" class="c-more">Explore All GPS Trackers >></a>
-            </div>
+      </div>
+      <div class="col-xs-6 col-sm-6 category-row-wrap">
 
+        <div class="category-row">
+          <h3>Recommended <strong>GPS Trackers</strong></h3>
+          <div class="category-car">
+            [%thumb_list type:'products' template:'new' filter_category:'167' limit:'16'%]
+            [%param *header%]
+            [%/param%]
+            [%param *footer%]
+            [%/param%]
+            [%param *ifempty%]
+            No Results Found
+            [%/param%]
+            [%/thumb_list%]
+          </div>
+          <a href="/gps-tracker/" class="c-more">Explore All GPS Trackers >></a>
         </div>
+
+      </div>
     </div>
 
     <div class="row">
-        <div class="col-xs-6 col-sm-6 category-row-wrap">
+      <div class="col-xs-6 col-sm-6 category-row-wrap">
 
-            <div class="category-row">
-                <h3>Recommended <strong>Security Cameras</strong></h3>
-                <div class="category-car">
-                    [%thumb_list type:'products' template:'new' filter_category:'169' limit:'16'%]
-                    [%param *header%]
-                    [%/param%]
-                    [%param *footer%]
-                    [%/param%]
-                    [%param *ifempty%]
-                    No Results Found
-                    [%/param%]
-                    [%/thumb_list%]
-                </div>
-                <a href="/security-camera/" class="c-more">Explore All Security Cameras >></a>
-            </div>
-
+        <div class="category-row">
+          <h3>Recommended <strong>Security Cameras</strong></h3>
+          <div class="category-car">
+            [%thumb_list type:'products' template:'new' filter_category:'169' limit:'16'%]
+            [%param *header%]
+            [%/param%]
+            [%param *footer%]
+            [%/param%]
+            [%param *ifempty%]
+            No Results Found
+            [%/param%]
+            [%/thumb_list%]
+          </div>
+          <a href="/security-camera/" class="c-more">Explore All Security Cameras >></a>
         </div>
-        <div class="col-xs-6 col-sm-6 category-row-wrap">
 
-            <div class="category-row">
-                <h3>Recommended <strong>Voice Recorders</strong></h3>
-                <div class="category-car">
-                    [%thumb_list type:'products' template:'new' filter_category:'170' limit:'16'%]
-                    [%param *header%]
-                    [%/param%]
-                    [%param *footer%]
-                    [%/param%]
-                    [%param *ifempty%]
-                    No Results Found
-                    [%/param%]
-                    [%/thumb_list%]
-                </div>
-                <a href="/voice-recorder/" class="c-more">Explore All Voice Recorders >></a>
-            </div>
+      </div>
+      <div class="col-xs-6 col-sm-6 category-row-wrap">
 
+        <div class="category-row">
+          <h3>Recommended <strong>Voice Recorders</strong></h3>
+          <div class="category-car">
+            [%thumb_list type:'products' template:'new' filter_category:'170' limit:'16'%]
+            [%param *header%]
+            [%/param%]
+            [%param *footer%]
+            [%/param%]
+            [%param *ifempty%]
+            No Results Found
+            [%/param%]
+            [%/thumb_list%]
+          </div>
+          <a href="/voice-recorder/" class="c-more">Explore All Voice Recorders >></a>
         </div>
+
+      </div>
     </div>
 
-</div>
-
-<div class="home-bottom">
-
-        <div class="home-bottom-item">
-            [%content_zone id:'home_bottom_left_col'%]
-            [%param if_empty%]
-            [%/param%]
-            [%/content_zone%]
-            <form class="f-form" method="post" action="[%URL type:'page' id:'subscribe' https:'1'%][%END URL%]">
-                <input type="hidden" name="list_id" value="1">
-                <input type="hidden" name="opt_in" value="y">
-                <div class="input-group">
-                    <input name="inp-email" class="form-control" type="email" value="[%nohtml%][@inp-email@][%/nohtml%]" placeholder="Email Address" required />
-                    <input name="inp-submit" type="hidden" value="y" />
-                    <input name="inp-opt_in" type="hidden" value="y" />
-                    <span class="input-group-btn">
-                        <input class="btn btn-default" type="submit" value="Sign Up" data-loading-text="<i class='fa fa-spinner fa-spin' style='font-size: 14px'></i>" />
-                    </span>
-                </div>
-            </form>
-        </div>
-
-        <div class="home-bottom-item">
-            [%content_zone id:'home_bottom_center_col'%]
-            [%param if_empty%]
-            [%/param%]
-            [%/content_zone%]
-        </div>
-
-        <div class="home-bottom-item">
-            [%content_zone id:'home_bottom_right_col'%]
-            [%param if_empty%]
-            [%/param%]
-            [%/content_zone%]
-        </div>
-
+  </div>
 </div>
