@@ -39,41 +39,7 @@
 [%cache type:'display' id:'[@inventory_id@]'%]
 </div>
 </div>
-<div class="content-page">
-	<div class="container">
-        <ul class="list-inline nav-category">
-        	[%cache type:'cmenu' id:'header_cat_menu'%]
-            [%categorymenu sortby:'sortorder,selected,name' show_empty:'1'%]
-                    [%param *level_1%]
-                        <li class="[%DATA id:'next_level' if:'ne' value:''%]dropdown dropdown-hover[%/DATA%]">									<a href="[@url@]">[@name@]</a>
-                            [%data id:'next_level' if:'ne' value:''%]
-                                <ul class="dropdown-menu">
-                                    [@next_level@]
-                                </ul>
-                            [%/data%]
-                        </li>
-                    [%/param%]
-                    [%param *level_2%]
-                        <li class="[%DATA id:'next_level' if:'ne' value:''%]dropdown dropdown-hover[%/DATA%]">
-                            <a href="[@url@]">[@name@]</a>
-                            [%data id:'next_level' if:'ne' value:''%]
-                                <ul class="dropdown-menu dropdown-menu-horizontal">
-                                    [@next_level@]
-                                </ul>
-                            [%/data%]
-                        </li>
-                    [%/param%]
-                    [%param *level_3%]
-                        <li class="lv3-li">
-                            <a href="[@url@]">[@name@]</a>
-                        </li>
-                    [%/param%]
-            [%/categorymenu%]
-            [%/cache%]
-        </ul>
-	</div>
-</div>
-<div class="container">
+<div class="container bc-single">
 [%breadcrumb%]
 	[%PARAM *header%]
 		<ul class="breadcrumb" itemscope itemtype="http://schema.org/BreadcrumbList">
@@ -90,11 +56,16 @@
 		</ul>
 	[%/PARAM%]
 [%/breadcrumb%]
+</div>
+
+<div class="container main-desc">
 	<div class="row">
 		<div class="col-xs-12 col-sm-5">
+			<div class="row">
 			[%load_ajax_template id:'_images' type:'item' template:'images' preload:'1' tmpl_sku:'[@current_sku@]' tmpl_preview:'y'/%]
+			</div>
 		</div>
-		<div class="col-xs-12 col-sm-7">
+		<div class="col-xs-12 col-sm-7 desc-main">
 			[%load_ajax_template id:'_header' type:'item' template:'header' preload:'1' tmpl_sku:'[@current_sku@]' tmpl_preview:'y'/%]
 			<form autocomplete="off">
 				[%list_item_variations id:'[@current_sku@]'%]
@@ -185,6 +156,8 @@
 			[%/if%]
 		</div>
 	</div>
+</div>
+<div class="container">
 	<div class="row" style="margin-top:110px">
 		<div class="col-xs-12">
 			[%discount_products id:'[@SKU@]' template:'' show_all:'1' limit:'100'%]
@@ -238,6 +211,11 @@
 			</div>
 			[%/param%]
 			[%/free_gifts%]
+
+		</div>
+</div>
+</div>
+		<div class="container">
 			<div class="tabbable">
 				<ul class="nav nav-tabs">
 					<li class="active">
@@ -345,7 +323,7 @@
 								[@misc6@]
 							</div>
 						[%/if%]
-						
+
 					</div>
 					[%if [@warranty@]%]
 						<div class="tab-pane" id="warranty">
@@ -410,63 +388,38 @@
 				</div><!--/.tab-content-->
 			</div><!--/.tabbable-->
 			[%tracking_code type:'ProductDescription' /%]
-			[%upsell_products id:'[@SKU@]' limit:'[@config:upsell_limit@]' template:'' show_all:'1'%]
+			[%upsell_products id:'[@SKU@]' limit:'[@config:upsell_limit@]' template:'new' show_all:'1'%]
 				[%param header%]
-				<hr />
+				<div class="item-post">
 				<h3>We Also Recommend</h3>
-				<br />
-				<div class="row">
-				[%/param%]
-				[%param footer%]
-				</div>
+				<div class="item-car">
+				[%/param%][%param footer%]
+				</div></div>
+				<div class="clear clearfix"></div>
 				[%/param%]
 			[%/upsell_products%]
-			[%crosssell id:'[@SKU@]' limit:'[@config:upsell_limit@]' template:'' show_all:'1'%]
+
+			[%related_products id:'[@SKU@]' limit:'[@config:upsell_limit@]' template:'new' show_all:'1'%]
 				[%param header%]
-				<hr />
-				<h3>You May Also Like</h3>
-				<br />
-				<div class="row">
-				[%/param%]
-				[%param footer%]
-				</div>
-				[%/param%]
-			[%/crosssell%]
-			[%related_products id:'[@SKU@]' limit:'[@config:upsell_limit@]' template:'' show_all:'1'%]
-				[%param header%]
-				<hr />
+				<div class="item-post">
 				<h3>Others Also Bought</h3>
-				<br />
-				<div class="row">
-				[%/param%]
-				[%param footer%]
-				</div>
+				<div class="item-car">
+				[%/param%][%param footer%]
+				</div></div>
+				<div class="clear clearfix"></div>
 				[%/param%]
 			[%/related_products%]
-			[%thumb_list type:'products' sortby:'random' filter_category:'[@content_id@]' template:'' filter_exsku1:'[@sku@]' limit:'[@config:upsell_limit@]'%]
+			[%thumb_list type:'products' sortby:'random' filter_category:'[@content_id@]' template:'new' filter_exsku1:'[@sku@]' limit:'[@config:upsell_limit@]'%]
 				[%param *header%]
-				<hr />
+				<div class="item-post">
 				<h3>More From This Category</h3>
-				<br />
-				<div class="row">
+				<div class="item-car">
 				[%/param%][%param footer%]
-				</div>
+				</div></div>
+				<div class="clear clearfix"></div>
 				[%/param%]
 			[%/thumb_list%]
 			[%/CACHE%]
-			[%if [@config:phistory_limit@]%]
-				[%product_history limit:'[@config:phistory_limit@]' template:''%]
-					[%param header%]
-					<hr />
-					<h3>Your Browsing History</h3>
-					<br />
-					<div class="row">
-					[%/param%]
-					[%param footer%]
-					</div>
-					[%/param%]
-				[%/product_history%]
-			[%/if%]
 		</div><!--/.col-xs-12-->
 	</div><!--/.row-->
 </div><!--/.col-xs-12-->
