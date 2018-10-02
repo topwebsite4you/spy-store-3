@@ -41,10 +41,12 @@
     <div class="row">
       <div class="col-xs-6 col-sm-6 txt-sale">
 
-        <h2>sale now on</h2>
-        <h3>hurry! limited time only</h3>
-        <p>Whether you want to protect your home, guard your ofﬁce, monitor a parent at a retirement home, we’ve got the right spy camera for you. Don’t forget, if you need help choosing our friendly staff are available to help guide you. </p>
-
+        [%content_zone id:'home_sales'%]
+        [%param if_empty%]
+        <p>There is no zone with the ID of ZONEID</p>
+        [%/param%]
+        [%/content_zone%]
+        
       </div>
       <div class="col-xs-6 col-sm-6 category-row-wrap">
 
