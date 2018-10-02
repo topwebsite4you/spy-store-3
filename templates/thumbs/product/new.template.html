@@ -1,16 +1,6 @@
 <div class="new-listing" itemscope itemtype="http://schema.org/Product">
 	<div class="new-listing-wrap">
 		<a href="[@URL@]" class="h-car-link">
-				[%if [@misc3@] or [@misc4@]%]
-		<div class="savings-container">
-			[%if [@misc3@]%]
-				<p class="label">New Arrival</p>
-			[%/if%]
-			[%if [@misc4@]%]
-				<p class="label">Best Seller</p>
-			[%/if%]
-		</div>
-	[%/if%]
 			[%if [@inpromo@]%]
 			<h4 class="promo">Hurry, promotion price ends in <span class="sale-end" data-countdown="[%format type:'date' format:'#Y/#M/#D'%][@promo_end@][%/format%]"></span>!</h4> 
 			[%/if%]
