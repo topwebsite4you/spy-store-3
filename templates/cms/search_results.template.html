@@ -1,55 +1,42 @@
 [%SET [@page_type@]='category'/%]
 
-<div class="row">
-<div class="col-xs-12 col-sm-12 category-top">
-<div class="row">
-	<h1 class="page-header">
-		[%url_info name:'page_heading' if:'eq' value:''%]
-			[%PARAM if_true%]
-				[@content_name@]
-			[%/PARAM%]
-			[%PARAM if_false%]
-				[%url_info name:'page_heading'%][%end url_info%]
-			[%/PARAM%]
-		[%end url_info%]
-		[%IF [@keywords@] == ''%]
-			[%FILTER ID:'keywords' if:'ne' value:''%][%NOHTML%][%FILTER ID:'keywords'%][%/FILTER%][%/NOHTML%][%/FILTER%]
-		[%/IF%]
-	</h1>
-	<section class="short-content" aria-label="Description">
-		[@content_description1@]
-		[@content_description2@]
-		[@content_description3@]
 
-		<a href="#" class="c-link">[@content_name@] Buying Guide</a>
+		<h1 class="page-header">
+			Search [@config:website_name@]
+		</h1>
+		<div class="search-results-search">
+			<form class="top-filter-main" name="productsearch" id="tagSearch" method="get" action="[@config:CURRENT_URL@]">
+				<input type="hidden" name="rf" value="kw" />
+				<input type="hidden" id="searchkw" name="kw" value="[%NOHTML%][%FILTER ID:'keywords'/%][%/NOHTML%]" />
 
-	</section>
-</div>
-</div>
-</div>
+				<ul class="top-filter"> 
 
-[%advert type:'text' limit:'20' ad_group:'home-ads' sortby:'sortorder,name'%]
-[%param *header%]
-<div class="row">
-    <div class="top-ads-carousel">
+					[%FILTER ID:'keywords' if:'ne' value:''%]
+					<button onclick="document.getElementById('searchkw').value = '';document.getElementById('tagSearch').submit();">[%NOHTML%][%FILTER ID:'keywords'/%][%/NOHTML%]<span>+</span></button>
 
-        [%/param%]
-        [%param *body%]
-        <div>
-            <a href="[@url@]">
-                <img src="[%asset_url type:'adw' id:'[@ad_id@]'%][%param default%][%cdn_asset html:'0' library:'images'%]default_product.gif[%/cdn_asset%][%/param%][%/asset_url%]" />
-            </a>
-        </div>
-        [%/param%]
-        [%param *footer%]
-    </div>
-</div>
+					[%/FILTER%]
 
-[%/param%]
-[%/advert%]
+					[%PRODUCT_FILTER type:'variations' autohide:'0' sortoption:'sortorder' ignore_current:'1'%]
+					[%PARAM *body%]
+						[%DATA id:'selected' if:'==' value:'1'%]
+							[%PARAM *if_true%]
+						
+							<a href="[@remove_single_url@]" class="filter-item">
+									[@name@]<span>+</span></a>
 
+							[%/PARAM%]
+						[%/DATA%]
+					[%/PARAM%]
+					[%/PRODUCT_FILTER%]
 
+				</ul>
+				
+			</form>
 
+			
+
+		</div>
+	
 
 [%THUMB_LIST type:'products' template:'new' limit:'[@config:THUMB_LIMIT@]'%]
 	[%PARAM template%][%VIEWBY type:'products' default:'[@templatethumb@]'%][%/VIEWBY%][%/PARAM%]
@@ -60,6 +47,11 @@
 				<strong>[@total_results@]</strong> Product[%if [@total_results@] > 1%]s[%/if%]&nbsp;Found
 			</div>
 		</div>
+
+
+
+
+
 		<div class="sort-right">
 			<form method="get" class="form-horizontal" action="[@config:CURRENT_URL@]">
 				<input name="rf" type="hidden" value="[%FILTER_CODE%][%/FILTER_CODE%]">
@@ -73,9 +65,9 @@
 							<option value="name" [%SORTBY type:'products' if:'eq' value:'name'%]selected[%/SORTBY%]>
 								Name
 							</option>
-							<option value="SKU" [%SORTBY type:'products' if:'eq' value:'SKU'%]selected[%/SORTBY%]>
+							<!--<option value="SKU" [%SORTBY type:'products' if:'eq' value:'SKU'%]selected[%/SORTBY%]>
 								SKU
-							</option>
+							</option>-->
 							<option value="lowest_price" [%SORTBY type:'products' if:'eq' value:'lowest_price'%]selected[%/SORTBY%]>
 								Lowest Price
 							</option>
@@ -87,6 +79,27 @@
 				</div>
 			</form>
 		</div>
+
+		<div class="filter-btt">
+<a href="#" class="m-filter">Filter <i class="fa fa-angle-right" aria-hidden="true"></i></a>
+		</div>
+
+		[%IF [@total_results@] > [@config:thumb_limit@]%]
+
+					<div class="mobile-nav">
+						<ul class="pagination" role="navigation" aria-label="Pagination Navigation">
+							[%paging limit:'4'%]
+								[%PARAM *previous_page%]<li><a href="[@URL@]" aria-label="Go Back 1 Page"><i class="fa fa-chevron-left"></i></a></li>[%/PARAM%]
+								[%PARAM *goback_pages%]<li><a href="[@URL@]"  aria-label="Goto Page [@PAGE@]">[@PAGE@]</a></li>[%/PARAM%]
+								[%PARAM *current_page%]<li class="active"><a href="[@URL@]" aria-label="Current Page">[@PAGE@]</a></li>[%/PARAM%]
+								[%PARAM *gonext_pages%]<li><a href="[@URL@]" aria-label="Goto Page [@PAGE@]">[@PAGE@]</a></li>[%/PARAM%]
+								[%PARAM *next_page%]<li><a href="[@URL@]" aria-label="Go Forward 1 Page"><i class="fa fa-chevron-right"></i></a></li>[%/PARAM%]
+							[%/paging%]
+						</ul>
+					</div>
+
+		[%/IF%]
+
 	</div>
 
 <div class="row cat-main-wrap">
@@ -100,9 +113,9 @@
 		</section>
 	</div>
 	[%IF [@total_results@] > [@config:thumb_limit@]%]
-		<div class="row">
+		<div class="row main-c-page">
 			<div class="col-xs-12">
-				<hr />
+
 				<div class="text-center">
 					<ul class="pagination" role="navigation" aria-label="Pagination Navigation">
 						[%paging limit:'3'%]
@@ -114,7 +127,7 @@
 						[%/paging%]
 					</ul>
 				</div>
-				<hr />
+
 			</div>
 		</div>
 	[%/IF%]
@@ -127,5 +140,6 @@
 		</div>
 	[%/PARAM%]
 [%/THUMB_LIST%]
+</div>
 </div>
 </div>

@@ -29,11 +29,13 @@ jQuery(window).load(function() {
 
   jQuery('.new-listing .new-listing-wrap a.h-car-link').sameheight();
   jQuery('.home-bottom .home-bottom-item').sameheight();
+  jQuery('.cat-body .new-listing').sameheight();
 
   jQuery(window).resize(function() {
 
     jQuery('.new-listing .new-listing-wrap a.h-car-link').sameheight();
     jQuery('.home-bottom .home-bottom-item').sameheight();
+    jQuery('.cat-body .new-listing').sameheight();
 
   });
 
@@ -142,11 +144,79 @@ jQuery(window).load(function() {
 
 $(document).ready(function() {
 
+  $(".wrapper-qty .num-wrapper").append('<div class="inc button">+</div><div class="dec button">-</div>');
+
+  $(".wrapper-qty .button").on("click", function() {
+
+    var $button = $(this);
+    var oldValue = $button.parent().find("input").val();
+  
+    if ($button.text() == "+") {
+      var newVal = parseFloat(oldValue) + 1;
+    } else {
+     // Don't allow decrementing below zero
+      if (oldValue > 1) {
+        var newVal = parseFloat(oldValue) - 1;
+      } else {
+        newVal = 1;
+      }
+    }
+  
+    $button.parent().find("input").val(newVal);
+  
+  });
+
+  $(".tab-pane").hide();
+  $(".tab-pane:first").show();
+
+  $(".tabbable ul.nav-tabs li a").click(function(e) {
+    e.preventDefault();
+    $(".tab-pane").hide();
+    var activeTab = $(this).attr("href"); 
+    $(activeTab).fadeIn();
+    $(".tabbable ul.nav-tabs li").removeClass('active');
+    $(this).parent().addClass('active');
+   
+    $(".acc-head").removeClass("d_active");
+    $(".acc-head[rel^='"+activeTab+"']").addClass("d_active");
+
+  
+  //$(".acc-head[rel^='"+activeTab+"']").addClass("d_active");
+  
+  });
+
+	/* if in drawer mode */
+	$(".acc-head").click(function() {
+      
+      $(".tab-pane").hide();
+      var d_activeTab = $(this).attr("rel"); 
+      $("#"+d_activeTab).show();
+	  
+	  $(".acc-head").removeClass("d_active");
+      $(this).addClass("d_active");
+	  
+	  $("ul.tabs li").removeClass("active");
+	  $("ul.tabs li[rel^='"+d_activeTab+"']").addClass("active");
+    });
+	
+	
+	/* Extra class "tab_last" 
+	   to add border to right side
+	   of last tab */
+	$('ul.tabs li').last().addClass("tab_last");
+
   $('[data-countdown]').each(function() {
     var $this = $(this),
       finalDate = $(this).data('countdown');
     $this.countdown(finalDate, function(event) {
-      $this.html(event.strftime('%D days'));
+
+      var $limidate = event.strftime('%D');
+
+      if ($limidate <= 14) {
+        $this.html(event.strftime('in %D days'));
+      } else {
+        $this.html('soon');
+      }
     });
   });
 
@@ -307,7 +377,7 @@ $(document).ready(function() {
     speed: 300,
     slidesToShow: 4,
     autoplay: false,
-    slidesToScroll: 1,
+    slidesToScroll: 4,
     arrows: true,
     prevArrow: "<a href='#' class='prev-arr rel-arr'><i class='fa fa-chevron-left' aria-hidden='true'></i></a>",
     nextArrow: "<a href='#' class='next-arr rel-arr'><i class='fa fa-chevron-right' aria-hidden='true'></i></a>",
@@ -315,7 +385,7 @@ $(document).ready(function() {
         breakpoint: 1024,
         settings: {
           slidesToShow: 4,
-          slidesToScroll: 1,
+          slidesToScroll: 4,
           infinite: true,
           autoplay: false,
           dots: true
@@ -360,6 +430,15 @@ $(document).ready(function() {
           autoplay: false,
           slidesToScroll: 2
         }
+      },
+      {
+        breakpoint: 769,
+        settings: {
+          slidesToShow: 1,
+          autoplay: false,
+          slidesToScroll: 1,
+          dots: true
+        }
       }
     ]
   });
@@ -390,6 +469,19 @@ $(document).ready(function() {
 
   // Carousel
   $('.carousel').carousel();
+
+});
+
+$('.type-wrapper li.filter.filter-remove').parent().find('.not-selected').addClass('inactive-filter');
+
+$('section.short-content .col-xs-12.col-sm-3').html(function (i, html) {
+    return html.replace(/&nbsp;/g, '');
+});
+
+$('.type-wrapper li.filter.inactive-filter a').click(function(event) {
+
+
+  event.preventDefault();
 
 });
 

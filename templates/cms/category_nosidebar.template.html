@@ -1,4 +1,4 @@
-[%SET [@page_type@]='category'/%]
+[%SET [@page_type@]='category_nosearch'/%]
 
 <div class="row">
 <div class="col-xs-12 col-sm-12 category-top">
@@ -26,29 +26,11 @@
 		[@content_description3@]
 
 	</div>
+	<div class="col-xs-12 col-sm-3">
 
-	[%content_menu content_type:'category' start_category:'[@content_id@]' sortby:'sortorder' show_empty:'0'%]
-	    [%param header%]
-			<div class="col-xs-12 col-sm-3">
-	    [%/param%]
-	    [%param *level_1%]
-			&nbsp;
-	    [%/param%]
-	    [%param footer%]
+		<a href="#" class="c-link">[@content_name@] Buying Guide</a>
 
-
-				<a href="#" class="c-link">[@content_name@] Buying Guide</a>
-
-				</div>
-	    [%/param%]
-	    [%param ifempty%]
-
-
-
-				[%/param%]
-[%/content_menu%]
-
-
+		</div>
 		</div>
 
 	</section>
@@ -82,70 +64,10 @@
 [%THUMB_LIST type:'products' template:'new' limit:'[@config:THUMB_LIMIT@]'%]
 	[%PARAM template%][%VIEWBY type:'products' default:'[@templatethumb@]'%][%/VIEWBY%][%/PARAM%]
 	[%PARAM *header%]
-	<div class="row sort_container">
-		<div class="sort-left">
-			<div class="btn-text">
-				<strong>[@total_results@]</strong> Product[%if [@total_results@] > 1%]s[%/if%]&nbsp;Found
-			</div>
-		</div>
-
-
-
-
-
-		<div class="sort-right">
-			<form method="get" class="form-horizontal" action="[@config:CURRENT_URL@]">
-				<input name="rf" type="hidden" value="[%FILTER_CODE%][%/FILTER_CODE%]">
-				<div class="form-group">
-					<label class="control-label col-xs-2">Sort</label>
-					<div class="col-xs-10">
-						<select name="sortby" onChange="return this.form.submit();" class="form-control" aria-label="Sort products by">
-							<option value="popular" [%SORTBY type:'products' if:'eq' value:'popular'%]selected[%/SORTBY%]>
-								Most Popular
-							</option>
-							<option value="name" [%SORTBY type:'products' if:'eq' value:'name'%]selected[%/SORTBY%]>
-								Name
-							</option>
-							<!--<option value="SKU" [%SORTBY type:'products' if:'eq' value:'SKU'%]selected[%/SORTBY%]>
-								SKU
-							</option>-->
-							<option value="lowest_price" [%SORTBY type:'products' if:'eq' value:'lowest_price'%]selected[%/SORTBY%]>
-								Lowest Price
-							</option>
-							<option value="highest_price" [%SORTBY type:'products' if:'eq' value:'highest_price'%]selected[%/SORTBY%]>
-								Highest Price
-							</option>
-						</select>
-					</div>
-				</div>
-			</form>
-		</div>
-
-		<div class="filter-btt">
-<a href="#" class="m-filter">Filter <i class="fa fa-angle-right" aria-hidden="true"></i></a>
-		</div>
-
-		[%IF [@total_results@] > [@config:thumb_limit@]%]
-
-					<div class="mobile-nav">
-						<ul class="pagination" role="navigation" aria-label="Pagination Navigation">
-							[%paging limit:'4'%]
-								[%PARAM *previous_page%]<li><a href="[@URL@]" aria-label="Go Back 1 Page"><i class="fa fa-chevron-left"></i></a></li>[%/PARAM%]
-								[%PARAM *goback_pages%]<li><a href="[@URL@]"  aria-label="Goto Page [@PAGE@]">[@PAGE@]</a></li>[%/PARAM%]
-								[%PARAM *current_page%]<li class="active"><a href="[@URL@]" aria-label="Current Page">[@PAGE@]</a></li>[%/PARAM%]
-								[%PARAM *gonext_pages%]<li><a href="[@URL@]" aria-label="Goto Page [@PAGE@]">[@PAGE@]</a></li>[%/PARAM%]
-								[%PARAM *next_page%]<li><a href="[@URL@]" aria-label="Go Forward 1 Page"><i class="fa fa-chevron-right"></i></a></li>[%/PARAM%]
-							[%/paging%]
-						</ul>
-					</div>
-
-		[%/IF%]
-
-	</div>
 
 <div class="row cat-main-wrap">
 
-[%load_template file:'cms/includes/sidebar.template.html'/%]
+<div class="col-xs-12 col-sm-12 cat-body full-width-category">
 
 	<div class="[%VIEWBY type:'products' if:'eq' value:'list' if_true:'thumb_list' if_false:'thumb'%][%/VIEWBY%]">
 		<section class="row" aria-label="Products In Category">

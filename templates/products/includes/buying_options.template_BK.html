@@ -25,7 +25,7 @@
 				</td>
 				[%END IF%]
 				<td nowrap="nowrap">
-				<span class="productmultilevelprice"> Pay [%FORMAT type:'currency' dpno_zero:'1'%][@price@][%END FORMAT%]</span>
+				<span class="productmultilevelprice"> Pay [%FORMAT type:'currency'%][@price@][%END FORMAT%]</span>
 				</td>
 				</tr>
 				[%END PARAM%]
@@ -34,7 +34,7 @@
 		</table>
 		[%END PARAM%]
 	[%END multilevelpricing%]
-
+	<hr />
 	<!-- PRODUCT OPTIONS -->
 	[%extra_options id:'[@SKU@]'%]
 		[%PARAM *header%]
@@ -78,7 +78,7 @@
 			[%PARAM *choices%]
 				<option type="text" class="form-control" value="[@option_id@]">[%nohtml%][@text@][%end nohtml%]
 				[%DATA id:'price' if:'!=' value:'0'%]
-					(+ [%FORMAT type:'currency' dpno_zero:'1'%][@price@][%END FORMAT%])
+					(+ [%FORMAT type:'currency'%][@price@][%END FORMAT%])
 				[%END DATA%]
 				</option>
 			[%END PARAM%]
@@ -98,73 +98,76 @@
 	[%data id:'max_qty' if:'ne' value:'0' %]
 	Maximum Order Quantity <strong>[@max_qty@]</strong>
 	[%end data%]
-	<div class="mobile-buy-btt">
-		<div class="wrapper-pricing-main">
-			[%if ![@inpromo@]%]
-
-			<div class="pricenow">
-				[%FORMAT type:'currency' dpno_zero:'1'%][@store_price@][%/FORMAT%]
-			</div>
-
-			[%else%]
-
-
-
-			<div class="m-p-left">
-
-			<div class="sale-banner">
-				on sale
-			</div>
-
-			[%if [@save@] > 0%]
-			<div class="ret-price">
-				was [%FORMAT type:'currency' dpno_zero:'1'%][@store_price@][%/FORMAT%]
-			</div>
-			[%/if%]
-
-		</div>
-
-		<div class="pricenow sale-color">
-			<span>sale price</span>
-			[%FORMAT type:'currency' dpno_zero:'1'%][@promo_price@][%/FORMAT%]
-		</div>
-		<div class="clear clearfix"></div>
-			<!--<div class="productsavetext">
-															Sale Ends in <span id="sale-end" class="time"></span>
-													</div>
-													<div class="time-text" itemprop="priceValidUntil" content="[%format type:'date' format:'#Y-#M-#d'%][@promo_end@][%END format%]">
-															[%format type:'date' format:' #H:#I #a, #d #K #Y'%][@promo_end@][%/format%]
-													</div>-->
-			[%/if%]
-			<!--[%if [@store_quantity@] > 0 AND [@preorder@] %]
-													<span itemprop="availability" content="preorder" class="label label-warning">Pre-order - Released [%format type:'date'%][@arrival_date@][%/format%]</span>
-											[%elseif [@store_quantity@] > 0 AND ![@preorder@] %]
-													<span itemprop="availability" content="in_stock" class="label label-success">In Stock</span>
-											[%elseif [@store_quantity@] < 1 AND [@config:ALLOW_NOSTOCK_CHECKOUT@] %]
-													<span itemprop="availability" content="out_of_stock" class="label label-danger">Sold Out -  Backorder Available</span>
-											[%else%]
-													<span itemprop="availability" content="out_of_stock" class="label label-danger">Sold Out</span>
-											[%/if%]
-											[%if [@availability_description@]%]
-													<div class="availability_description">
-															[@availability_description@]
-													</div>
-											[%/if%]-->
-		</div>
-
-	<form class="buying-options" autocomplete="off" class="wrapper-prod-price col-sm-12">
+	<form class="buying-options" autocomplete="off">
 		<input type="hidden" id="model[@rndm@][@SKU@]" name="model" value="[@model@]">
 		<input type="hidden" id="thumb[@rndm@][@SKU@]" name="thumb" value="[@thumb@]">
 		<input type="hidden" id="sku[@rndm@][@SKU@]" name="sku" value="[@SKU@]">
 		<div class="row btn-stack">
-			<div class="col-xs-12 col-sm-12 product-priceBtn">
-<div class="row">
-				<div class="col-xs-12 col-md-4 wrapper-qty">
-					<div class="num-wrapper">
-						<input type="number" min="[@min_qty@]" class="form-control qty input-lg" id="qty[@rndm@][@SKU@]" name="qty" value="[%data id:'min_qty' if:'ne' value:'0' %][@min_qty@][%end data%][%data id:'min_qty' if:'eq' value:'0' %]1[%end data%]" size="2"/>
-					</div>
+			<div class="col-xs-12 col-sm-7 wrapper-priceBtn">
+				<div class="col-xs-12 col-md-5">
+					[%if ![@has_child@] || [@has_variation@]%]
+	                    <div itemprop="offers" itemscope itemtype="http://schema.org/Offer" class="wrapper-pricing">
+	                        <meta itemprop="priceCurrency" content="[@config:defaultcurrency@]">
+	                        [%if ![@inpromo@]%]
+	                        	[%if [@save@] > 0%]
+	                                <div class="productrrp text-muted">
+	                                    [%FORMAT type:'currency'%][@retail@][%/FORMAT%]
+	                                </div>
+	                            [%/if%]
+	                            <div class="productprice productpricetext" itemprop="price" content="[@store_price@]">
+	                                [%FORMAT type:'currency'%][@store_price@][%/FORMAT%]
+	                            </div>
+	                            [%if [@save@] > 0%]
+	                                <div class="text-muted">
+	                                    SAVE [%format type:'currency'%][@save_price@][%/format%]
+	                                </div>
+	                            [%/if%]
+	                        [%else%]
+	                            <div class="productwasprice">
+	                                WAS [%FORMAT type:'currency'%][@store_price@][%/FORMAT%]
+	                            </div>
+	                            [%if [@save@] > 0%]
+	                                <div class="productrrp muted">
+	                                    RRP [%FORMAT type:'currency'%][@retail@][%/FORMAT%]
+	                                </div>
+	                            [%/if%]
+	                            <div class="productpromo" itemprop="price" content="[@promo_price@]">
+	                                NOW [%FORMAT type:'currency'%][@promo_price@][%/FORMAT%]
+	                            </div>
+	                            [%if [@save@] > 0%]
+	                                <div class="productsave">
+	                                    SAVE [%format type:'percent'%][@save@][%/format%]!
+	                                </div>
+	                            [%/if%]
+	                            <!--<div class="productsavetext">
+	                                Sale Ends in <span id="sale-end" class="time"></span>
+	                            </div>
+	                            <div class="time-text" itemprop="priceValidUntil" content="[%format type:'date' format:'#Y-#M-#d'%][@promo_end@][%END format%]">
+	                                [%format type:'date' format:' #H:#I #a, #d #K #Y'%][@promo_end@][%/format%]
+	                            </div>-->
+	                        [%/if%]
+	                        [%tracking_code type:'BuyingOptions' /%]
+	                        <!--[%if [@store_quantity@] > 0 AND [@preorder@] %]
+	                            <span itemprop="availability" content="preorder" class="label label-warning">Pre-order - Released [%format type:'date'%][@arrival_date@][%/format%]</span>
+	                        [%elseif [@store_quantity@] > 0 AND ![@preorder@] %]
+	                            <span itemprop="availability" content="in_stock" class="label label-success">In Stock</span>
+	                        [%elseif [@store_quantity@] < 1 AND [@config:ALLOW_NOSTOCK_CHECKOUT@] %]
+	                            <span itemprop="availability" content="out_of_stock" class="label label-danger">Sold Out -  Backorder Available</span>
+	                        [%else%]
+	                            <span itemprop="availability" content="out_of_stock" class="label label-danger">Sold Out</span>
+	                        [%/if%]
+	                        [%if [@availability_description@]%]
+	                            <div class="availability_description">
+	                                [@availability_description@]
+	                            </div>
+	                        [%/if%]-->
+	                    </div>
+	                [%/if%]
+	            </div>
+				<div class="col-xs-12 col-md-4">
+					<input type="hidden" min="[@min_qty@]" class="form-control qty input-lg" id="qty[@rndm@][@SKU@]" name="qty" value="[%data id:'min_qty' if:'ne' value:'0' %][@min_qty@][%end data%][%data id:'min_qty' if:'eq' value:'0' %]1[%end data%]" size="2"/>
 				</div>
-				<div class="col-xs-12 col-md-4 wrapper-btns">
+				<div class="col-xs-12 col-md-7 wrapper-btns">
 					[%IF [@store_quantity@] > 0 AND [@preorder@] %]
 					<button type="button" title="Add to Cart" class="addtocart btn btn-warning btn-block btn-lg btn-loads" data-loading-text="<i class='fa fa-spinner fa-spin' style='font-size: 14px'></i>" rel="[@rndm@][@SKU@]">Pre-Order Now</button>
 					[%ELSEIF [@store_quantity@] > 0 AND ![@preorder@] %]
@@ -175,16 +178,9 @@
 					<a class="btn btn-info btn-lg btn-block" data-toggle="modal" data-target="#notifymodal">Notify Me</a>
 					[%END IF%]
 				</div>
-				<div class="col-xs-12 col-md-4 wrapper-code">
-						<div style="cursor: pointer; display: inline;" data-zm-info="true" class="zip_tagline" data-zm-widget="popup" data-zm-popup-asset="termsdialog">
-								<img class="zip-logo" src="/assets/themes/spy-store-3/img/zip.svg" alt="The Spy Store Call Us">
-						</div>
-				</div>
-				</div>
 			</div>
 		</div>
 	</form>
-	</div>
 </div>
 
 <div class="modal fade notifymodal" id="notifymodal">

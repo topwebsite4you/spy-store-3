@@ -26,12 +26,12 @@
 											<h4 class="title">[%format type:'text' maxlength:'50' rmhtml:'1'%][@model@][%/FORMAT%]</h4>
 											<p class="price">
 												[%if [@itm_price@]%]
-													[%format type:'currency'%][@itm_price@][%END format%]
+													[%FORMAT type:'currency' dpno_zero:'1'%][@itm_price@][%END format%]
 												[%else%]
 													[%if [@inpromo@]%]
-														<strong>Now</strong> [%format type:'currency'%][@promo_price@][%/format%]
+														<strong>Now</strong> [%FORMAT type:'currency' dpno_zero:'1'%][@promo_price@][%/format%]
 													[%else%]
-														[%format type:'currency'%][@store_price@][%/format%]
+														[%FORMAT type:'currency' dpno_zero:'1'%][@store_price@][%/format%]
 													[%/if%]
 												[%/if%]
 											</p>
@@ -52,12 +52,12 @@
 													<h4 class="title">[%format type:'text' maxlength:'50' rmhtml:'1'%][@model@][%/FORMAT%]</h4>
 													<p class="price">
 														[%if [@itm_price@]%]
-															[%format type:'currency'%][@itm_price@][%END format%]
+															[%FORMAT type:'currency' dpno_zero:'1'%][@itm_price@][%END format%]
 														[%else%]
 															[%if [@inpromo@]%]
-																<strong>Now</strong> [%format type:'currency'%][@promo_price@][%/format%]
+																<strong>Now</strong> [%FORMAT type:'currency' dpno_zero:'1'%][@promo_price@][%/format%]
 															[%else%]
-																[%format type:'currency'%][@store_price@][%/format%]
+																[%FORMAT type:'currency' dpno_zero:'1'%][@store_price@][%/format%]
 															[%/if%]
 														[%/if%]
 													</p>
@@ -140,7 +140,7 @@
 			[%PARAM *choices%]
 				<option type="text" class="form-control" value="[@option_id@]">[%nohtml%][@text@][%end nohtml%]
 				[%DATA id:'price' if:'!=' value:'0'%]
-					(+ [%FORMAT type:'currency'%][@price@][%END FORMAT%])
+					(+ [%FORMAT type:'currency' dpno_zero:'1'%][@price@][%END FORMAT%])
 				[%END DATA%]
 				</option>
 			[%END PARAM%]
@@ -166,4 +166,4 @@
 	<div class="col-xs-12">
 		<hr>
 	</div>
-</div> 
+</div>

@@ -13,7 +13,7 @@
 [%/if%]
 
 			[%if [@inpromo@]%]
-			<h4 class="promo">Hurry, promotion price ends <span class="sale-end" data-countdown="[%format type:'date' format:'#Y/#M/#D'%][@promo_end@][%/format%]"></span>!</h4>
+			<h4 class="promo">Hurry, promotion price ends <span class="sale-end">soon</span>!</h4>
 			[%/if%]
 
 			<img src="[%asset_url type:'product' thumb:'thumb' id:'[@SKU@]'%][%param default%][%cdn_asset html:'0' library:'images'%]default_product.gif[%/cdn_asset%][%end param%][%/asset_url%]" class="product-image" alt="[@model@]" rel="itmimg[@SKU@]">

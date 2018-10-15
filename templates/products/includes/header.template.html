@@ -6,60 +6,54 @@
 		<h3 itemprop="name">[@subtitle@]</h3>
 		[%/if%]
 
+		[%if [@reviews@] <= 0%] <div class="rating-none">
+			[%/if%]
 
-
-		<span class="small" itemprop="aggregateRating" itemscope itemtype="http://schema.org/AggregateRating">
+			<span class="rating-single" itemprop="aggregateRating" itemscope itemtype="http://schema.org/AggregateRating">
 				[%set [@data:ratings-count@] = 1 /%]
-				[%while [@data:ratings-count@] <= [@data:rating@]%]
-					[%set [@data:ratings-count@] = [@data:ratings-count@]+1 /%]
-					<i class="fa fa-star"></i>
-				[%/ while%]
-				[%while [@data:ratings-count@] <= 5%]
-					[%set [@data:ratings-count@] = [@data:ratings-count@]+1 /%]
-					<i class="fa fa-star-o"></i>
-				[%/while%]
-				Rated <span itemprop="ratingValue">[@rating@]</span>/<span itemprop="bestRating">5</span> based on <span itemprop="ratingCount">[@reviews@]</span> reviews.
-		</span>
+				[%while [@data:ratings-count@] <= [@data:rating@]%] [%set [@data:ratings-count@]=[@data:ratings-count@]+1 /%] <i
+				 class="fa fa-star"></i>
+					[%/ while%]
+					[%while [@data:ratings-count@] <= 5%] [%set [@data:ratings-count@]=[@data:ratings-count@]+1 /%] <i class="fa fa-star-o"></i>
+						[%/while%]
+						[%if [@reviews@] > 0%]
+						<span itemprop="ratingValue">[@rating@]</span>.0 <span itemprop="ratingCount">([@reviews@] reviews)</span>
+						[%else%]
+						<a href="[%URL page:'account' type:'write_review' qs:'item=[@SKU@]'%][%/URL%]" class="review-add">Be the first to
+							write a review</a>
+						[%/if%]
+			</span>
 
-		[%if ![@has_child@] || [@has_variation@]%]
-		<div class="wrapper-pricing-main">
-			[%if ![@inpromo@]%]
-			[%if [@save@] > 0%]
-			<div class="productrrp text-muted">
-				[%FORMAT type:'currency'%][@retail@][%/FORMAT%]
-			</div>
-			[%/if%]
-			<div class="productprice productpricetext" itemprop="price" content="[@store_price@]">
-				[%FORMAT type:'currency'%][@store_price@][%/FORMAT%]
-			</div>
-			[%if [@save@] > 0%]
-			<div class="text-muted">
-				SAVE [%format type:'currency'%][@save_price@][%/format%]
-			</div>
-			[%/if%]
-			[%else%]
+			[%if [@reviews@] <= 0%] </div> [%/if%] [%if ![@has_child@] || [@has_variation@]%] <div class="wrapper-pricing-main">
+				[%if ![@inpromo@]%]
 
-			<div class="pricenow">
-				[%FORMAT type:'currency'%][@promo_price@][%/FORMAT%]
-			</div>
+				<div class="pricenow">
+					[%FORMAT type:'currency' dpno_zero:'1'%][@store_price@][%/FORMAT%]
+				</div>
 
-			<div class="sale-banner">
-				on sale
-			</div>
+				[%else%]
 
-			[%if [@save@] > 0%]
-			<div class="ret-price">
-				retail price [%FORMAT type:'currency'%][@retail@][%/FORMAT%]
-			</div>
-			[%/if%]
-			<!--<div class="productsavetext">
+				<div class="pricenow sale-color">
+					[%FORMAT type:'currency' dpno_zero:'1'%][@promo_price@][%/FORMAT%]
+				</div>
+
+				<div class="sale-banner">
+					on sale
+				</div>
+
+				[%if [@save@] > 0%]
+				<div class="ret-price">
+					was [%FORMAT type:'currency' dpno_zero:'1'%][@store_price@][%/FORMAT%]
+				</div>
+				[%/if%]
+				<!--<div class="productsavetext">
 															Sale Ends in <span id="sale-end" class="time"></span>
 													</div>
 													<div class="time-text" itemprop="priceValidUntil" content="[%format type:'date' format:'#Y-#M-#d'%][@promo_end@][%END format%]">
 															[%format type:'date' format:' #H:#I #a, #d #K #Y'%][@promo_end@][%/format%]
 													</div>-->
-			[%/if%]
-			<!--[%if [@store_quantity@] > 0 AND [@preorder@] %]
+				[%/if%]
+				<!--[%if [@store_quantity@] > 0 AND [@preorder@] %]
 													<span itemprop="availability" content="preorder" class="label label-warning">Pre-order - Released [%format type:'date'%][@arrival_date@][%/format%]</span>
 											[%elseif [@store_quantity@] > 0 AND ![@preorder@] %]
 													<span itemprop="availability" content="in_stock" class="label label-success">In Stock</span>
@@ -73,10 +67,14 @@
 															[@availability_description@]
 													</div>
 											[%/if%]-->
-		</div>
-		[%/if%]
-
 	</div>
+	[%/if%]
+
+</div>
+
+[%if [@inpromo@]%] 
+			<h4 class="promo">Hurry, promotion price ends <span class="sale-end" data-countdown="[%format type:'date' format:'#Y/#M/#D'%][@promo_end@][%/format%]"></span>!</h4>
+			[%/if%]
 
 <div class="wrapper-product-desc col-sm-12">
 	[%if [@description@]%]
@@ -85,6 +83,15 @@
 
 	</div>
 	[%/if%]
+
+	<div class="home-txt-top">
+
+		<div class="home-top-wrap">
+			<div class="home-top-item"><img src="/assets/themes/spy-store-3/img/h-ico0.png">lifetime support</div>
+			<div class="home-top-item"><img src="/assets/themes/spy-store-3/img/h-ico1.png">discrete billing</div>
+			<div class="home-top-item"><img src="/assets/themes/spy-store-3/img/h-ico2.png">Express shipping</div>
+			<div class="home-top-item"><img src="/assets/themes/spy-store-3/img/h-ico3.png">1 year warranty</div>
+			<div class="home-top-item"><img src="/assets/themes/spy-store-3/img/h-ico4.png">try 14 day risk free</div>
+		</div>
+
 	</div>
-</div>
-</div>
