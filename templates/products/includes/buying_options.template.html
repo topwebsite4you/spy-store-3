@@ -1,23 +1,23 @@
 <div class="extra-options">
 	[%multilevelpricing id:'[@SKU@]'%]
-		[%PARAM *header%]
-		<table class="table table-striped table-bordered table-condensed">
-			<thead>
-				<tr>
-					<th colspan="2">
-						Buy In Bulk &amp; Save!
-					</th>
-				</tr>
-			</thead>
-			<tbody>
-				[%END PARAM%]
-				[%PARAM *body%]
-				<tr>
+	[%PARAM *header%]
+	<table class="table table-striped table-bordered table-condensed">
+		<thead>
+			<tr>
+				<th colspan="2">
+					Buy In Bulk &amp; Save!
+				</th>
+			</tr>
+		</thead>
+		<tbody>
+			[%END PARAM%]
+			[%PARAM *body%]
+			<tr>
 				<td width="20%" nowrap="nowrap">
-				<span class="productmultilevelqty">Buy [%FORMAT type:'number' dp:'0' sp:','%][@minqty@][%END FORMAT%]
-				[%IF [@maxqty@] > 0%]
-				to [%FORMAT type:'number' dp:'0' sp:','%][@maxqty@][%END FORMAT%]:
-				</span>
+					<span class="productmultilevelqty">Buy [%FORMAT type:'number' dp:'0' sp:','%][@minqty@][%END FORMAT%]
+						[%IF [@maxqty@] > 0%]
+						to [%FORMAT type:'number' dp:'0' sp:','%][@maxqty@][%END FORMAT%]:
+					</span>
 				</td>
 				[%ELSE%]
 				or more:
@@ -25,68 +25,69 @@
 				</td>
 				[%END IF%]
 				<td nowrap="nowrap">
-				<span class="productmultilevelprice"> Pay [%FORMAT type:'currency' dpno_zero:'1'%][@price@][%END FORMAT%]</span>
+					<span class="productmultilevelprice"> Pay [%FORMAT type:'currency' dpno_zero:'1'%][@price@][%END FORMAT%]</span>
 				</td>
-				</tr>
-				[%END PARAM%]
-				[%PARAM *footer%]
-			</tbody>
-		</table>
-		[%END PARAM%]
+			</tr>
+			[%END PARAM%]
+			[%PARAM *footer%]
+		</tbody>
+	</table>
+	[%END PARAM%]
 	[%END multilevelpricing%]
 
 	<!-- PRODUCT OPTIONS -->
 	[%extra_options id:'[@SKU@]'%]
-		[%PARAM *header%]
-		<table class="table table-striped table-bordered">
-			<tr>
-				<th colspan="2">
-					Available Options
-				</th>
-			</tr>
-			[%END PARAM%][%PARAM *number_option%]
-				<tr>
-					<td>
-						<label>[@name@]</label>
-					</td>
-					<td>
-						<input name="extra[@count@]" class="form-control" id="productextra[@count@]" rel="[@SKU@]" value="">
-					</td>
-				</tr>
-			[%END PARAM%][%PARAM *text_option%]
-				<tr>
-					<td>
-						<label>[@name@]</label>
-					</td>
-					<td>
-						<textarea name="extra[@count@]" [%if [@length@]%]maxlength="[@length@]"[%/if%]class="form-control" id="productextra[@count@]" rel="[@SKU@]" cols="20"></textarea>
-					</td>
-				</tr>
-			[%END PARAM%]
-			[%PARAM *select_option%]
-				<tr>
-					<td>
-						<label>[@name@]</label>
-					</td>
-					<td>
-						<select name="extra[@count@]" class="form-control" id="productextra[@count@]" rel="[@SKU@]">
-							[@choices@]
-						</select>
-					</td>
-				</tr>
-			[%END PARAM%]
-			[%PARAM *choices%]
-				<option type="text" class="form-control" value="[@option_id@]">[%nohtml%][@text@][%end nohtml%]
-				[%DATA id:'price' if:'!=' value:'0'%]
-					(+ [%FORMAT type:'currency' dpno_zero:'1'%][@price@][%END FORMAT%])
-				[%END DATA%]
-				</option>
-			[%END PARAM%]
-			[%PARAM *footer%]
-			<input type="hidden" name="extras" value="[@total_options@]"/>
-		</table>
-		<hr />
+	[%PARAM *header%]
+	<table class="table table-striped table-bordered">
+		<tr>
+			<th colspan="2">
+				Available Options
+			</th>
+		</tr>
+		[%END PARAM%][%PARAM *number_option%]
+		<tr>
+			<td>
+				<label>[@name@]</label>
+			</td>
+			<td>
+				<input name="extra[@count@]" class="form-control" id="productextra[@count@]" rel="[@SKU@]" value="">
+			</td>
+		</tr>
+		[%END PARAM%][%PARAM *text_option%]
+		<tr>
+			<td>
+				<label>[@name@]</label>
+			</td>
+			<td>
+				<textarea name="extra[@count@]" [%if [@length@]%]maxlength="[@length@]" [%/if%]class="form-control" id="productextra[@count@]"
+				 rel="[@SKU@]" cols="20"></textarea>
+			</td>
+		</tr>
 		[%END PARAM%]
+		[%PARAM *select_option%]
+		<tr>
+			<td>
+				<label>[@name@]</label>
+			</td>
+			<td>
+				<select name="extra[@count@]" class="form-control" id="productextra[@count@]" rel="[@SKU@]">
+					[@choices@]
+				</select>
+			</td>
+		</tr>
+		[%END PARAM%]
+		[%PARAM *choices%]
+		<option type="text" class="form-control" value="[@option_id@]">[%nohtml%][@text@][%end nohtml%]
+			[%DATA id:'price' if:'!=' value:'0'%]
+			(+ [%FORMAT type:'currency' dpno_zero:'1'%][@price@][%END FORMAT%])
+			[%END DATA%]
+		</option>
+		[%END PARAM%]
+		[%PARAM *footer%]
+		<input type="hidden" name="extras" value="[@total_options@]" />
+	</table>
+	<hr />
+	[%END PARAM%]
 	[%END extra_options%]
 
 	[%data id:'multiplier_qty' if:'ne' value:'0' %]
@@ -112,78 +113,66 @@
 
 			<div class="m-p-left">
 
-			<div class="sale-banner">
-				on sale
+				<div class="sale-banner">
+					on sale
+				</div>
+
+				[%if [@save@] > 0%]
+				<div class="ret-price">
+					was [%FORMAT type:'currency' dpno_zero:'1'%][@store_price@][%/FORMAT%]
+				</div>
+				[%/if%]
+
 			</div>
 
-			[%if [@save@] > 0%]
-			<div class="ret-price">
-				was [%FORMAT type:'currency' dpno_zero:'1'%][@store_price@][%/FORMAT%]
+			<div class="pricenow sale-color">
+				<span>sale price</span>
+				[%FORMAT type:'currency' dpno_zero:'1'%][@promo_price@][%/FORMAT%]
 			</div>
+			<div class="clear clearfix"></div>
 			[%/if%]
-
 		</div>
 
-		<div class="pricenow sale-color">
-			<span>sale price</span>
-			[%FORMAT type:'currency' dpno_zero:'1'%][@promo_price@][%/FORMAT%]
-		</div>
-		<div class="clear clearfix"></div>
-			<!--<div class="productsavetext">
-															Sale Ends in <span id="sale-end" class="time"></span>
-													</div>
-													<div class="time-text" itemprop="priceValidUntil" content="[%format type:'date' format:'#Y-#M-#d'%][@promo_end@][%END format%]">
-															[%format type:'date' format:' #H:#I #a, #d #K #Y'%][@promo_end@][%/format%]
-													</div>-->
-			[%/if%]
-			<!--[%if [@store_quantity@] > 0 AND [@preorder@] %]
-													<span itemprop="availability" content="preorder" class="label label-warning">Pre-order - Released [%format type:'date'%][@arrival_date@][%/format%]</span>
-											[%elseif [@store_quantity@] > 0 AND ![@preorder@] %]
-													<span itemprop="availability" content="in_stock" class="label label-success">In Stock</span>
-											[%elseif [@store_quantity@] < 1 AND [@config:ALLOW_NOSTOCK_CHECKOUT@] %]
-													<span itemprop="availability" content="out_of_stock" class="label label-danger">Sold Out -  Backorder Available</span>
-											[%else%]
-													<span itemprop="availability" content="out_of_stock" class="label label-danger">Sold Out</span>
-											[%/if%]
-											[%if [@availability_description@]%]
-													<div class="availability_description">
-															[@availability_description@]
-													</div>
-											[%/if%]-->
-		</div>
-
-	<form class="buying-options" autocomplete="off" class="wrapper-prod-price col-sm-12">
-		<input type="hidden" id="model[@rndm@][@SKU@]" name="model" value="[@model@]">
-		<input type="hidden" id="thumb[@rndm@][@SKU@]" name="thumb" value="[@thumb@]">
-		<input type="hidden" id="sku[@rndm@][@SKU@]" name="sku" value="[@SKU@]">
-		<div class="row btn-stack">
-			<div class="col-xs-12 col-sm-12 product-priceBtn">
-<div class="row">
-				<div class="col-xs-12 col-md-4 wrapper-qty">
-					<div class="num-wrapper">
-						<input type="number" min="[@min_qty@]" class="form-control qty input-lg" id="qty[@rndm@][@SKU@]" name="qty" value="[%data id:'min_qty' if:'ne' value:'0' %][@min_qty@][%end data%][%data id:'min_qty' if:'eq' value:'0' %]1[%end data%]" size="2"/>
+		<form class="buying-options" autocomplete="off" class="wrapper-prod-price col-sm-12">
+			<input type="hidden" id="model[@rndm@][@SKU@]" name="model" value="[@model@]">
+			<input type="hidden" id="thumb[@rndm@][@SKU@]" name="thumb" value="[@thumb@]">
+			<input type="hidden" id="sku[@rndm@][@SKU@]" name="sku" value="[@SKU@]">
+			<div class="row btn-stack">
+				<div class="col-xs-12 col-sm-12 product-priceBtn">
+					<div class="row">
+						<div class="col-xs-12 col-md-4 wrapper-qty">
+							<div class="num-wrapper">
+								<input type="number" min="[@min_qty@]" class="form-control qty input-lg" id="qty[@rndm@][@SKU@]" name="qty"
+								 value="[%data id:'min_qty' if:'ne' value:'0' %][@min_qty@][%end data%][%data id:'min_qty' if:'eq' value:'0' %]1[%end data%]"
+								 size="2" />
+							</div>
+						</div>
+						<div class="col-xs-12 col-md-4 wrapper-btns">
+							[%IF [@store_quantity@] > 0 AND [@preorder@] %]
+							<button type="button" title="Add to Cart" class="addtocart btn btn-warning btn-block btn-lg btn-loads"
+							 data-loading-text="<i class='fa fa-spinner fa-spin' style='font-size: 14px'></i>" rel="[@rndm@][@SKU@]">Pre-Order
+								Now</button>
+							[%ELSEIF [@store_quantity@] > 0 AND ![@preorder@] %]
+							<button type="button" title="Add to Cart" class="addtocart btn btn-success btn-block btn-lg btn-loads"
+							 data-loading-text="<i class='fa fa-spinner fa-spin' style='font-size: 14px'></i>" rel="[@rndm@][@SKU@]">Add to
+								Cart</button>
+							[%ELSEIF [@store_quantity@] < 1 AND [@config:ALLOW_NOSTOCK_CHECKOUT@] %] <button type="button" title="Add to Cart"
+							 class="addtocart btn btn-warning btn-block btn-lg btn-loads" data-loading-text="<i class='fa fa-spinner fa-spin' style='font-size: 14px'></i>"
+							 rel="[@rndm@][@SKU@]">Backorder</button>
+								[%ELSE%]
+								<a class="btn btn-info btn-lg btn-block" data-toggle="modal" data-target="#notifymodal">Notify Me</a>
+								[%END IF%]
+						</div>
+						<div class="col-xs-12 col-md-4 wrapper-code">
+							<div style="cursor: pointer; display: inline;" data-zm-info="true" class="zip_tagline" data-zm-widget="popup"
+							 data-zm-popup-asset="termsdialog">
+								<img class="zip-logo" src="/assets/themes/spy-store-3/img/zip.svg" alt="The Spy Store Call Us">
+							</div>
+						</div>
 					</div>
 				</div>
-				<div class="col-xs-12 col-md-4 wrapper-btns">
-					[%IF [@store_quantity@] > 0 AND [@preorder@] %]
-					<button type="button" title="Add to Cart" class="addtocart btn btn-warning btn-block btn-lg btn-loads" data-loading-text="<i class='fa fa-spinner fa-spin' style='font-size: 14px'></i>" rel="[@rndm@][@SKU@]">Pre-Order Now</button>
-					[%ELSEIF [@store_quantity@] > 0 AND ![@preorder@] %]
-					<button type="button" title="Add to Cart" class="addtocart btn btn-success btn-block btn-lg btn-loads" data-loading-text="<i class='fa fa-spinner fa-spin' style='font-size: 14px'></i>" rel="[@rndm@][@SKU@]">Add to Cart</button>
-					[%ELSEIF [@store_quantity@] < 1 AND [@config:ALLOW_NOSTOCK_CHECKOUT@] %]
-					<button type="button" title="Add to Cart" class="addtocart btn btn-warning btn-block btn-lg btn-loads" data-loading-text="<i class='fa fa-spinner fa-spin' style='font-size: 14px'></i>" rel="[@rndm@][@SKU@]">Backorder</button>
-					[%ELSE%]
-					<a class="btn btn-info btn-lg btn-block" data-toggle="modal" data-target="#notifymodal">Notify Me</a>
-					[%END IF%]
-				</div>
-				<div class="col-xs-12 col-md-4 wrapper-code">
-						<div style="cursor: pointer; display: inline;" data-zm-info="true" class="zip_tagline" data-zm-widget="popup" data-zm-popup-asset="termsdialog">
-								<img class="zip-logo" src="/assets/themes/spy-store-3/img/zip.svg" alt="The Spy Store Call Us">
-						</div>
-				</div>
-				</div>
 			</div>
-		</div>
-	</form>
+		</form>
 	</div>
 </div>
 

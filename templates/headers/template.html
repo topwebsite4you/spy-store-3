@@ -270,13 +270,15 @@
                         <a href="#" class=" mobile-main-trigger" data-target=".navbar-responsive-collapse"><span class="icon"><i class="fa fa-bars"></i></span><span class="m-txt">menu</span></a>
 
                         <ul class="extra-main">
-                            [%cache type:'menu' id:'main-header'%]
-                            [%menu id:'main-header'%]
+                                <li><a href="#">Info</a>
+                                    <ul class="nav-sub">
+                            [%cache type:'menu' id:'sidebar_page'%]
+                            [%menu id:'sidebar_page'%]
                             [%param *level_1%]
 
                             <li><a href="[@url@]">[@name@]</a>
 
-                                [%if [@next_level@]%]<ul class="nav-sub">
+                                [%if [@next_level@]%]<ul>
                                     [@next_level@]
                                 </ul>[%/if%]
                             </li>
@@ -288,55 +290,18 @@
                             [%/menu%]
                             [%/ cache%]
                         </ul>
+                        </li>
+                        </ul>
 
 
                         <nav class="extra-main-mobile" role="navigation" aria-label="Main Menu">
 
                             <ul class="iconic-menu">
-                                <li><a href="/_myacct/"><img src="/assets/themes/spy-store-3/img/btt-info.png" class="mobile-menu-ico"></a></li>
+                                <li><a href="/about-us/"><img src="/assets/themes/spy-store-3/img/btt-info.png" class="mobile-menu-ico"></a></li>
                                 <li><a href="/_myacct/"><img src="/assets/themes/spy-store-3/img/btt-acc.png" class="mobile-menu-ico"></a></li>
                                 <li><a href="#" class="nToggleMenu" data-target=".header-search-collapse"><span class="icon"><i class="fa fa-search"></i></span></a></li>
                                 <li><a href="[%url page:'checkout' type:'cart'/%]">
-                                        <svg version="1.1" id="cartnewmobile" class="mobile-menu-ico" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="510px" height="510px" viewBox="0 0 510 510" style="enable-background:new 0 0 510 510;" xml:space="preserve">
-                                            <g>
-                                                <g id="shopping-cart">
-                                                    <path d="M153,408c-28.05,0-51,22.95-51,51s22.95,51,51,51s51-22.95,51-51S181.05,408,153,408z M0,0v51h51l91.8,193.8L107.1,306
-			c-2.55,7.65-5.1,17.85-5.1,25.5c0,28.05,22.95,51,51,51h306v-51H163.2c-2.55,0-5.1-2.55-5.1-5.1v-2.551l22.95-43.35h188.7
-			c20.4,0,35.7-10.2,43.35-25.5L504.9,89.25c5.1-5.1,5.1-7.65,5.1-12.75c0-15.3-10.2-25.5-25.5-25.5H107.1L84.15,0H0z M408,408
-			c-28.05,0-51,22.95-51,51s22.95,51,51,51s51-22.95,51-51S436.05,408,408,408z" />
-                                                </g>
-                                            </g>
-                                            <g>
-                                            </g>
-                                            <g>
-                                            </g>
-                                            <g>
-                                            </g>
-                                            <g>
-                                            </g>
-                                            <g>
-                                            </g>
-                                            <g>
-                                            </g>
-                                            <g>
-                                            </g>
-                                            <g>
-                                            </g>
-                                            <g>
-                                            </g>
-                                            <g>
-                                            </g>
-                                            <g>
-                                            </g>
-                                            <g>
-                                            </g>
-                                            <g>
-                                            </g>
-                                            <g>
-                                            </g>
-                                            <g>
-                                            </g>
-                                        </svg>
+                                    <img src="[%ntheme_asset%]img/btt-mobile-cart.png[%/ntheme_asset%]" class="mobile-cart-extra" alt="">
                                         <span class="cart-qty-number" rel="a2c_item_count">[%format type:'number' dp:'0'%][%CART id:'total_items'%][%/CART%][%/format%]</span></a></li>
                             </ul>
 

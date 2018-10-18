@@ -1,3 +1,52 @@
+$(function(){
+  var windowH = $(window).height();     
+  windowH = windowH - 50;                   
+  $('.mobile-f-el .panel').css({'height':windowH+'px'});                                                                
+  $(window).resize(function(){
+      var windowH = $(window).height();
+      windowH = windowH - 50; 
+          $('.mobile-f-el .panel').css('height', windowH+'px');
+
+  })          
+});
+
+
+
+
+
+
+var updateQueryStringParam = function (key, value) {
+
+  var baseUrl = [location.protocol, '//', location.host, location.pathname].join(''),
+      urlQueryString = document.location.search,
+      newParam = key + '=' + value,
+      params = '?' + newParam;
+
+  // If the "search" string exists, then build params from it
+  if (urlQueryString) {
+
+      updateRegex = new RegExp('([\?&])' + key + '[^&]*');
+      removeRegex = new RegExp('([\?&])' + key + '=[^&;]+[&;]?');
+
+      if( typeof value == 'undefined' || value == null || value == '' ) { // Remove param if value is empty
+
+          params = urlQueryString.replace(removeRegex, "$1");
+          params = params.replace( /[&;]$/, "" );
+
+      } else if (urlQueryString.match(updateRegex) !== null) { // If param exists already, update it
+
+          params = urlQueryString.replace(updateRegex, "$1" + newParam);
+
+      } else { // Otherwise, add it to end of query string
+
+          params = urlQueryString + '&' + newParam;
+
+      }
+
+  }
+  window.history.replaceState({}, "", baseUrl + params);
+};
+
 jQuery(window).load(function() {
 
 
@@ -167,7 +216,21 @@ $(document).ready(function() {
   });
 
   $(".tab-pane").hide();
-  $(".tab-pane:first").show();
+ // $(".tab-pane:first").show();
+
+ //control first open browser
+ $(document).ready(function () {
+  if( $( window ).width() > 769 ){
+    $(".tab-pane:first").show();
+  } 
+});
+
+//change browser size
+$( window ).resize(function() {
+  if( $( window ).width() > 769 ){
+    $(".tab-pane:first").show();
+  } 
+});
 
   $(".tabbable ul.nav-tabs li a").click(function(e) {
     e.preventDefault();
@@ -178,22 +241,34 @@ $(document).ready(function() {
     $(this).parent().addClass('active');
    
     $(".acc-head").removeClass("d_active");
-    $(".acc-head[rel^='"+activeTab+"']").addClass("d_active");
-
-  
   //$(".acc-head[rel^='"+activeTab+"']").addClass("d_active");
   
   });
 
 	/* if in drawer mode */
-	$(".acc-head").click(function() {
+	$(".acc-head").click(function(e) {
       
-      $(".tab-pane").hide();
+      e.preventDefault();
+      
+      //$('.tab-content h3').removeClass("d_active"); 
+
+      
+      
       var d_activeTab = $(this).attr("rel"); 
-      $("#"+d_activeTab).show();
-	  
-	  $(".acc-head").removeClass("d_active");
-      $(this).addClass("d_active");
+      
+
+      if($(this).hasClass("d_active")){
+        $('.tab-content h3').removeClass("d_active"); 
+        $(".tab-pane").hide();
+      }else{
+        $('.tab-content h3').removeClass("d_active"); 
+        $(this).addClass("d_active"); 
+        $(".tab-pane").hide();
+        $("#"+d_activeTab).show();
+      }
+      
+	  //alert("#"+d_activeTab);
+	  //$(this).toggleClass("d_active");
 	  
 	  $("ul.tabs li").removeClass("active");
 	  $("ul.tabs li[rel^='"+d_activeTab+"']").addClass("active");
@@ -437,7 +512,8 @@ $(document).ready(function() {
           slidesToShow: 1,
           autoplay: false,
           slidesToScroll: 1,
-          dots: true
+          dots: true,
+          adaptiveHeight: true
         }
       }
     ]
@@ -542,12 +618,21 @@ $(document).ready(function() {
     e.preventDefault();
     $(this).toggleClass('close');
     $(this).parent().parent().toggleClass('close');
+    
   });
 
   $(".m-filter").click(function(e) {
     e.preventDefault();
-    $('.row.cat-main-wrap div#left-sidebar').toggleClass('open-mobile');
-    $(this).toggleClass('open-mobile');
+    $('.mobile-filter').stop().toggleClass( 'mopen' );
+    $('body').toggleClass('noOverlay');
+    //$(this).toggleClass('open-mobile');
+  });
+
+  $(".closemobile").click(function(e) {
+    e.preventDefault();
+    $('.mobile-filter').stop().toggleClass( 'mopen' );
+    //$(this).toggleClass('open-mobile');
+    $('body').toggleClass('noOverlay');
   });
 
 });
@@ -577,13 +662,13 @@ $('.nToggleMenu').click(function() {
 });
 
 $('.mobile-main-trigger').click(function() {
-
-  $('.mobile-menu').addClass('open');
+$('body').addClass('noOverflow');  
+$('.mobile-menu').addClass('open');
   $('.overlay').addClass('open');
 });
 
 $('a.close-menu').click(function() {
-
+  $('body').removeClass('noOverflow'); 
   $('.mobile-menu').removeClass('open');
   $('.overlay').removeClass('open');
 });

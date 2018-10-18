@@ -4,16 +4,21 @@
 	<a href="[%asset_url type:'product' id:'[@SKU@]' thumb:'full' check_parent:'y'%][%END asset_url%]" class=" mag-box" rel="product_images">
 		<div class="zoom">
 			<img src="[%asset_url type:'product' id:'[@SKU@]' thumb:'full' check_parent:'y'%][%END asset_url%]" class="hidden">
-			<img src="[%asset_url type:'product' id:'[@SKU@]' thumb:'thumbL' check_parent:'y'%][%END asset_url%]" rel="itmimg[@SKU@]" alt="[@name@]" border="0" id="main-image" itemprop="image">
+			<img src="[%asset_url type:'product' id:'[@SKU@]' thumb:'thumbL' check_parent:'y'%][%END asset_url%]" rel="itmimg[@SKU@]" alt="[@name@]" border="0" id="main-image" itemprop="image"> 
 		</div>
 	</a>
-</div>
-<div class="clear"></div><br />
+</div> 
+<div class="clear"></div>
 
 <div class="clear"></div>
 <div class="row">
 	<div class="col-xs-12 ">
 <div class="image-thumbs ">
+		<div class="item-img">
+				<a href="[%asset_url type:'product' id:'[@SKU@]' thumb:'full' check_parent:'y'%][%END asset_url%]" class="mag-box" rel="product_images" title="Large View">
+					<img src="[%asset_url type:'product' id:'[@SKU@]' thumb:'thumbL' check_parent:'y'%][%END asset_url%]" border="0" class="img-responsive product-image-small" title="Large View">
+				</a>
+			</div>
 <!--##[%THUMBNAILS id:'[@SKU@]' check_parent:'y'%]##-->
 	<!--##[%PARAM *body%]##-->
 		<div class="item-img">
