@@ -7,9 +7,7 @@
 				[%PRODUCT_FILTER type:'variations' autohide:'0' sortoption:'sortorder'%]
 					[%PARAM *header%]
 						<div class="filter-wrap"><li class="list-group-item"><h4><a href="#" class="filter-toggle">[@filter_name@]</a></h4></li>
-							[%IF [@filter_name@] eq 'Type'%]
 							<div class="type-wrapper">
-								[%/IF%]
 
 					[%/PARAM%]
 					[%PARAM *body%]
@@ -27,9 +25,7 @@
 						[%/DATA%]
 					[%/PARAM%]
 					[%PARAM *footer%]
-					[%IF [@filter_name@] eq 'Type'%]
 					</div>
-						[%/IF%]
 				</div>
 					[%/PARAM%]
 				[%/PRODUCT_FILTER%]
@@ -37,19 +33,5 @@
 			</ul>
 		</div>
 	[%/IF%]
-
-	<!--[%CONFIG id:'phistory_limit' if:'ne' value:'0'%]
-		[%PRODUCT_HISTORY limit:'[@config:phistory_limit@]' template:'box'%]
-			[%PARAM header%]
-				<div class="panel panel-default hidden-xs">
-					<div class="panel-heading panel-heading-thumbnails"><h3 class="panel-title">Browsing History</h3></div>
-					<ul class="nav list-group">
-			[%/PARAM%]
-			[%PARAM footer%]
-					</ul>
-				</div>
-			[%/PARAM%]
-		[%/PRODUCT_HISTORY%]
-	[%/CONFIG%]-->
 </div>
 <div class="col-xs-12 col-sm-9 cat-body">
