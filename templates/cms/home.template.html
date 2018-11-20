@@ -1,3 +1,43 @@
+[%advert type:'text' limit:'20' ad_group:'home-wide-mobile' sortby:'sortorder,name'%]
+[%param *header%]
+<div class="row">
+  <div class="top-ads-carousel-full mobile-only">
+
+    [%/param%]
+    [%param *body%]
+    <div>
+      <a href="[@url@]">
+        <img src="[%asset_url type:'adw' id:'[@ad_id@]'%][%param default%][%cdn_asset html:'0' library:'images'%]default_product.gif[%/cdn_asset%][%/param%][%/asset_url%]" />
+      </a>
+    </div>
+    [%/param%]
+    [%param *footer%]
+  </div>
+</div>
+
+[%/param%]
+[%/advert%]
+
+[%advert type:'text' limit:'20' ad_group:'home-wide' sortby:'sortorder,name'%]
+[%param *header%]
+<div class="row">
+  <div class="top-ads-carousel-full">
+
+    [%/param%]
+    [%param *body%]
+    <div>
+      <a href="[@url@]">
+        <img src="[%asset_url type:'adw' id:'[@ad_id@]'%][%param default%][%cdn_asset html:'0' library:'images'%]default_product.gif[%/cdn_asset%][%/param%][%/asset_url%]" />
+      </a>
+    </div>
+    [%/param%]
+    [%param *footer%]
+  </div>
+</div>
+
+[%/param%]
+[%/advert%]
+
 [%advert type:'text' limit:'20' ad_group:'home-ads' sortby:'sortorder,name'%]
 [%param *header%]
 <div class="row">
@@ -7,8 +47,8 @@
     [%param *body%]
     <div>
       <a href="[@url@]">
-                <img src="[%asset_url type:'adw' id:'[@ad_id@]'%][%param default%][%cdn_asset html:'0' library:'images'%]default_product.gif[%/cdn_asset%][%/param%][%/asset_url%]" />
-            </a>
+        <img src="[%asset_url type:'adw' id:'[@ad_id@]'%][%param default%][%cdn_asset html:'0' library:'images'%]default_product.gif[%/cdn_asset%][%/param%][%/asset_url%]" />
+      </a>
     </div>
     [%/param%]
     [%param *footer%]
@@ -37,7 +77,7 @@
         <div class="home-top-item"><img src="/assets/themes/spy-store-3/img/h-ico3.png" />1 year warranty</div>
 
         <div class="home-top-item"><img src="/assets/themes/spy-store-3/img/h-ico4.png" />try 14 day risk free</div>
-        </div>
+      </div>
     </div>
   </div>
 
