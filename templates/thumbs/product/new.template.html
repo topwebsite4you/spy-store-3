@@ -1,6 +1,6 @@
 <div class="new-listing">
 	<div class="new-listing-wrap">
-		<a href="[@URL@]" class="h-car-link">
+		<div class="h-car-link">
 
 			[%if [@misc15@] %]
 			[%if [@misc15@] eq 'New'%]
@@ -8,7 +8,7 @@
 			[%elseif [@misc15@] eq 'Our Pick'%]
 			<div class="item-overlay ourpick-over"></div>
 			[%elseif [@misc15@] eq 'Hot'%]
-			<div class="item-overlay hot-over"></div> 
+			<div class="item-overlay hot-over"></div>
 			[%/if%]
 			[%/if%]
 
@@ -34,7 +34,7 @@
 				</div>
 				<div class="pwasprice">
 					<span>[%FORMAT type:'currency' dpno_zero:'1'%][@store_price@][%/FORMAT%]</span>
-				</div> 
+				</div>
 
 
 				[%/if%]
@@ -45,7 +45,95 @@
 			</div>
 
 
-			
-		</a>
+
+		</div>
+	</div>
+
+	<div class="p-overlay-bg"></div>
+	<div class="p-overlay">
+		<span class="close-mobile">+</span>
+		<div class="p-wrap">
+
+			[%if [@misc15@] %]
+			[%if [@misc15@] eq 'New'%]
+			<div class="item-overlay new-over"></div>
+			[%elseif [@misc15@] eq 'Our Pick'%]
+			<div class="item-overlay ourpick-over"></div>
+			[%elseif [@misc15@] eq 'Hot'%]
+			<div class="item-overlay hot-over"></div>
+			[%/if%]
+			[%/if%]
+
+			[%if [@inpromo@]%]
+			<h4 class="promo">Hurry, promotion price ends <span class="sale-end" data-countdown="[%format type:'date' format:'#Y/#M/#D'%][@promo_end@][%/format%]"></span>!</h4>
+			[%/if%]
+
+			<a href="[@URL@]" class="list-img"><img src="[%asset_url type:'product' thumb:'thumb' id:'[@SKU@]'%][%param default%][%cdn_asset html:'0' library:'images'%]default_product.gif[%/cdn_asset%][%end param%][%/asset_url%]"
+				 class="product-image" alt="[@model@]" rel="itmimg[@SKU@]"></a>
+
+			<a href="[@URL@]" class="list-title">
+				<h3 itemprop="name">[%format type:'text' truemaxlength:'50' rmhtml:'1'%][@model@][%/FORMAT%]</h3>
+			</a>
+
+			[%if [@misc2@]%]
+			<div class="sm-description">
+				[@misc2@]
+
+			</div>
+			[%/if%]
+
+			<div class="p-price">
+
+				[%if ![@inpromo@]%]
+				<div class="" itemprop="price">
+					[%FORMAT type:'currency' dpno_zero:'1'%][@store_price@][%/FORMAT%]
+				</div>
+				[%else%]
+				<div class="ppromo">
+					<span>[%FORMAT type:'currency' dpno_zero:'1'%][@promo_price@][%/FORMAT%]</span>
+				</div>
+				<div class="pwasprice">
+					<span>[%FORMAT type:'currency' dpno_zero:'1'%][@store_price@][%/FORMAT%]</span>
+				</div>
+
+
+				[%/if%]
+
+				[%if [@inpromo@]%]
+				<div class="promo-banner">Sale</div>
+				[%/if%]
+			</div>
+
+			<div class="hover-control">
+				<form class="form-inline buying-options text-uppercase">
+					<input type="hidden" id="sku[@rndm@][@SKU@]" name="sku[@rndm@][@SKU@]" value="[@SKU@]">
+					<input type="hidden" id="model[@rndm@][@SKU@]" name="model[@rndm@][@SKU@]" value="[@model@]">
+					<input type="hidden" id="thumb[@rndm@][@SKU@]" name="thumb[@rndm@][@SKU@]" value="[@thumb@]">
+					<input type="hidden" id="qty[@rndm@][@SKU@]" name="qty[@rndm@][@SKU@]" value="1" class="input-tiny">
+					<ul class="list-inline">
+
+						[%IF [@extra@] or [@has_child@] or [@editable_bundle@]%]
+						<li><a href="[@URL@]" title="Buying Options" class="btn btn-primary btn-block btn-loads" data-loading-text="<i class='fa fa-spinner fa-spin' style='font-size: 14px'></i>">See
+								Options</a></li>
+						[%ELSEIF [@store_quantity@] > 0 AND [@preorder@] %]
+						<li><button type="button" title="Pre-Order Now!" class="addtocart btn btn-warning btn-block btn-loads" rel="[@rndm@][@SKU@]"
+							 data-loading-text="<i class='fa fa-spinner fa-spin' style='font-size: 14px'></i>">Pre-Order</button></li>
+						[%ELSEIF [@store_quantity@] > 0 AND ![@preorder@] %]
+						<li><button type="button" title="Add to Cart" class="addtocart btn-primary btn btn-block btn-loads text-uppercase"
+							 rel="[@rndm@][@SKU@]" data-loading-text="<i class='fa fa-spinner fa-spin' style='font-size: 14px'></i>">Add to
+								cart</button></li>
+						[%ELSEIF [@store_quantity@] < 1 AND [@config:ALLOW_NOSTOCK_CHECKOUT@] %] <li><button type="button" title="Add to Cart"
+							 class="addtocart btn-primary btn btn-block btn-loads" rel="[@rndm@][@SKU@]" data-loading-text="<i class='fa fa-spinner fa-spin' style='font-size: 14px'></i>">Backorder</button></li>
+							[%ELSE%]
+							<li><a class="notify_popup btn btn-default btn-block btn-loads" href="[@url@]" title="Notify Me When Back In Stock"
+								 data-loading-text="<i class='fa fa-spinner fa-spin' style='font-size: 14px'></i>">Out Of Stock</a></li>
+							[%END IF%]
+
+							<li><a href="[@URL@]" class="btn btn-primary btn-block btn-loads white">details</a></li>
+					</ul>
+				</form>
+			</div>
+
+		</div>
 	</div>
 </div>

@@ -1,0 +1,70 @@
+<div class="new-listing">
+	<div class="new-listing-wrap">
+		<a href="[@URL@]" class="h-car-link">
+			[@sku@]
+
+			[%display_child_products id:'[@sku@]' template:'default'%]
+			[%param *header%]
+			<h4>Child Products</h4>
+			[%/param%]
+			[%param *footer%]
+			[%/param%]
+			[%/display_child_products%]
+
+
+			[%display_child_products id:'[@sku@]' template:'default'%]
+			[%param *header%]
+			<h4>Child Products</h4>
+			[%/param%]
+			[%param *footer%]
+			[%/param%]
+			[%/display_child_products%]
+
+			[%if [@misc15@] %]
+			[%if [@misc15@] eq 'New'%]
+			<div class="item-overlay new-over"></div>
+			[%elseif [@misc15@] eq 'Our Pick'%]
+			<div class="item-overlay ourpick-over"></div>
+			[%elseif [@misc15@] eq 'Hot'%]
+			<div class="item-overlay hot-over"></div>
+			[%/if%]
+			[%/if%]
+
+			[%if [@inpromo@]%]
+			<h4 class="promo">Hurry, promotion price ends <span class="sale-end">soon</span>!</h4>
+			[%/if%]
+
+			<img src="[%asset_url type:'product' thumb:'thumb' id:'[@SKU@]'%][%param default%][%cdn_asset html:'0' library:'images'%]default_product.gif[%/cdn_asset%][%end param%][%/asset_url%]"
+			 class="product-image" alt="[@model@]" rel="itmimg[@SKU@]">
+
+			<h3 itemprop="name">[%format type:'text' truemaxlength:'50' rmhtml:'1'%][@model@][%/FORMAT%]</h3>
+
+
+			<div class="p-price">
+
+				[%if ![@inpromo@]%]
+				<div class="" itemprop="price">
+					[%FORMAT type:'currency' dpno_zero:'1'%][@store_price@][%/FORMAT%]
+				</div>
+				[%else%]
+				<div class="ppromo">
+					<span>[%FORMAT type:'currency' dpno_zero:'1'%][@promo_price@][%/FORMAT%]</span>
+				</div>
+				<div class="pwasprice">
+					<span>[%FORMAT type:'currency' dpno_zero:'1'%][@store_price@][%/FORMAT%]</span>
+				</div>
+
+
+				[%/if%]
+
+				[%if [@inpromo@]%]
+				<div class="promo-banner">Sale</div>
+				[%/if%]
+
+			</div>
+
+
+
+		</a>
+	</div>
+</div>

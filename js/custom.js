@@ -195,6 +195,139 @@ jQuery(window).load(function () {
 
 $(document).ready(function () {
 
+  var windowWidth = $(window).width();
+  $('.thumb .new-listing .new-listing-wrap').click(
+    function () {
+
+      if (windowWidth < 768) {
+        $(this).parent().addClass('hover-list');
+      } else if (($(window).width() >= 768) && ($(window).width() <= 1024)) {
+        $('.new-listing').removeClass('hover-list');
+        $(this).parent().addClass('hover-list');
+      }
+    }
+  );
+
+  $('.thumb .new-listing .close-mobile').click(
+    function () {
+      $(this).closest('.new-listing').removeClass('hover-list');
+    }
+  );
+
+
+  var windowWidth = $(window).width();
+
+
+  $('.new-listing').hover(
+    function () {
+      if (windowWidth > 1024) {
+        $(this).addClass('hover-list');
+      }
+    },
+    function () {
+      if (windowWidth > 1024) {
+        $(this).removeClass('hover-list');
+      }
+    }
+
+  );
+
+
+
+
+
+
+
+  $(window).on('resize', function (e) {
+    var windowWidth = $(window).width();
+    $('.thumb .new-listing .new-listing-wrap').click(
+      function () {
+
+        if (windowWidth < 768) {
+          $(this).parent().addClass('hover-list');
+        } else if (($(window).width() >= 768) && ($(window).width() <= 1024)) {
+          $('.new-listing').removeClass('hover-list');
+          $(this).parent().addClass('hover-list');
+        }
+      }
+    );
+
+    $('.thumb .new-listing .close-mobile').click(
+      function () {
+        $(this).closest('.new-listing').removeClass('hover-list');
+      }
+    );
+
+
+    var windowWidth = $(window).width();
+
+    if (windowWidth > 1024) {
+      $('.new-listing').hover(
+        function () {
+          $(this).addClass('hover-list');
+        },
+        function () {
+
+          $(this).removeClass('hover-list');
+
+        }
+
+      )
+    }
+
+  })
+  /*
+    $('.new-listing .new-listing-wrap').click(
+
+    if ($(window).width() < 768) {
+   
+
+      $('a.h-car-link').click(
+        function (e) {
+          e.preventDefault();
+        }
+      );
+
+
+      $('.new-listing .new-listing-wrap').click(
+        function () {
+          $('.new-listing').addClass('hover-list');
+          $(this).parent().toggleClass('hover-list');
+        }
+      );
+      $('.close-mobile').click(
+        function (e) {
+          e.preventDefault();
+          $(this).closest('.new-listing').removeClass('hover-list');
+        }
+      );
+    } else if (($(window).width() >= 768) && ($(window).width() <= 1024)) {
+
+      $('.new-listing').click(
+        function () {
+          $('.new-listing').removeClass('hover-list');
+          $(this).toggleClass('hover-list');
+        }
+      );
+
+    } else {
+      $('.new-listing').hover(
+        function () {
+          $(this).addClass('hover-list');
+        },
+        function () {
+          $(this).removeClass('hover-list');
+        }
+      );
+    }*/
+
+  /*
+    $(window).resize(function () {
+      if ($(window).width() > 769) {
+        $(".tab-pane:first").show();
+      }
+    });*/
+
   $(".wrapper-qty .num-wrapper").append('<div class="inc button">+</div><div class="dec button">-</div>');
 
   $(".wrapper-qty .button").on("click", function () {
@@ -665,49 +798,52 @@ $(document).ready(function () {
     $('body').toggleClass('noOverlay');
   });
 
-});
 
-// Tooltip
-$('.tipsy').tooltip({
-  trigger: 'hover',
-  placement: 'bottom'
-});
 
-// Who needs AddThis?
-function windowPopup(url, width, height) {
-  // Calculate the position of the popup so
-  // it’s centered on the screen.
-  var left = (screen.width / 2) - (width / 2),
-    top = (screen.height / 2) - (height / 2);
-  window.open(url, "", "menubar=no,toolbar=no,resizable=yes,scrollbars=yes,width=" + width + ",height=" + height + ",top=" + top + ",left=" + left);
-}
-$(".js-social-share").on("click", function (e) {
-  e.preventDefault();
-  windowPopup($(this).attr("href"), 500, 300);
-});
+  // Tooltip
+  $('.tipsy').tooltip({
+    trigger: 'hover',
+    placement: 'bottom'
+  });
 
-$('.nToggleMenu').click(function () {
-  var toggleTarget = $(this).attr('data-target')
-  $(toggleTarget).slideToggle();
-});
-
-$('.mobile-main-trigger').click(function () {
-  $('body').addClass('noOverflow');
-  $('.mobile-menu').addClass('open');
-  $('.overlay').addClass('open');
-});
-
-$('a.close-menu').click(function () {
-  $('body').removeClass('noOverflow');
-  $('.mobile-menu').removeClass('open');
-  $('.overlay').removeClass('open');
-});
-
-//active link
-var currentPage = location.pathname;
-$('a').each(function () {
-  var currentHref = $(this).attr('href');
-  if (currentHref == currentPage) {
-    $(this).addClass('active');
+  // Who needs AddThis?
+  function windowPopup(url, width, height) {
+    // Calculate the position of the popup so
+    // it’s centered on the screen.
+    var left = (screen.width / 2) - (width / 2),
+      top = (screen.height / 2) - (height / 2);
+    window.open(url, "", "menubar=no,toolbar=no,resizable=yes,scrollbars=yes,width=" + width + ",height=" + height + ",top=" + top + ",left=" + left);
   }
-})
+  $(".js-social-share").on("click", function (e) {
+    e.preventDefault();
+    windowPopup($(this).attr("href"), 500, 300);
+  });
+
+  $('.nToggleMenu').click(function () {
+    var toggleTarget = $(this).attr('data-target')
+    $(toggleTarget).slideToggle();
+  });
+
+  $('.mobile-main-trigger').click(function () {
+    $('body').addClass('noOverflow');
+    $('.mobile-menu').addClass('open');
+    $('.overlay').addClass('open');
+  });
+
+  $('a.close-menu').click(function () {
+    $('body').removeClass('noOverflow');
+    $('.mobile-menu').removeClass('open');
+    $('.overlay').removeClass('open');
+  });
+
+  //active link
+  var currentPage = location.pathname;
+  $('a').each(function () {
+    var currentHref = $(this).attr('href');
+    if (currentHref == currentPage) {
+      $(this).addClass('active');
+    }
+  });
+
+
+});
