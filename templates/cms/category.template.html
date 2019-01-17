@@ -1,20 +1,7 @@
 [%SET [@page_type@]='category'/%]
 
 <div class="mobile-filter">
-	<div class="container">
-		<div class="sort-right">
-			<form method="get" class="form-horizontal" action="[@config:CURRENT_URL@]">
-				<input name="rf" type="hidden" value="[%FILTER_CODE%][%/FILTER_CODE%]">
-				<div class="form-group">
-					<label class="control-label col-xs-2">Sort By</label>
-					<div class="col-xs-10">
-						<select name="sortby" onChange="return this.form.submit();" class="form-control" aria-label="Sort products by">
-							<option value="popular" [%SORTBY type:'products' if:'eq' value:'popular'%]selected[%/SORTBY%]> Most Popular </option>
-							 <option value="name" [%SORTBY type:'products' if:'eq' value:'name'%]selected[%/SORTBY%]> Name </option>
-							 <!--<option value="SKU" [%SORTBY type:'products' if:'eq' value:'SKU'%]selected[%/SORTBY%]> SKU </option>-->
-							 <option value="lowest_price" [%SORTBY type:'products' if:'eq' value:'lowest_price'%]selected[%/SORTBY%]> Lowest
-							 Price </option> <option value="highest_price" [%SORTBY type:'products' if:'eq'
-							 value:'highest_price'%]selected[%/SORTBY%]> Highest Price </option> </select> </div> </div> </form> </div> </div>
+		
 							 <div class="mobile-f-el">
 
 								<div class="mobile-f-head">
@@ -26,7 +13,26 @@
 									</div>
 								</div>
 								<div class="container">
-									<div class="panel panel-default">
+										
+									<div class="panel panel-default"> 
+											<div class="sort-right">
+													<form method="get" class="form-horizontal" action="[@config:CURRENT_URL@]">
+														<input name="rf" type="hidden" value="[%FILTER_CODE%][%/FILTER_CODE%]">
+														<div class="form-group">
+															<label class="control-label col-xs-2">Sort By</label>
+															<div class="col-xs-10">
+																<select name="sortby" onChange="return this.form.submit();" class="form-control" aria-label="Sort products by">
+																	<option value="popular" [%SORTBY type:'products' if:'eq' value:'popular'%]selected[%/SORTBY%]> Most Popular </option>
+																	 <option value="name" [%SORTBY type:'products' if:'eq' value:'name'%]selected[%/SORTBY%]> Name </option>
+																	 <!--<option value="SKU" [%SORTBY type:'products' if:'eq' value:'SKU'%]selected[%/SORTBY%]> SKU </option>-->
+																	 <option value="lowest_price" [%SORTBY type:'products' if:'eq' value:'lowest_price'%]selected[%/SORTBY%]> Lowest
+																	 Price </option> <option value="highest_price" [%SORTBY type:'products' if:'eq'
+																	 value:'highest_price'%]selected[%/SORTBY%]> Highest Price </option> 
+																</select> 
+															</div> 
+														</div> 
+													</form> 
+											</div>
 										<ul class="filters-m-ul panel-collapse collapse list-group">
 											[%PRODUCT_FILTER type:'variations' autohide:'0' sortoption:'sortorder' ignore_current:'1'%]
 											[%PARAM *header%]
@@ -63,6 +69,7 @@
 
 										</ul>
 									</div>
+									
 								</div>
 					</div>
 

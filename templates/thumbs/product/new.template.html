@@ -19,7 +19,7 @@
 			<img src="[%asset_url type:'product' thumb:'thumb' id:'[@SKU@]'%][%param default%][%cdn_asset html:'0' library:'images'%]default_product.gif[%/cdn_asset%][%end param%][%/asset_url%]"
 			 class="product-image" alt="[@model@]" rel="itmimg[@SKU@]">
 
-			<h3 itemprop="name">[%format type:'text' truemaxlength:'50' rmhtml:'1'%][@model@][%/FORMAT%]</h3>
+			<h3 itemprop="name">[%format type:'text' truemaxlength:'100' rmhtml:'1'%][@model@][%/FORMAT%]</h3>
 
 
 			<div class="p-price">
@@ -72,7 +72,7 @@
 				 class="product-image" alt="[@model@]" rel="itmimg[@SKU@]"></a>
 
 			<a href="[@URL@]" class="list-title">
-				<h3 itemprop="name">[%format type:'text' truemaxlength:'50' rmhtml:'1'%][@model@][%/FORMAT%]</h3>
+				<h3 itemprop="name">[%format type:'text' truemaxlength:'100' rmhtml:'1'%][@model@][%/FORMAT%]</h3>
 			</a>
 
 			[%if [@misc2@]%]
