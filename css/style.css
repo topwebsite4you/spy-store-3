@@ -16,6 +16,9 @@ body {
   /*{body|text-colour}*/
   ;
 }
+span.for-mobile {
+    display: none;
+}
 
 html .sm-description {
   opacity: 0;
@@ -31,7 +34,15 @@ html .btn-success {
   background-color: #D01D1B;
   border-color: #D01D1B;
 }
-
+span.was-p {
+  display: none;
+}
+.pwasprice span span {
+  display: none;
+}
+html .pwasprice span {
+  font-weight: 400;
+}
 html .btn-danger,
 html .btn-primary {
   background-color: #D01D1B;
@@ -361,6 +372,7 @@ h6,
   position: absolute;
   left: 10px;
   top: 100px;
+  transform: scale(.8);
 }
 
 .item-overlay.ourpick-over:after {
@@ -1842,6 +1854,7 @@ img.zip-logo {
   height: 25px;
   width: 25px;
   background-color: #eee;
+  border: 1px solid #666;
 }
 .lcontainer:hover input ~ .checkmark {
   background-color: #ccc;
@@ -2486,6 +2499,10 @@ a.c-link {
   white-space: nowrap;
   margin-top: 0px;
 }
+* {
+  /* So 100% means 100% */
+  box-sizing: border-box;
+}
 
 .sort-left {
   float: left;
@@ -2550,7 +2567,9 @@ a.c-link {
 .cat-body .new-listing:nth-child(3n) {
   border-left: 0px;
 }
-
+.h-car-link .p-price{
+  margin: 5px 0;
+}
 .cat-body .new-listing h3 {
   text-align: left;
   font-size: 14px;
@@ -2560,12 +2579,21 @@ a.c-link {
   margin-bottom: 10px;
   overflow: hidden;
   line-height: 21px;
+  line-height: 1.2em;
   text-overflow: ellipsis;
   display: -webkit-box;
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
-  min-height: 62px;
+  min-height: 55px;
+  height: 55px;
+  /* height: 82px; */
   font-weight: 500;
+  display: table-cell;
+  vertical-align: bottom;
+}
+.cat-body .new-listing .p-overlay .p-wrap h3 {
+  padding-top: 0px;
+  vertical-align: middle;
 }
 
 .sm-description {
@@ -2622,7 +2650,7 @@ a.c-link {
   max-width: 100%;
 }
 
-.hover-list .p-overlay,
+.hover-list .p-overlay
   {
   display: block;
   opacity: 1;
@@ -3004,8 +3032,42 @@ a.list-title {
     padding: 6px 0px;
   }
 }
-
+.loading {
+  opacity: 0;
+}
+.loader-img {
+  display: block;
+  margin: 0 auto;
+  float: none;
+  text-align: center;
+}
+.loader-img img {
+  max-width: 60px;
+  padding-top: 100px;
+  padding-bottom: 50px;
+}
 @media (max-width: 768px) {
+  .cat-body .new-listing h3 {
+    height: 110px;
+}
+.new-listing-wrap {
+  overflow: hidden;
+  display: block;
+}  
+html .p-price>.promo-banner {
+  position: absolute;
+  right: 10px;
+  bottom: 0px;
+  padding: 0 5px;
+}
+
+.p-overlay{
+  display:none;
+}   
+.top-bar{
+  min-height: 45px;
+  background: #f8f8f8;
+}
   .col-xs-12.col-md-4.wrapper-code {
     display: none;
   }
@@ -3907,6 +3969,44 @@ nav.navbar.mobile-menu.open {
 }
 
 @media (max-width: 1199px) {
+  .btn-lg {
+    padding: 10px 10px;
+}
+html .spy-cross-sell .mobile-sp-price .qty {
+  max-width: 100px;
+}
+html .btn-lg{
+  font-size: 16px;
+}
+.spy-cross-sell .qty { 
+  width: 120px;
+  text-indent: 0px !important;
+}
+#n_product .qty {
+  height: 43px;
+  text-align: center;
+  font-size: 18px;
+}
+.wrapper-qty .button {
+  position: absolute;
+  width: 33px;
+  height: 43px;
+  background: #dedede;
+  top: 0px;
+  text-align: center;
+  line-height: 43px;
+  font-size: 24px;
+  cursor: pointer;
+}
+.spy-cross-sell .mobile-sp-price .qty {
+  max-width: 100px;
+}
+
+#n_product .qty {
+  height: 43px;
+  text-align: center;
+  font-size: 18px;
+}
   .wrapper-product-desc .home-top-wrap .home-top-item {
     width: 18%;
   }
@@ -4088,9 +4188,6 @@ width: 150px;
     padding-top: 10px;
     text-align: left;
 }
-  .hover-list .p-overlay .sort-right {
-  
-  }
 
   .hover-list .p-overlay {
     zoom: 1.1;
@@ -4352,11 +4449,11 @@ width: 150px;
   .h-car-link img {
     max-width: 100%;
   }
-
+/*
   .main-c-page {
     display: none;
   }
-
+*/
   html .mobile-search-wrap {
     position: static;
   }
@@ -5282,10 +5379,18 @@ width: 150px;
     font-size: 14px;
   }
 
-  .pwasprice span {
+  .p-overlay .pwasprice span {
     font-size: 17px;
   }
-
+  .pwasprice span {
+    font-size: 16px;
+}
+.p-overlay h4.promo {
+  display: none;
+}
+.p-overlay .promo-banner {
+  display: none;
+}
   html .cat-body .new-listing {
     width: 50%;
     float: left;
@@ -5293,7 +5398,13 @@ width: 150px;
     margin: 0;
     margin-bottom: 0px;
   }
-
+  .p-overlay h4.promo.m-promo {
+    display: block;
+    position: static;
+}
+.p-overlay .ppromo {
+  display: inline-block;
+}
   .black-logo-box ul li a {
     font-size: 16px;
     padding: 25px 10px;
@@ -5428,13 +5539,68 @@ width: 150px;
 h1.m-title {
   display: none;
 }
+.cat-body .new-listing .p-overlay .p-wrap h4.subtitle{
+  display:none;
+}
+.mobile-only{
+  display:none;
+}
 @media (max-width: 767px) {
+  div#_jstl__buying_options_r {
+    display: none;
+}
+  .for-mobile{
+    display:inline-block; 
+  }
+  .p-overlay h4.promo.m-promo {
+    background: transparent;
+    margin: 0px;
+}
+  .col-sm-12.nCrossSellItem{
+    width:100%;
+    float:left;
+  }
+  .col-sm-12.nCrossSellItem>.row>.col-xs-2 {
+    display: none;
+}
+.nCrossSellItem .row .col-xs-1 {
+  left: -15px;
+}
   h1.m-title {
     display: block;
     
 }
+.item-overlay{
+  transform: scale(1);
+}
 #n_product .qty {
   width: 150px;
+}
+#n_product .m-price .qty { 
+  width: 120px;
+}
+.m-price form.buying-options>.row .addtocart {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+.m-price .col-xs-12.col-md-5.wrapper-code {
+  display: none;
+}
+.m-price .wrapper-pricing-main .pricenow>span {
+  font-size: 13px;
+  font-weight: 400;
+  font-size: 14px;
+  color: #000000;
+  position: relative;
+  top: -5px;
+  margin-right: 5px;
+}
+.m-price .wrapper-pricing-main .pricenow {
+  font-style: normal;
+  font-weight: bold;
+  line-height: 1em;
+  margin-bottom: 10px;
+  color: #D0021B;
 }
 .formobile {
   display: block !important;
@@ -5487,19 +5653,120 @@ h1.m-title {
   .hover-list .p-overlay {
     position: fixed;
     width: 100%;
-    max-width: 300px;
+    max-width: initial;
+    border: none;
     height: initial;
     margin: 0 auto;
     float: none;
     display: block;
-    margin: 20px auto 90px;
-    left: 50%;
-    transform: translateX(-50%);
+    margin: 0px auto 0px;
     min-height: initial;
-    height: initial;
-  }
+    height: 100%; 
+    overflow-y: auto;
+    margin-bottom: 0px;
+    padding-bottom: 130px;
+    z-index: 9999999999;
+}
+.new-listing .p-overlay .p-price>div.ppromo {  
+  padding-right: 5px; 
+}
+.hover-control {
+  width: 100%;
+  float: left;
+  background: #f0f0f0;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  padding: 20px 15px;
+  margin: 0;
+}
 
+.new-listing .p-overlay .hover-control .p-price>div span.for-mobile {
+  font-family: Open Sans;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 23px;
+  font-size: 14px;
+  color: #000000;
+  position: relative;
+  top: -5px;
+}
 
+.new-listing .p-overlay .p-price>div {
+  font-style: normal;
+  font-weight: bold;
+  line-height: 23px;
+  font-size: 30px;
+  color: #D0021B;
+}
+
+.hover-control .p-price {
+  padding: 0px 10px;
+} 
+.hover-control ul.list-inline>li:last-child {
+  float: right;
+  text-align: right;
+  width: 48%;
+}
+.hover-control form.buying-options .list-inline{
+  padding: 0 0px;
+}
+.hover-control form.buying-options, .hover-control form.buying-options *{
+  max-width: 100%;
+  box-sizing: border-box;
+  width:100%; 
+}
+.hover-control form.buying-options {
+  max-width: 100%;
+  box-sizing: border-box;
+  padding: 0px;
+    float: left;
+    width: 100%;
+    padding: 0px;
+    margin: 0px;
+    float: left;
+}
+.cat-body .new-listing .p-overlay .p-wrap h3 {
+  padding-top: 0px;
+  vertical-align: middle;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  color: #000;
+  display: block;
+  height: initial;
+  padding: 0px;
+  margin-top: 10px;
+  font-style: normal;
+  line-height: 20px;
+  font-size: 19px;
+  margin-bottom: 5px;
+}
+.cat-body .new-listing .p-overlay .p-wrap h4.subtitle {
+  text-align: left;
+  font-size: 15px;
+  font-weight: 500;
+  display: block;
+  margin: 0px;
+  font-style: normal;
+  line-height: 16px;
+  color: #939393;
+}
+.new-listing.hover-list .sm-description {
+  opacity: 1;
+  visibility: visible;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.6em;
+  font-size: 13px;
+  margin-top: 10px;
+}
+  .p-overlay>.p-wrap {
+    border: none;
+    height: 100%;
+    overflow-y: scroll;
+    padding: 0px;
+    margin: 10px 15px; 
+}
 
   .hover-list .p-overlay-bg {
     position: fixed;
@@ -5513,19 +5780,99 @@ h1.m-title {
   }
 
   .close-mobile {
-    position: absolute;
-    top: -20px;
-    right: 0px;
-    font-size: 50px;
+    position: fixed;
+    top: 0px;
+    right: 30px;
+    font-size: 64px;
+    font-weight: 500;
     transform: rotate(45deg);
-    display: inline-block;
+    display: block;
     z-index: 9;
-  }
+}
+.hover-list .p-overlay {
+  zoom: 1; 
+  transform: scale(1);
+}
+.p-overlay img.product-image {
+  margin-top: 0px;
+  width: 100%;
+  max-width: 220px;
+}
 
   .top-ads-carousel-full {
     display: none !important;
   }
-
+  .hover-control ul.list-inline>li {
+    padding: 0;
+    display: block;
+    width: 50%;
+    float: left;
+}
+.p-overlay .hover-control ul.list-inline>li a.btn, .p-overlay .hover-control ul.list-inline>li button {
+  padding: 7px 5px;
+  font-size: 14px;
+  width: 99%;
+  margin-top: 0px;
+  font-weight: 600;
+} 
+.new-listing.hover-list .item-overlay.new-over, .new-listing.hover-list .item-overlay {
+  top: 100px;
+  transition: none;
+}
+.new-listing .item-overlay.new-over, .new-listing .item-overlay {
+  transition: none;
+}
+.p-overlay .hover-control .p-price {
+  text-align: center;
+}
+.new-listing .p-overlay .p-overlay .p-price>div {
+  font-weight: bold;
+  font-size: 30px;
+}
+.new-listing .p-overlay .hover-control .p-price>div span {
+  position: static;
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: bold;
+  line-height: 23px;
+  font-size: 30px;
+  color: #D0021B;
+}
+.p-overlay span.was-p {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: bold;
+  line-height: 16px;
+  font-size: 13px;
+  text-align: center;
+  color: #FFFFFF;
+  display: inline-block;
+  background: #D0021B;
+  text-transform: uppercase;
+  padding: 7px 15px 6px;
+  position: relative;
+  top: -6px;
+}
+.new-listing .p-overlay .hover-control .p-price>div.pwasprice span {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: normal;
+  line-height: 16px;
+  font-size: 13px;
+  color: #363636;
+}
+.p-overlay .pwasprice span span {
+  display: inline-block;
+  text-transform: uppercase;
+}
+.new-listing .p-overlay .p-price>div.pwasprice {
+  position: relative;
+  top: -6px;
+  left: 5px;
+}
+span.for-mobile {
+  display: inline-block;
+}
   .top-ads-carousel-full.mobile-only {
     display: block !important;
   }
@@ -5603,7 +5950,19 @@ h1.m-title {
 
   .formobile h4.promo {
     text-align: center;
-  }
+    padding: 0px;
+    float: left;
+    width: 100%;
+}
+.m-price .wrapper-pricing-main .pricenow.sale-color {
+  float: none;
+  width: initial;
+  margin: 0px;
+  line-height: 30px;
+  vertical-align: middle;
+  position: static;
+  margin-right: 10px;
+}
 
   form.buying-options .product-priceBtn .wrapper-qty {
     width: 50%;
@@ -5724,8 +6083,8 @@ h1.m-title {
 @media (max-width: 550px) {
   .wrapper-qty .button {
     width: 35px;
-    height: 40px;
-    line-height: 40px;
+    height: 43px;
+    line-height: 43px;
   }
 
   html .home-txt-top .home-top-item {
@@ -5914,7 +6273,7 @@ h1.m-title {
   .pagination>.active>a:focus,
   .pagination>.active>span:focus {
     color: #000;
-    line-height: 34px;
+   /* line-height: 34px;*/
   }
 
   .image-thumbs .item-img>a {
@@ -6055,7 +6414,7 @@ h1.m-title {
 
   .black-logo-box ul li a {
     font-size: 12px;
-    padding: 15px 5px;
+    padding: 15px 3px;
   }
 
   nav.extra-main-mobile {

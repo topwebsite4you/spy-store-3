@@ -123,7 +123,7 @@
 							[%if ![@inpromo@]%]
 
 							<div class="pricenow">
-								[%FORMAT type:'currency' dpno_zero:'1'%][@store_price@][%/FORMAT%]
+								<span>only</span>[%FORMAT type:'currency' dpno_zero:'1'%][@store_price@][%/FORMAT%]
 							</div>
 
 							[%else%]
@@ -136,11 +136,9 @@
 								on sale
 							</div>
 
-							[%if [@save@] > 0%]
 							<div class="ret-price">
 								was [%FORMAT type:'currency' dpno_zero:'1'%][@store_price@][%/FORMAT%]
 							</div>
-							[%/if%]
 
 							[%/if%]
 						</div>
@@ -181,12 +179,6 @@
 												[%ELSE%]
 												<a class="btn btn-info btn-lg btn-block" data-toggle="modal" data-target="#notifymodal">Notify Me</a>
 												[%END IF%]
-										</div>
-										<div class="col-xs-12 col-md-5 wrapper-code">
-											<div style="cursor: pointer; display: inline;" data-zm-info="true" class="zip_tagline" data-zm-widget="popup"
-											 data-zm-popup-asset="termsdialog">
-												<img class="zip-logo" src="/assets/themes/spy-store-3/img/zip.svg" alt="The Spy Store Call Us">
-											</div>
 										</div>
 									</div>
 								</div>

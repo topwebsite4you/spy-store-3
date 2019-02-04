@@ -51,6 +51,8 @@ var updateQueryStringParam = function (key, value) {
 
 jQuery(window).load(function () {
 
+jQuery('.loader-img').remove();
+jQuery('.loading').removeClass('loading');
 
   // Same height boxes
   jQuery.fn.sameheight = function () {
